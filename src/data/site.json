@@ -1,0 +1,95 @@
+{
+  "_readme": "Single source of truth for clinic facts. Templates read this at build time ({{site.*}}); src/js/site.js reads it at runtime. In WordPress this becomes theme options / ACF options page.",
+  "name": "Smileawhile Dental",
+  "shortName": "Smileawhile",
+  "tagline": "Family & cosmetic dentistry · Holland, PA",
+  "url": "[SITE URL]",
+  "showPlaceholders": true,
+
+  "phone": {
+    "display": "(215) 355-4242",
+    "international": "+1 (215) 355-4242",
+    "tel": "+12153554242"
+  },
+  "email": "[EMAIL]",
+  "address": {
+    "street": "1030 Holland Rd",
+    "city": "Holland",
+    "region": "PA",
+    "postalCode": "18966",
+    "country": "US",
+    "singleLine": "1030 Holland Rd, Holland, PA 18966"
+  },
+
+  "hours": {
+    "_comment": "// PLACEHOLDER HOURS – confirm with client. Dummy values; do NOT add to LocalBusiness/Dentist schema (openingHours) until confirmed.",
+    "placeholder": true,
+    "summary": "Mon–Thu 9:00 am – 5:00 pm · Fri 9:00 am – 2:00 pm · Sat–Sun Closed",
+    "days": [
+      { "label": "Mon–Thu", "days": [1, 2, 3, 4], "open": "09:00", "close": "17:00", "display": "9:00 am – 5:00 pm" },
+      { "label": "Fri", "days": [5], "open": "09:00", "close": "14:00", "display": "9:00 am – 2:00 pm" },
+      { "label": "Sat–Sun", "days": [6, 0], "closed": true, "display": "Closed" }
+    ]
+  },
+
+  "booking": { "href": "#appointment", "label": "Book an appointment", "shortLabel": "Book Now" },
+
+  "nav": [
+    { "label": "Home", "href": "/", "current": true },
+    { "label": "Our Practice", "href": "/our-practice/" },
+    { "label": "Services", "href": "/services/", "mega": true },
+    { "label": "Testimonials", "href": "/testimonials/" },
+    { "label": "Contact", "href": "/contact/" }
+  ],
+
+  "services": [
+    {
+      "slug": "emergency-dentistry", "name": "Emergency Dentistry", "icon": "gi-emergency",
+      "summary": "Urgent tooth pain? Call us during office hours and we'll prioritise you.",
+      "items": ["Tooth pain", "Tooth extraction & oral surgery", "Emergency root canal treatment", "Lost fillings", "Dental abscess & infection", "Dental trauma"]
+    },
+    {
+      "slug": "dental-implants", "name": "Dental Implants", "icon": "gi-implants",
+      "summary": "Single teeth, full arches and All-on-4, planned around you.",
+      "items": ["Single tooth implant", "Multiple tooth implants", "Full arch implants", "All-on-4 systems", "Implant dentures", "Ceramic implants"]
+    },
+    {
+      "slug": "periodontal-treatment", "name": "Periodontal Treatment", "icon": "gi-periodontal",
+      "summary": "Gum disease treatment, sinus lifts and laser gum shaping.",
+      "items": ["Sinus lift", "Crown lengthening", "Scaling & root planing", "Laser gum shaping"]
+    },
+    {
+      "slug": "general-dentistry", "name": "General Dentistry", "icon": "gi-general",
+      "summary": "Check-ups, fillings, crowns, root canals and dentures.",
+      "items": ["Dental crowns & bridges", "Root canals & endodontic re-treatment", "Cavities & fillings", "Bite correction", "Grinding & clenching", "Routine care", "TMJ", "Dentures"]
+    },
+    {
+      "slug": "cosmetic-dentistry", "name": "Cosmetic Dentistry", "icon": "gi-cosmetic",
+      "summary": "Veneers, whitening, reshaping and total smile restoration.",
+      "items": ["Porcelain veneers", "Minimal-prep veneers", "Single-tooth veneer", "Tooth reshaping", "Tooth whitening", "Total smile restoration"]
+    },
+    {
+      "slug": "orthodontics", "name": "Orthodontics", "icon": "gi-orthodontics",
+      "summary": "Clear aligners to straighten your smile, discreetly.",
+      "items": ["Clear aligners"]
+    }
+  ],
+
+  "trust": [
+    { "name": "Invisalign", "placeholder": true },
+    { "name": "CEREC", "placeholder": true },
+    { "name": "ADA", "placeholder": true },
+    { "name": "CareCredit", "placeholder": true }
+  ],
+
+  "doctor": { "displayName": "Dr. Patel", "firstName": "[FIRST NAME]", "credentials": "[DDS/DMD]" },
+
+  "hero": {
+    "eyebrow": "Family & cosmetic dentistry · Holland, PA",
+    "title": "Calm, expert dental care in Holland, PA.",
+    "subline": "Personal, unhurried care for the whole family, from routine check-ups to implants and Invisalign.",
+    "image": { "name": "dr-patel-operatory", "ratio": "4x5" }
+  },
+
+  "social": []
+}

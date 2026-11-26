@@ -1,0 +1,51 @@
+<!-- ===================== SECTION: hero =====================
+     WP: template-parts/home/hero.php · copy from ACF fields (eyebrow, title, subline), image = featured image
+     ========================================================= -->
+<section class="hero" aria-labelledby="hero-title" data-hero>
+  <div class="hero__bg" aria-hidden="true"></div>
+
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <p class="eyebrow hero__eyebrow" data-reveal>{{site.hero.eyebrow}}</p>
+
+      <h1 class="t-display hero__title" id="hero-title" data-hero-title>{{site.hero.title}}</h1>
+
+      <p class="t-body-lg hero__subline" data-reveal>{{site.hero.subline}}</p>
+
+      <div class="hero__ctas" data-reveal>
+        <a class="btn btn--primary hero__cta" href="{{site.booking.href}}" data-magnetic>
+          <span class="btn__label">{{site.booking.label}}</span>
+          <span class="btn__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </a>
+        <a class="btn btn--secondary hero__cta" href="tel:{{site.phone.tel}}">
+          <svg class="btn__icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.6 2.5 4 2.3c-.9 0-1.7.8-1.6 1.7.6 5.1 4.6 9 9.6 9.6.9.1 1.7-.7 1.7-1.6l-.2-1.6c-.1-.5-.5-.9-1-1l-1.8-.4c-.4-.1-.8 0-1.1.3l-.8.8a8 8 0 0 1-3.6-3.6l.8-.8c.3-.3.4-.7.3-1.1L5.9 3c0-.3-.1-.4-.3-.5Z"/></svg>
+          <span class="t-num">Call {{site.phone.display}}</span>
+        </a>
+      </div>
+
+      <div class="hero__trust" data-reveal>
+        <p class="hero__trust-label">Certified &amp; trusted partners</p>
+        <!-- PLACEHOLDER LOGOS: replace each .logo-slot with the official monochrome SVG
+             (Invisalign provider portal, Dentsply Sirona/CEREC, ADA member toolkit, CareCredit provider centre). -->
+        <ul class="trust-logos" role="list">
+          {{#each site.trust as t}}
+          <li><span class="logo-slot" data-placeholder title="Placeholder: official {{t.name}} logo pending">{{t.name}}</span></li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+
+    <figure class="hero__media" data-hero-media>
+      <div class="hero__frame" data-hero-frame>
+        <!-- @picture dr-patel-operatory 4x5 eager class="hero__img" sizes="(min-width: 1440px) 560px, (min-width: 1024px) 40vw, 100vw" art="3x2|(min-width: 768px) and (max-width: 1023.98px)|90vw" -->
+      </div>
+      <figcaption class="hero__chip" data-reveal>
+        <span class="hero__chip-dot" aria-hidden="true"></span>
+        <span class="hero__chip-text">
+          <span class="hero__chip-name">{{site.doctor.displayName}}</span>
+          <span class="hero__chip-meta">{{site.address.singleLine}}</span>
+        </span>
+      </figcaption>
+    </figure>
+  </div>
+</section>

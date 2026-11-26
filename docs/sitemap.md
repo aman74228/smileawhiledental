@@ -23,7 +23,7 @@
 Meet the Doctor (sitemap: "Meet Dr. Patel") · Meet the Team · Office Tour · Driving Directions · Hours
 
 ## Services (hub + one category template)
-- **24/7 Emergency Dentistry:** tooth pain · tooth extraction & oral surgery · emergency root canal · lost fillings · dental abscess & infection · dental trauma
+- **Emergency Dentistry:** (renamed from "24/7 Emergency Dentistry"; the practice does not take emergency calls) tooth pain · tooth extraction & oral surgery · emergency root canal · lost fillings · dental abscess & infection · dental trauma
 - **Dental Implants:** single tooth · multiple teeth · full arch · All-on-4 · implant dentures · ceramic implants
 - **Periodontal Treatment:** sinus lift · crown lengthening · scaling & root planing · laser gum shaping
 - **General Dentistry:** crowns & bridges · root canals & endodontic re-treatment · cavities & fillings · bite correction · grinding & clenching · routine care · TMJ · dentures

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+# Sitemap: [SITE URL]/sitemap.xml  (WordPress/Yoast generates this after launch)

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en-US" class="{{#if site.showPlaceholders}}show-placeholders{{/if}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{{site.name}} | Family &amp; Cosmetic Dentist in Holland, PA</title>
+  <meta name="description" content="Calm, expert dental care in Holland, PA. Personal, unhurried care for the whole family, from routine check-ups to implants and Invisalign. Call {{site.phone.display}}.">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{site.name}} | Family &amp; Cosmetic Dentist in Holland, PA">
+  <meta property="og:description" content="Personal, unhurried dental care for the whole family in Holland, PA.">
+  <meta property="og:image" content="/images/holland/dr-patel-operatory-3x2-1200.webp">
+
+  <link rel="preload" href="/fonts/GoogleSans-Variable-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%2310768A'/%3E%3C/svg%3E">
+
+  <script>
+    // Hide [data-reveal] content only when JS runs; un-hide after 3s if the
+    // motion module fails to boot, so content can never stay invisible.
+    document.documentElement.classList.add('js');
+    window.__revealFailsafe = setTimeout(function () { document.documentElement.classList.remove('js'); }, 3000);
+  </script>
+
+  <!-- LocalBusiness / Dentist schema. openingHours intentionally omitted until real hours are confirmed. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "{{site.name}}",
+    "telephone": "{{site.phone.tel}}",
+    "image": "/images/holland/dr-patel-operatory-3x2-1200.webp",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{site.address.street}}",
+      "addressLocality": "{{site.address.city}}",
+      "addressRegion": "{{site.address.region}}",
+      "postalCode": "{{site.address.postalCode}}",
+      "addressCountry": "{{site.address.country}}"
+    },
+    "employee": { "@type": "Person", "name": "{{site.doctor.displayName}}", "jobTitle": "Dentist" }
+  }
+  </script>
+
+  <script type="module" src="/src/js/main.js"></script>
+</head>
+<body>
+  <!-- @include src/icons/glass-icons.svg -->
+  <!-- @include src/sections/header/header.html -->
+
+  <main id="main" tabindex="-1">
+    <!-- @include src/sections/hero/hero.html -->
+
+    <!-- DEV STUB (Phase 2 only): stands in for Phase 3 sections so the header's
+         glass / hide-on-scroll states and the #appointment anchor can be tested. Delete in Phase 3. -->
+    <section class="dev-stub" aria-label="Upcoming sections">
+      <div class="container">
+        <p class="eyebrow">Phase 3</p>
+        <p class="t-h2 dev-stub__title">Trust logos, About, Our office, Featured treatments and the rest of the homepage continue here.</p>
+      </div>
+    </section>
+    <section class="dev-stub dev-stub--alt" id="appointment" aria-label="Appointment form (coming in Phase 3)">
+      <div class="container">
+        <p class="eyebrow">#appointment</p>
+        <p class="t-h3 dev-stub__title">The appointment form lands here in Phase 3. Book Now links already scroll to this anchor.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

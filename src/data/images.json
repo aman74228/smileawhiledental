@@ -1,0 +1,359 @@
+{
+  "dr-patel-operatory": {
+    "alt": "Dr. Patel smiling in a treatment room at Smileawhile Dental",
+    "crops": {
+      "4x5": {
+        "width": 1800,
+        "height": 2250,
+        "files": [
+          {
+            "w": 480,
+            "h": 600,
+            "avif": "dr-patel-operatory-4x5-480.avif",
+            "webp": "dr-patel-operatory-4x5-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 1000,
+            "avif": "dr-patel-operatory-4x5-800.avif",
+            "webp": "dr-patel-operatory-4x5-800.webp"
+          },
+          {
+            "w": 1200,
+            "h": 1500,
+            "avif": "dr-patel-operatory-4x5-1200.avif",
+            "webp": "dr-patel-operatory-4x5-1200.webp"
+          },
+          {
+            "w": 1600,
+            "h": 2000,
+            "avif": "dr-patel-operatory-4x5-1600.avif",
+            "webp": "dr-patel-operatory-4x5-1600.webp"
+          }
+        ]
+      },
+      "3x2": {
+        "width": 3000,
+        "height": 2000,
+        "files": [
+          {
+            "w": 480,
+            "h": 320,
+            "avif": "dr-patel-operatory-3x2-480.avif",
+            "webp": "dr-patel-operatory-3x2-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 533,
+            "avif": "dr-patel-operatory-3x2-800.avif",
+            "webp": "dr-patel-operatory-3x2-800.webp"
+          },
+          {
+            "w": 1200,
+            "h": 800,
+            "avif": "dr-patel-operatory-3x2-1200.avif",
+            "webp": "dr-patel-operatory-3x2-1200.webp"
+          },
+          {
+            "w": 1600,
+            "h": 1067,
+            "avif": "dr-patel-operatory-3x2-1600.avif",
+            "webp": "dr-patel-operatory-3x2-1600.webp"
+          }
+        ]
+      }
+    }
+  },
+  "dr-patel-reception": {
+    "alt": "Dr. Patel standing beside the reception desk",
+    "crops": {
+      "4x5": {
+        "width": 1229,
+        "height": 1536,
+        "files": [
+          {
+            "w": 480,
+            "h": 600,
+            "avif": "dr-patel-reception-4x5-480.avif",
+            "webp": "dr-patel-reception-4x5-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 1000,
+            "avif": "dr-patel-reception-4x5-800.avif",
+            "webp": "dr-patel-reception-4x5-800.webp"
+          },
+          {
+            "w": 1200,
+            "h": 1500,
+            "avif": "dr-patel-reception-4x5-1200.avif",
+            "webp": "dr-patel-reception-4x5-1200.webp"
+          },
+          {
+            "w": 1229,
+            "h": 1536,
+            "avif": "dr-patel-reception-4x5-1229.avif",
+            "webp": "dr-patel-reception-4x5-1229.webp"
+          }
+        ]
+      },
+      "3x2": {
+        "width": 2048,
+        "height": 1365,
+        "files": [
+          {
+            "w": 480,
+            "h": 320,
+            "avif": "dr-patel-reception-3x2-480.avif",
+            "webp": "dr-patel-reception-3x2-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 533,
+            "avif": "dr-patel-reception-3x2-800.avif",
+            "webp": "dr-patel-reception-3x2-800.webp"
+          },
+          {
+            "w": 1200,
+            "h": 800,
+            "avif": "dr-patel-reception-3x2-1200.avif",
+            "webp": "dr-patel-reception-3x2-1200.webp"
+          },
+          {
+            "w": 1600,
+            "h": 1066,
+            "avif": "dr-patel-reception-3x2-1600.avif",
+            "webp": "dr-patel-reception-3x2-1600.webp"
+          }
+        ]
+      }
+    }
+  },
+  "team-member-reception-a": {
+    "alt": "[TEAM MEMBER NAME] at the reception desk",
+    "crops": {
+      "4x5": {
+        "width": 3427,
+        "height": 4284,
+        "files": [
+          {
+            "w": 480,
+            "h": 600,
+            "avif": "team-member-reception-a-4x5-480.avif",
+            "webp": "team-member-reception-a-4x5-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 1000,
+            "avif": "team-member-reception-a-4x5-800.avif",
+            "webp": "team-member-reception-a-4x5-800.webp"
+          },
+          {
+            "w": 1200,
+            "h": 1500,
+            "avif": "team-member-reception-a-4x5-1200.avif",
+            "webp": "team-member-reception-a-4x5-1200.webp"
+          },
+          {
+            "w": 1600,
+            "h": 2000,
+            "avif": "team-member-reception-a-4x5-1600.avif",
+            "webp": "team-member-reception-a-4x5-1600.webp"
+          }
+        ]
+      }
+    }
+  },
+  "team-member-reception-b": {
+    "alt": "[TEAM MEMBER NAME] at the reception desk",
+    "crops": {
+      "4x5": {
+        "width": 1229,
+        "height": 1536,
+        "files": [
+          {
+            "w": 480,
+            "h": 600,
+            "avif": "team-member-reception-b-4x5-480.avif",
+            "webp": "team-member-reception-b-4x5-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 1000,
+            "avif": "team-member-reception-b-4x5-800.avif",
+            "webp": "team-member-reception-b-4x5-800.webp"
+          },
+          {
+            "w": 1200,
+            "h": 1500,
+            "avif": "team-member-reception-b-4x5-1200.avif",
+            "webp": "team-member-reception-b-4x5-1200.webp"
+          },
+          {
+            "w": 1229,
+            "h": 1536,
+            "avif": "team-member-reception-b-4x5-1229.avif",
+            "webp": "team-member-reception-b-4x5-1229.webp"
+          }
+        ]
+      }
+    }
+  },
+  "exterior-front": {
+    "alt": "The practice building on Holland Road, a converted family home with parking out front",
+    "crops": {
+      "3x2": {
+        "width": 1280,
+        "height": 853,
+        "files": [
+          {
+            "w": 480,
+            "h": 320,
+            "avif": "exterior-front-3x2-480.avif",
+            "webp": "exterior-front-3x2-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 533,
+            "avif": "exterior-front-3x2-800.avif",
+            "webp": "exterior-front-3x2-800.webp"
+          },
+          {
+            "w": 1200,
+            "h": 800,
+            "avif": "exterior-front-3x2-1200.avif",
+            "webp": "exterior-front-3x2-1200.webp"
+          },
+          {
+            "w": 1280,
+            "h": 853,
+            "avif": "exterior-front-3x2-1280.avif",
+            "webp": "exterior-front-3x2-1280.webp"
+          }
+        ]
+      }
+    }
+  },
+  "exterior-wide": {
+    "alt": "Wide view of the practice and car park in autumn",
+    "crops": {
+      "3x2": {
+        "width": 1280,
+        "height": 853,
+        "files": [
+          {
+            "w": 480,
+            "h": 320,
+            "avif": "exterior-wide-3x2-480.avif",
+            "webp": "exterior-wide-3x2-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 533,
+            "avif": "exterior-wide-3x2-800.avif",
+            "webp": "exterior-wide-3x2-800.webp"
+          },
+          {
+            "w": 1200,
+            "h": 800,
+            "avif": "exterior-wide-3x2-1200.avif",
+            "webp": "exterior-wide-3x2-1200.webp"
+          },
+          {
+            "w": 1280,
+            "h": 853,
+            "avif": "exterior-wide-3x2-1280.avif",
+            "webp": "exterior-wide-3x2-1280.webp"
+          }
+        ]
+      }
+    }
+  },
+  "operatory": {
+    "alt": "A bright treatment room with a dental chair and chairside screen",
+    "crops": {
+      "3x2": {
+        "width": 4032,
+        "height": 2688,
+        "files": [
+          {
+            "w": 480,
+            "h": 320,
+            "avif": "operatory-3x2-480.avif",
+            "webp": "operatory-3x2-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 533,
+            "avif": "operatory-3x2-800.avif",
+            "webp": "operatory-3x2-800.webp"
+          },
+          {
+            "w": 1200,
+            "h": 800,
+            "avif": "operatory-3x2-1200.avif",
+            "webp": "operatory-3x2-1200.webp"
+          },
+          {
+            "w": 1600,
+            "h": 1067,
+            "avif": "operatory-3x2-1600.avif",
+            "webp": "operatory-3x2-1600.webp"
+          }
+        ]
+      }
+    }
+  },
+  "practice-sign": {
+    "alt": "The practice sign at 1030 Holland Road",
+    "crops": {
+      "4x5": {
+        "width": 960,
+        "height": 1200,
+        "files": [
+          {
+            "w": 480,
+            "h": 600,
+            "avif": "practice-sign-4x5-480.avif",
+            "webp": "practice-sign-4x5-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 1000,
+            "avif": "practice-sign-4x5-800.avif",
+            "webp": "practice-sign-4x5-800.webp"
+          },
+          {
+            "w": 960,
+            "h": 1200,
+            "avif": "practice-sign-4x5-960.avif",
+            "webp": "practice-sign-4x5-960.webp"
+          }
+        ]
+      }
+    }
+  },
+  "team-group": {
+    "alt": "The Smileawhile Dental team in the waiting room",
+    "crops": {
+      "4x3": {
+        "width": 640,
+        "height": 480,
+        "files": [
+          {
+            "w": 480,
+            "h": 360,
+            "avif": "team-group-4x3-480.avif",
+            "webp": "team-group-4x3-480.webp"
+          },
+          {
+            "w": 640,
+            "h": 480,
+            "avif": "team-group-4x3-640.avif",
+            "webp": "team-group-4x3-640.webp"
+          }
+        ]
+      }
+    }
+  }
+}

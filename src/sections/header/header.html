@@ -1,0 +1,133 @@
+<!-- ===================== SECTION: header (global) =====================
+     WP: template-parts/header.php · nav → wp_nav_menu('primary') with a custom walker for the mega item
+     ==================================================================== -->
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header" data-header>
+  <div class="site-header__bar container">
+    <a class="wordmark site-header__logo" href="/" aria-label="{{site.name}}, home" data-placeholder title="Temporary wordmark (final logo pending)">
+      {{site.shortName}}<span class="wordmark__sub">Dental</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      <ul class="site-nav__list" role="list">
+        <li><a class="site-nav__link" href="/" aria-current="page">Home</a></li>
+        <li><a class="site-nav__link" href="/our-practice/">Our Practice</a></li>
+        <li class="site-nav__item site-nav__item--mega">
+          <button class="site-nav__link site-nav__trigger" type="button" aria-expanded="false" aria-controls="mega-services" data-mega-trigger>
+            Services
+            <svg class="site-nav__chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>
+          </button>
+
+          <div class="mega" id="mega-services" data-mega hidden>
+            <div class="mega__panel">
+              <ul class="mega__grid" role="list">
+                {{#each site.services as svc}}
+                <li class="mega__cell" data-mega-item>
+                  <a class="mega__item" href="/services/{{svc.slug}}/">
+                    <span class="glass-tile glass-tile--sm" aria-hidden="true"><svg><use href="#{{svc.icon}}"/></svg></span>
+                    <span class="mega__text">
+                      <span class="mega__title">{{svc.name}}</span>
+                      <span class="mega__desc">{{svc.summary}}</span>
+                    </span>
+                  </a>
+                </li>
+                {{/each}}
+              </ul>
+              <aside class="mega__aside" data-mega-item aria-label="Visit and contact">
+                <p class="eyebrow">Office hours</p>
+                <!-- PLACEHOLDER HOURS – confirm with client (values come from src/data/site.json) -->
+                <dl class="hours-list t-num" data-placeholder title="Placeholder hours (confirm with client)">
+                  {{#each site.hours.days as d}}<div class="hours-list__row"><dt>{{d.label}}</dt><dd>{{d.display}}</dd></div>{{/each}}
+                </dl>
+                <a class="mega__phone t-num" href="tel:{{site.phone.tel}}">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.6 2.5 4 2.3c-.9 0-1.7.8-1.6 1.7.6 5.1 4.6 9 9.6 9.6.9.1 1.7-.7 1.7-1.6l-.2-1.6c-.1-.5-.5-.9-1-1l-1.8-.4c-.4-.1-.8 0-1.1.3l-.8.8a8 8 0 0 1-3.6-3.6l.8-.8c.3-.3.4-.7.3-1.1L5.9 3c0-.3-.1-.4-.3-.5Z"/></svg>
+                  {{site.phone.display}}
+                </a>
+                <a class="link mega__all" href="/services/">View all services</a>
+              </aside>
+            </div>
+          </div>
+        </li>
+        <li><a class="site-nav__link" href="/testimonials/">Testimonials</a></li>
+        <li><a class="site-nav__link" href="/contact/">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="site-header__actions">
+      <a class="site-header__phone t-num" href="tel:{{site.phone.tel}}">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.6 2.5 4 2.3c-.9 0-1.7.8-1.6 1.7.6 5.1 4.6 9 9.6 9.6.9.1 1.7-.7 1.7-1.6l-.2-1.6c-.1-.5-.5-.9-1-1l-1.8-.4c-.4-.1-.8 0-1.1.3l-.8.8a8 8 0 0 1-3.6-3.6l.8-.8c.3-.3.4-.7.3-1.1L5.9 3c0-.3-.1-.4-.3-.5Z"/></svg>
+        <span>{{site.phone.display}}</span>
+      </a>
+      <a class="icon-btn site-header__call" href="tel:{{site.phone.tel}}" aria-label="Call {{site.phone.display}}">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.6 2.5 4 2.3c-.9 0-1.7.8-1.6 1.7.6 5.1 4.6 9 9.6 9.6.9.1 1.7-.7 1.7-1.6l-.2-1.6c-.1-.5-.5-.9-1-1l-1.8-.4c-.4-.1-.8 0-1.1.3l-.8.8a8 8 0 0 1-3.6-3.6l.8-.8c.3-.3.4-.7.3-1.1L5.9 3c0-.3-.1-.4-.3-.5Z"/></svg>
+      </a>
+      <a class="btn btn--primary btn--sm site-header__book" href="{{site.booking.href}}" data-magnetic>
+        <span class="btn__label">{{site.booking.shortLabel}}</span>
+        <span class="btn__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </a>
+      <button class="icon-btn site-header__menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-open>
+        <span class="visually-hidden">Open menu</span>
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M3.5 7h13M3.5 13h13"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile / tablet menu (full screen) -->
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Site menu" data-menu hidden>
+  <div class="mobile-menu__top container">
+    <a class="wordmark" href="/" data-placeholder>{{site.shortName}}<span class="wordmark__sub">Dental</span></a>
+    <button class="icon-btn" type="button" data-menu-close>
+      <span class="visually-hidden">Close menu</span>
+      <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg>
+    </button>
+  </div>
+
+  <nav class="mobile-menu__nav container" aria-label="Mobile">
+    <ul class="mobile-menu__list" role="list">
+      <li data-menu-item><a class="mobile-menu__link" href="/" aria-current="page">Home</a></li>
+      <li data-menu-item><a class="mobile-menu__link" href="/our-practice/">Our Practice</a></li>
+      <li data-menu-item>
+        <button class="mobile-menu__link mobile-menu__toggle" type="button" aria-expanded="false" aria-controls="mobile-services" data-accordion>
+          Services
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 10h12"/><path d="M10 4v12" class="mobile-menu__plus-v"/></svg>
+        </button>
+        <div class="mobile-menu__sub" id="mobile-services" hidden>
+          <ul role="list">
+            {{#each site.services as svc}}
+            <li>
+              <a class="mobile-menu__sublink" href="/services/{{svc.slug}}/">
+                <span class="glass-tile glass-tile--sm" aria-hidden="true"><svg><use href="#{{svc.icon}}"/></svg></span>
+                {{svc.name}}
+              </a>
+            </li>
+            {{/each}}
+            <li><a class="link mobile-menu__all" href="/services/">View all services</a></li>
+          </ul>
+        </div>
+      </li>
+      <li data-menu-item><a class="mobile-menu__link" href="/testimonials/">Testimonials</a></li>
+      <li data-menu-item><a class="mobile-menu__link" href="/contact/">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="mobile-menu__foot" data-menu-item>
+    <div class="container">
+      <!-- PLACEHOLDER HOURS – confirm with client (values come from src/data/site.json) -->
+      <dl class="hours-list hours-list--inline mobile-menu__hours t-num" data-placeholder title="Placeholder hours (confirm with client)">
+        {{#each site.hours.days as d}}<div class="hours-list__row"><dt>{{d.label}}</dt><dd>{{d.display}}</dd></div>{{/each}}
+      </dl>
+      <div class="mobile-menu__ctas">
+        <a class="btn btn--secondary" href="tel:{{site.phone.tel}}">
+          <svg class="btn__icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.6 2.5 4 2.3c-.9 0-1.7.8-1.6 1.7.6 5.1 4.6 9 9.6 9.6.9.1 1.7-.7 1.7-1.6l-.2-1.6c-.1-.5-.5-.9-1-1l-1.8-.4c-.4-.1-.8 0-1.1.3l-.8.8a8 8 0 0 1-3.6-3.6l.8-.8c.3-.3.4-.7.3-1.1L5.9 3c0-.3-.1-.4-.3-.5Z"/></svg>
+          Call us
+        </a>
+        <a class="btn btn--primary" href="{{site.booking.href}}" data-menu-close-on-click>
+          <span class="btn__label">{{site.booking.shortLabel}}</span>
+          <span class="btn__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

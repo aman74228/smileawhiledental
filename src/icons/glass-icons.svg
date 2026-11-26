@@ -33,7 +33,7 @@
     <path stroke="#fff" stroke-opacity=".95" d="M9.6 7.6c.2-.8.8-1.3 1.6-1.4"/>
   </symbol>
 
-  <!-- 24/7 Emergency: tooth + solid plus badge -->
+  <!-- Emergency dentistry: tooth + solid plus badge -->
   <symbol id="gi-emergency" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
     <g transform="translate(-1.6 -0.6) scale(.92)"><path vector-effect="non-scaling-stroke" fill="url(#gi-fill)" d="M10.2 4.75c-3 0-4.95 2.5-4.95 5.6 0 3.3 1.5 5.3 2.3 8.4.85 3.4 1.2 8.5 3.45 8.5 2.2 0 2.3-6 5-6s2.8 6 5 6c2.25 0 2.6-5.1 3.45-8.5.8-3.1 2.3-5.1 2.3-8.4 0-3.1-1.95-5.6-4.95-5.6-2.5 0-3.4 1.6-5.8 1.6s-3.3-1.6-5.8-1.6Z"/>
     <path vector-effect="non-scaling-stroke" stroke="#fff" stroke-opacity=".95" d="M8.6 9.3c.35-1.15 1.2-1.85 2.3-1.95"/></g>

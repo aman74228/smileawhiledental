@@ -4,9 +4,9 @@ import pathlib, base64
 root = pathlib.Path(__file__).resolve().parent.parent
 src = (root/'preview/system.src.html').read_text()
 icons = (root/'src/icons/glass-icons.svg').read_text()
-font = base64.b64encode((root/'assets/fonts/GoogleSans-Variable-latin.woff2').read_bytes()).decode()
+font = base64.b64encode((root/'public/fonts/GoogleSans-Variable-latin.woff2').read_bytes()).decode()
 tokens = (root/'src/styles/tokens.css').read_text().replace(
-    'url("../../assets/fonts/GoogleSans-Variable-latin.woff2")', f'url("data:font/woff2;base64,{font}")')
+    'url("/fonts/GoogleSans-Variable-latin.woff2")', f'url("data:font/woff2;base64,{font}")')
 out = (src.replace('<!--ICONS-->', icons)
           .replace('<link rel="stylesheet" href="../src/styles/tokens.css">', f'<style>\n{tokens}\n</style>')
           .replace('<link rel="preload" href="../assets/fonts/GoogleSans-Variable-latin.woff2" as="font" type="font/woff2" crossorigin>\n', ''))
