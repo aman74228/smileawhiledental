@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.DS_Store
+__pycache__/
+*.pyc
+.env
+.env.*
+# original 5 MB font; ship only the Latin WOFF2 subset
+assets/fonts/*.ttf
