@@ -1,0 +1,179 @@
+/* ==========================================================================
+   Section: featured treatments
+   Mobile/tablet: horizontal snap carousel (86% cards with a peek), counter.
+   Desktop (≥1024): 5 / 7 split; vertical tab list on the left, one card on
+   the right. JS adds .is-tabbed; without JS the cards show as a 2×2 grid.
+   ========================================================================== */
+
+.treatments { background: var(--color-surface-sunken); }
+
+.treatments__grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-8); }
+.treatments__intro, .treatments__stage { min-width: 0; }   /* keep the carousel inside its column */
+.treatments__title { margin-top: var(--space-5); }
+
+/* ---------- Tabs (desktop only) ---------- */
+.treatments__tabs { display: none; }
+.treatments__tab {
+  position: relative;
+  display: flex; align-items: baseline; gap: var(--space-4);
+  width: 100%;
+  padding: var(--space-4) 0 var(--space-4) var(--space-5);
+  border: 0; background: none; text-align: left;
+  color: var(--slate-400);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color var(--dur-base) var(--ease-out);
+}
+.treatments__tab::before {          /* active indicator */
+  content: ""; position: absolute; left: 0; top: 18%; bottom: 18%; width: 2px; border-radius: 2px;
+  background: var(--teal-500);
+  transform: scaleY(0); transform-origin: top;
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+.treatments__tab::after {           /* track */
+  content: ""; position: absolute; left: 0; top: 18%; bottom: 18%; width: 2px; border-radius: 2px;
+  background: var(--slate-200); z-index: -1;
+}
+.treatments__tab-n { font-size: var(--fs-small); color: inherit; min-width: 2ch; }
+.treatments__tab-label {
+  font-size: clamp(1.5rem, 1rem + 0.9vw, 2rem);
+  font-weight: var(--fw-medium);
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+.treatments__tab:hover { color: var(--slate-600); }
+.treatments__tab[aria-selected="true"] { color: var(--color-text); }
+.treatments__tab[aria-selected="true"]::before { transform: scaleY(1); }
+.treatments__tab:focus-visible { outline-offset: 2px; }
+
+.treatments__meta { display: flex; align-items: center; justify-content: space-between; gap: var(--space-6); margin-top: var(--space-6); font-size: var(--fs-small); }
+.treatments__count { color: var(--color-text-muted); }
+.treatments__count span:first-child { color: var(--color-text); }
+
+/* ---------- Cards ---------- */
+.treatments__list {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 86%;
+  gap: var(--space-4);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  margin-inline: calc(-1 * var(--gutter));
+  padding: 4px var(--gutter) var(--space-2);
+  scroll-padding-inline: var(--gutter);
+}
+.treatments__list::-webkit-scrollbar { display: none; }
+
+.treatment-card {
+  /* position: relative contains the .visually-hidden link text; without it that
+     absolutely positioned span anchors to the document and escapes the carousel's
+     overflow, widening the mobile layout viewport (seen as 1159px on a 375px phone). */
+  position: relative;
+  scroll-snap-align: start;
+  display: flex; flex-direction: column;
+  padding: var(--space-2);
+  border-radius: var(--radius-2xl);
+  background: var(--slate-0);
+  border: 1px solid var(--color-border);
+  transition: box-shadow var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out), border-color var(--dur-base) var(--ease-out);
+}
+
+.treatment-card__visual {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: calc(var(--radius-2xl) - 6px);
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;   /* tile centred above, tags in their own row */
+  justify-items: center; align-items: center;
+  padding: var(--space-4);
+  isolation: isolate;
+}
+/* Tinted meshes, all teal/slate based. Plum appears only as ONE low-opacity
+   gradient stop (emergency), per the palette rules. */
+.treatment-card__visual--teal {
+  background:
+    radial-gradient(60% 70% at 25% 20%, rgb(42 175 204 / 0.30), transparent 70%),
+    radial-gradient(50% 60% at 85% 90%, rgb(117 200 222 / 0.25), transparent 70%),
+    var(--teal-25);
+}
+.treatment-card__visual--mist {
+  background:
+    radial-gradient(55% 65% at 80% 15%, rgb(42 175 204 / 0.22), transparent 70%),
+    linear-gradient(160deg, var(--slate-50), var(--slate-100));
+}
+.treatment-card__visual--teal-deep {
+  background:
+    radial-gradient(60% 70% at 70% 25%, rgb(42 175 204 / 0.38), transparent 70%),
+    radial-gradient(60% 60% at 15% 90%, rgb(16 118 138 / 0.18), transparent 70%),
+    var(--teal-50);
+}
+.treatment-card__visual--plum {
+  background:
+    radial-gradient(60% 70% at 25% 20%, rgb(42 175 204 / 0.24), transparent 70%),
+    radial-gradient(50% 55% at 85% 85%, rgb(89 44 123 / 0.10), transparent 70%), /* the one plum stop */
+    var(--teal-25);
+}
+.treatment-card__visual::before,
+.treatment-card__visual::after {     /* two faint concentric rings behind the tile, centred on it */
+  content: ""; position: absolute; z-index: -1;
+  left: 50%; top: calc(50% - 22px);
+  aspect-ratio: 1; border-radius: 50%;
+  translate: -50% -50%;
+  border: 1px solid rgb(255 255 255 / 0.75);
+}
+.treatment-card__visual::before { width: 46%; box-shadow: inset 0 0 50px rgb(255 255 255 / 0.55); }
+.treatment-card__visual::after  { width: 78%; border-color: rgb(255 255 255 / 0.45); }
+.treatment-card__icon { transition: transform var(--dur-slow) var(--ease-out); }
+
+.treatment-card__tags {
+  justify-self: stretch;
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.treatment-card__tags li {
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  background: rgb(255 255 255 / 0.72);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  border: 1px solid rgb(255 255 255 / 0.8);
+  box-shadow: 0 0 0 1px var(--glass-hairline);
+  font-size: 0.8125rem; font-weight: var(--fw-medium);
+  color: var(--color-text-secondary);
+  line-height: 1.2;
+}
+
+.treatment-card__body { display: grid; gap: var(--space-3); padding: var(--space-5) var(--space-4) var(--space-4); align-content: start; }
+.treatment-card__text { max-width: 44ch; }
+.treatment-card__link { justify-self: start; margin-top: var(--space-2); font-size: var(--fs-small); }
+
+@media (hover: hover) {
+  .treatment-card:hover { box-shadow: var(--shadow-md); border-color: transparent; }
+  .treatment-card:hover .treatment-card__icon { transform: translateY(-4px); }
+}
+
+/* ---------- Desktop ---------- */
+@media (min-width: 64rem) {
+  .treatments__grid { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--grid-gap); align-items: start; }
+  .treatments__intro { grid-column: 1 / span 5; position: sticky; top: calc(var(--header-h) + var(--space-8)); }
+  .treatments__stage { grid-column: 6 / span 7; }
+  .treatments__meta { margin-top: var(--space-8); max-width: 26rem; }
+
+  /* No-JS fallback: 2 × 2 grid */
+  .treatments__list {
+    grid-auto-flow: row; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-columns: auto;
+    overflow: visible; margin-inline: 0; padding: 0;
+  }
+  .treatments__count { display: none; }
+
+  /* Tabbed (JS): every card occupies the same cell; only the active one is shown. */
+  .is-tabbed .treatments__tabs { display: grid; margin-top: var(--space-10); max-width: 26rem; }
+  .is-tabbed .treatments__count { display: block; }
+  .is-tabbed .treatments__list { grid-template-columns: minmax(0, 1fr); }
+  .is-tabbed .treatment-card { grid-area: 1 / 1; }
+  .is-tabbed .treatment-card[aria-hidden="true"] { visibility: hidden; pointer-events: none; }
+  .is-tabbed .treatment-card__visual { aspect-ratio: 16 / 9; padding: var(--space-5); }
+  .is-tabbed .glass-tile--xl { --size: 120px; border-radius: 32px; }
+  .is-tabbed .glass-tile--xl svg { width: 68px; height: 68px; }
+  .is-tabbed .treatment-card__body { padding: var(--space-6) var(--space-6) var(--space-5); }
+}

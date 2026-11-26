@@ -109,7 +109,7 @@
 
 /* ---------- Wordmark (temporary until the final logo is supplied) ---------- */
 .wordmark {
-  display: inline-flex; align-items: baseline; gap: 0.3em;
+  display: inline-flex; align-items: baseline;
   color: var(--color-text);
   text-decoration: none;
   font-size: 1.1875rem;
@@ -119,3 +119,13 @@
   white-space: nowrap;
 }
 .wordmark__sub { color: var(--color-text-muted); font-weight: var(--fw-regular); }
+.wordmark--spaced .wordmark__sub { margin-left: 0.3em; }   /* "Smileawhile Dental" style; set via site.json → wordmark.spaced */
+
+/* ---------- Section shell ---------- */
+.section { padding-block: var(--space-section); }
+.section--band { background: var(--color-surface-sunken); }
+.section__head { display: grid; gap: var(--space-4); }
+
+/* ---------- Glass tile XL (treatment visuals) ---------- */
+.glass-tile--xl { --size: 104px; border-radius: 28px; }
+.glass-tile--xl svg { width: 60px; height: 60px; }

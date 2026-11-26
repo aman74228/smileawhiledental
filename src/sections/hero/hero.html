@@ -25,11 +25,15 @@
 
       <div class="hero__trust" data-reveal>
         <p class="hero__trust-label">Certified &amp; trusted partners</p>
-        <!-- PLACEHOLDER LOGOS: replace each .logo-slot with the official monochrome SVG
-             (Invisalign provider portal, Dentsply Sirona/CEREC, ADA member toolkit, CareCredit provider centre). -->
+        <!-- PLACEHOLDER LOGOS (text stand-ins). To swap in an official file, replace the
+             <span class="logo-slot__text"> with:
+               <img class="logo-slot__img" src="/images/logos/invisalign.svg" alt="Invisalign" height="24">
+             The slot is a fixed 24px-high box and the same monochrome filter/opacity applies,
+             so no other change is needed. Files come from the client's provider portals
+             (Invisalign Doctor Site, Dentsply Sirona/CEREC, ADA member toolkit, CareCredit Provider Center). -->
         <ul class="trust-logos" role="list">
           {{#each site.trust as t}}
-          <li><span class="logo-slot" data-placeholder title="Placeholder: official {{t.name}} logo pending">{{t.name}}</span></li>
+          <li class="logo-slot" data-placeholder title="Placeholder: official {{t.name}} logo pending"><span class="logo-slot__text">{{t.name}}</span></li>
           {{/each}}
         </ul>
       </div>

@@ -143,6 +143,19 @@
   .sem i{width:40px;height:40px;border-radius:10px;flex:none;box-shadow:inset 0 0 0 1px rgb(37 49 62/.08)}
   .sem b{display:block;font-size:13px;color:var(--color-text);font-weight:var(--fw-medium)}
 
+  /* plum rules */
+  .plum-rules{display:grid;gap:var(--space-5)}
+  @media (min-width:64rem){.plum-rules{grid-template-columns:3fr 2fr}}
+  .plum-rule{padding:var(--space-6);border-radius:var(--radius-xl);border:1px solid var(--color-border)}
+  .plum-rule h4{font-size:var(--fs-small);font-weight:var(--fw-medium);text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-muted);margin-bottom:var(--space-4)}
+  .plum-rule p{font-size:12px;color:var(--color-text-muted);margin:8px 0 var(--space-5)}
+  .plum-rule ul{padding-left:1.1em;display:grid;gap:8px;font-size:var(--fs-small);color:var(--color-text-secondary)}
+  .plum-rule--no{background:var(--slate-50)}
+  .plum-demo{display:flex;flex-wrap:wrap;gap:8px}
+  .plum-tag{display:inline-flex;align-items:center;height:28px;padding:0 12px;border-radius:99px;background:var(--color-tag-bg);color:var(--color-tag-fg);border:1px solid var(--color-tag-border);font-size:13px;font-weight:var(--fw-medium)}
+  .plum-hover{display:block;width:100%;padding:12px 14px;border-radius:12px;background:var(--color-hover-tint-plum);font-size:var(--fs-small)}
+  .plum-demo--mesh{height:72px;border-radius:14px;background:var(--mesh-hero);border:1px solid var(--color-border)}
+
   /* contrast */
   .ctable-wrap{overflow-x:auto;border:1px solid var(--color-border);border-radius:var(--radius-xl)}
   .ctable{width:100%;border-collapse:collapse;font-size:13px;font-feature-settings:"tnum";min-width:760px}
@@ -380,6 +393,31 @@
 
       <h3 class="sg-sub">Semantic tokens</h3>
       <div class="semantic" id="semantic"></div>
+
+      <h3 class="sg-sub">Plum usage rules</h3>
+      <div class="plum-rules">
+        <div class="plum-rule plum-rule--yes">
+          <h4>Allowed: minor accents</h4>
+          <div class="plum-demo">
+            <span class="plum-tag">New patients</span>
+            <span class="plum-tag">Clear aligners</span>
+          </div>
+          <p>Tags and badges · <code>--color-tag-bg / -fg / -border</code></p>
+          <div class="plum-demo"><span class="plum-hover">Hover tint on a list row</span></div>
+          <p>Hover tints · <code>--color-hover-tint-plum</code></p>
+          <div class="plum-demo plum-demo--mesh" aria-hidden="true"></div>
+          <p>One gradient stop (≤ 6% opacity) in <code>--mesh-hero</code></p>
+        </div>
+        <div class="plum-rule plum-rule--no">
+          <h4>Never</h4>
+          <ul>
+            <li>Buttons or any call to action (teal-600 only)</li>
+            <li>Section or card backgrounds, bands, large surfaces</li>
+            <li>Body or heading text</li>
+            <li>A teal→plum UI gradient (it exists only inside the logo mark)</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -789,7 +827,7 @@
   const ramps = [
     {name:'Teal · primary', key:'teal', steps:[25,50,100,200,300,400,500,600,700,800,900], anchor:400, note:'400 = exact logo teal (decorative / on navy only). 600 = CTA fill. 700 = links and hover.'},
     {name:'Slate · neutral', key:'slate', steps:[0,25,50,100,200,300,400,500,600,700,800,900,950], anchors:[100,500,900], note:'100, 500 and 900 are exact brand values from the current site. Cool and navy-tinted to match the ink.'},
-    {name:'Plum · secondary (rare)', key:'plum', steps:[50,100,200,300,400,500,600,700,800,900], anchor:700, note:'700 = exact logo plum. Kept to the logo and faint mesh tints. Desaturated light steps avoid the "AI lavender" look.'},
+    {name:'Plum · secondary (rare)', key:'plum', steps:[50,100,200,300,400,500,600,700,800,900], anchor:700, note:'700 = exact logo plum (it is in the original holland-smiles.com logo gradient). Minor accents only: tags, hover tints, one gradient stop. Never CTAs or large surfaces.'},
   ];
   const host = document.getElementById('ramps');
   ramps.forEach(r => {
@@ -837,6 +875,7 @@
     ['Teal 400 (brand)','#2AAFCC','White','#FFFFFF','Not allowed as text on light'],
     ['Slate 500 (brand)','#69737D','White','#FFFFFF','Logos only; not used for text'],
     ['Slate 500 (brand)','#69737D','Mist band','#E8EBEC','Not allowed as text'],
+    ['Tag plum 700','#592C7B','Tag plum 50','#F7F2FA','Tags / badges'],
     ['Error','#B4232F','White','#FFFFFF','Error messages'],
     ['Success','#1C7A4E','White','#FFFFFF','Success messages'],
     ['Input border','#8C959D','White','#FFFFFF','UI component (needs 3:1)'],

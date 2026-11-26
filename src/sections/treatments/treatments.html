@@ -1,0 +1,48 @@
+<!-- ===================== SECTION: featured treatments =====================
+     WP: template-parts/home/treatments.php · items = ACF repeater or 4 picked Service posts
+     Without JS: cards in a grid (desktop) / snap carousel (mobile); tab links jump to cards.
+     With JS ≥1024px: the tab list becomes an accessible ARIA tablist controlling one visible card.
+     Copy from the content source; emergency copy per client (office hours only).
+     ======================================================================== -->
+<section class="section treatments" id="treatments" aria-labelledby="treatments-title" data-treatments>
+  <div class="container treatments__grid">
+    <div class="treatments__intro">
+      <p class="eyebrow" data-reveal>What we do</p>
+      <h2 class="t-h2 treatments__title" id="treatments-title" data-reveal>Featured treatments</h2>
+
+      <div class="treatments__tabs" data-treatments-tabs data-reveal>
+        {{#each site.featured as f}}
+        <a class="treatments__tab" href="#treatment-{{f.slug}}" id="tab-{{f.slug}}" data-treatments-tab>
+          <span class="treatments__tab-n t-num">{{@n}}</span>
+          <span class="treatments__tab-label">{{f.title}}</span>
+        </a>
+        {{/each}}
+      </div>
+
+      <div class="treatments__meta" data-reveal>
+        <p class="treatments__count t-num" aria-hidden="true"><span data-treatments-current>01</span> / <span data-treatments-total>04</span></p>
+        <a class="link" href="/services/">View all services</a>
+      </div>
+    </div>
+
+    <div class="treatments__stage" data-reveal>
+      <div class="treatments__list" role="list" data-treatments-list>
+        {{#each site.featured as f}}
+        <div class="treatment-card" id="treatment-{{f.slug}}" role="listitem" data-treatment>
+          <div class="treatment-card__visual treatment-card__visual--{{f.tone}}">
+            <span class="glass-tile glass-tile--xl treatment-card__icon" aria-hidden="true"><svg><use href="#{{f.icon}}"/></svg></span>
+            <ul class="treatment-card__tags" role="list" aria-label="Includes">
+              {{#each f.tags as tag}}<li>{{tag}}</li>{{/each}}
+            </ul>
+          </div>
+          <div class="treatment-card__body">
+            <h3 class="t-h3 treatment-card__title">{{f.title}}</h3>
+            <p class="t-body treatment-card__text">{{f.text}}</p>
+            <a class="link treatment-card__link" href="/services/{{f.slug}}/">Explore treatment<span class="visually-hidden">: {{f.title}}</span></a>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</section>

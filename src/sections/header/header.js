@@ -3,7 +3,8 @@
 //   • hides on scroll down, shows on scroll up (never while a menu is open,
 //     or keyboard focus is inside it; disabled for reduced motion)
 //   • Services mega-menu: click / Enter, hover-intent on fine pointers, Esc, outside click
-//   • Mobile menu: full screen, staggered reveal, focus trap, Esc, scroll lock
+//   • Mobile menu: full screen, staggered reveal, focus trap, Esc, scroll lock;
+//     emits `menu:toggle` ({ detail: { open } }) for the sticky CTA bar
 import { gsap, ScrollTrigger, EASE, DUR, isReduced, finePointer, lockScroll, scrollToTarget } from '../../js/motion.js';
 
 const FOCUSABLE = 'a[href], button:not([disabled]), input, select, textarea, [tabindex]:not([tabindex="-1"])';
@@ -127,6 +128,7 @@ function initMobileMenu(header, state) {
     state.menuOpen = true;
     menu.hidden = false;
     openBtn.setAttribute('aria-expanded', 'true');
+    document.dispatchEvent(new CustomEvent('menu:toggle', { detail: { open: true } }));
     lockScroll(true);
     tween?.kill();
     const reduced = isReduced();
@@ -140,6 +142,7 @@ function initMobileMenu(header, state) {
     if (!state.menuOpen) return;
     state.menuOpen = false;
     openBtn.setAttribute('aria-expanded', 'false');
+    document.dispatchEvent(new CustomEvent('menu:toggle', { detail: { open: false } }));
     tween?.kill();
     tween = gsap.to(menu, {
       opacity: 0, duration: DUR.fast, ease: 'power2.in',

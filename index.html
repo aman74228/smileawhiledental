@@ -49,21 +49,27 @@
 
   <main id="main" tabindex="-1">
     <!-- @include src/sections/hero/hero.html -->
+    <!-- (Sitemap §2 "Trust logos" lives inside the hero's trust row.) -->
+    <!-- @include src/sections/about/about.html -->
+    <!-- @include src/sections/office/office.html -->
+    <!-- @include src/sections/treatments/treatments.html -->
 
-    <!-- DEV STUB (Phase 2 only): stands in for Phase 3 sections so the header's
-         glass / hide-on-scroll states and the #appointment anchor can be tested. Delete in Phase 3. -->
+    <!-- DEV STUBS (temporary): stand in for the remaining Phase 3 sections and the
+         #appointment target. Delete each as the real section lands. -->
     <section class="dev-stub" aria-label="Upcoming sections">
       <div class="container">
-        <p class="eyebrow">Phase 3</p>
-        <p class="t-h2 dev-stub__title">Trust logos, About, Our office, Featured treatments and the rest of the homepage continue here.</p>
+        <p class="eyebrow">Phase 3 · next batches</p>
+        <p class="t-h2 dev-stub__title">Quote + review, Advanced technology, Meet the doctor, Office tour, Testimonials and Contact continue here.</p>
       </div>
     </section>
-    <section class="dev-stub dev-stub--alt" id="appointment" aria-label="Appointment form (coming in Phase 3)">
+    <section class="dev-stub dev-stub--alt" id="appointment" aria-label="Appointment form (coming in Phase 3)" data-hide-sticky>
       <div class="container">
         <p class="eyebrow">#appointment</p>
         <p class="t-h3 dev-stub__title">The appointment form lands here in Phase 3. Book Now links already scroll to this anchor.</p>
       </div>
     </section>
   </main>
+
+  <!-- @include src/sections/sticky-cta/sticky-cta.html -->
 </body>
 </html>

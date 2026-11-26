@@ -35,7 +35,7 @@ const PHOTOS = [
     crops: { '4x5': { left: 150, top: 0, width: 1800, height: 2250 },
              '3x2': { left: 0, top: 125, width: 3000, height: 2000 } },
     glare: { x: 1105, y: 1450, r: 230, strength: 0.62 },
-    alt: 'Dr. Patel smiling in a treatment room at Smileawhile Dental' },
+    alt: 'Dr. Patel smiling in a treatment room' },
   { name: 'dr-patel-reception', file: 'dr-patel-reception.webp',
     crops: { '4x5': { left: 800, top: 0, width: 1229, height: 1536 },
              '3x2': { left: 0, top: 85, width: 2048, height: 1365 } },
@@ -61,7 +61,7 @@ const PHOTOS = [
     alt: 'The practice sign at 1030 Holland Road' },
   { name: 'team-group', file: 'team-group.jpg',
     crops: { '4x3': { left: 0, top: 0, width: 640, height: 480 } },
-    alt: 'The Smileawhile Dental team in the waiting room' },
+    alt: 'The practice team in the waiting room' },
 ];
 
 function glareOverlay(width, height, { x, y, r, strength }) {

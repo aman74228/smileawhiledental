@@ -6,11 +6,14 @@ Anything unconfirmed that is visible on the site is marked `data-placeholder` (d
 ## Resolved
 | # | Item | Decision |
 |---|------|----------|
-| 1 | Brand name | **Smileawhile Dental** (confirmed 2026-11-26) |
+| 1 | Brand name | **PENDING:** "SmileaDental" (in use now) vs "Smileawhile Dental". Lives only in `src/data/site.json` (`name` + `wordmark`); header, `<title>`, meta, schema and the coming footer all read from it. |
 | 2 | Doctor name | **Dr. Patel** (use exactly this until full name/credentials arrive) |
 | 3 | Emergency / 24/7 | Practice does **not** take emergency calls. All "24/7", "Open 24/7", "day or night", "around-the-clock", "on-call" and "same evening" claims removed. Category renamed **Emergency Dentistry**: "Urgent tooth pain? Call us during office hours and we'll prioritise you." |
 | 4 | Hero copy | Eyebrow "Family & cosmetic dentistry · Holland, PA" · H1 "Calm, expert dental care in Holland, PA." · subline as supplied |
 | 5 | Photography | Client approved reuse of holland-smiles.com photos (see `docs/photo-inventory.md`) |
+| 6 | Plum | It IS in the original palette (logo gradient end, #592C7B). Minor accents only: tags, hover tints, one gradient stop. Never CTAs or large surfaces. |
+| 7 | Mobile sticky Call / Book bar | Approved and built (<1024px; hidden over hero, appointment form, footer and open menu). |
+| 8 | Trust logos | Keep text stand-ins in fixed 24px monochrome slots until official files arrive. |
 
 ## Dropped from the content source (do not reintroduce)
 - Featured testimonial "…fitted me in the same evening when I cracked a tooth." (implies emergency service)
@@ -29,14 +32,21 @@ Anything unconfirmed that is visible on the site is marked `data-placeholder` (d
 - Parking: "Free parking right outside the practice" (CONFIRM)
 
 ## Doctor
-- First name: **[FIRST NAME]** (CONFIRM). Lead: the practice sign reads "Dr. Akshit Patel D.M.D." (photo `practice-sign`); not used until the client confirms.
-- Credentials: **[DDS/DMD]** (CONFIRM). Sign suggests D.M.D.
+- UI uses **"Dr. Patel"** only. Do not publish the full name yet.
+- Lead to confirm: **Dr. Akshit Patel, D.M.D. (from street sign, unconfirmed)** (photo `practice-sign`, holland-smiles.com /about).
+- First name: **[FIRST NAME]** (CONFIRM)
+- Credentials: **[DDS/DMD]** (CONFIRM; the sign suggests D.M.D.)
 - Bio, education, years in practice, memberships (NEEDED for "Meet the doctor")
 
 ## Brand assets
 - **Logo:** the header uses a temporary Google Sans text wordmark ("Smileawhile Dental"). Final logo SVG needed.
-- **Trust logos** (hero): Invisalign, CEREC, ADA, CareCredit render as text placeholders. Need official monochrome SVGs and confirmation that the practice may display each (Invisalign provider status, CEREC use, ADA membership, CareCredit enrolment).
-- **Accepting new patients?** Not shown anywhere yet (the content source claimed it). CONFIRM before using.
+- **Trust logos** (hero): Invisalign, CEREC, ADA, CareCredit render as text stand-ins in fixed 24px slots. **Official files are needed from the client's provider portals** (Invisalign Doctor Site, Dentsply Sirona / CEREC, ADA member toolkit, CareCredit Provider Center), plus confirmation that the practice may display each mark. Drop-in: replace `.logo-slot__text` with `<img class="logo-slot__img" … height="24">` (see comment in `hero.html`).
+
+## Kept off the site until confirmed
+- **"Accepting new patients"**: claimed by the content source; not shown anywhere. CONFIRM before using.
+- Google rating / review count
+- "Free parking right outside" is shown in the Office section but flagged (`data-placeholder`)
+- "40 years of dedicated service" is shown in About but flagged (`data-placeholder`)
 
 ## Claims & numbers (not displayed until confirmed)
 - Google rating and review count (content source said 4.9 / 250+). Hero shows **no** rating per Phase 2 brief.
@@ -51,7 +61,21 @@ Anything unconfirmed that is visible on the site is marked `data-placeholder` (d
 - Service category + sub-service page copy (36 sub-services)
 - Privacy policy, Terms of service
 
+## Image rights (client uploads) — CONFIRM before any publication
+These look sourced from other clinics or stock libraries, not this practice:
+- `all-on-4-dental-implants-houston.jpg` (filename names a Houston clinic)
+- `dental-all-on-4-implants-cost.webp`, `img-all-on-4-dental-implants-1.webp`
+- `teeth-whitening-2-licence-confirmed.webp` (suggests a licensed stock image: whose licence?)
+- `options-for-replacing-a-missing-tooth.jpg` (branded infographic)
+- `overdenture.png` (3D illustration set)
+Homepage Featured Treatments therefore uses brand visuals (glass icon + tags), not these photos. Clinical photos will be used on service pages only once rights are confirmed.
+
+## Copy edits made (FYI)
+- US spelling applied: "prioritize" (client-supplied emergency line said "prioritise").
+- Implants copy softened from "look, feel and function **exactly** like natural teeth" to "…like natural teeth" (avoids an absolute clinical claim).
+
 ## Photography (see `docs/photo-inventory.md`)
+- The operatory photo is held back from the homepage (yellow cast). Dr. Patel's reception photo has a strong headlamp reflection. Both strengthen the case for a short professional shoot.
 - Recommended: a short professional shoot (soft-light portrait of Dr. Patel without the headlamp, team, waiting room, technology)
 - Higher-res originals of the exterior photos and the team group photo (640×480 today)
 - Preventive / general care image for the featured treatments card

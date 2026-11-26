@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Smileawhile Dental — Design tokens  (v0.1, Step 0 — pending approval)
+   Design tokens (brand name lives in src/data/site.json)  (v0.2)
    Source of truth for color, type, space, radius, shadow, layout, motion.
    Brand anchors extracted from holland-smiles.com (logo SVG + shared CSS):
      #2AAFCC teal (logo)   #592C7B plum (logo)   #25313E navy (sections)
@@ -30,7 +30,12 @@
   --teal-800: #034654; /* icon strokes */
   --teal-900: #00303A;
 
-  /* ---------- Brand: Plum (secondary, rare) — anchor 700 = logo #592C7B ---------- */
+  /* ---------- Brand: Plum (secondary accent) — anchor 700 = logo #592C7B ----------
+     Plum IS in the original holland-smiles.com palette (logo gradient end stop).
+     ALLOWED, minor accents only:  tags/badges · hover tints · one gradient stop
+     NEVER:  CTAs/buttons · large surfaces/section backgrounds · body text
+     Use the semantic --color-tag-* / --color-hover-tint-plum / --mesh-* tokens,
+     not raw --plum-* values, so usage stays auditable. */
   --plum-50:  #F7F2FA;
   --plum-100: #EEE4F4;
   --plum-200: #DCC9E7;
@@ -88,10 +93,16 @@
   --color-error-bg:        #FDF0F0;
   --color-star:            #C98A12;               /* review stars — decorative */
 
+  /* Plum accents (the only sanctioned uses) */
+  --color-tag-bg:          var(--plum-50);        /* tags / badges */
+  --color-tag-fg:          var(--plum-700);       /* 9.2:1 on plum-50 */
+  --color-tag-border:      var(--plum-100);
+  --color-hover-tint-plum: var(--plum-50);        /* subtle hover wash */
+
   /* ---------- Gradients (low saturation, behind key areas only) ---------- */
   --mesh-hero:
     radial-gradient(60% 70% at 85% 10%, rgb(42 175 204 / 0.14) 0%, transparent 60%),
-    radial-gradient(50% 60% at 10% 90%, rgb(89 44 123 / 0.06) 0%, transparent 65%),
+    radial-gradient(50% 60% at 10% 90%, rgb(89 44 123 / 0.06) 0%, transparent 65%), /* the one plum gradient stop */
     linear-gradient(180deg, var(--teal-25) 0%, var(--slate-0) 100%);
   --mesh-soft:
     radial-gradient(70% 80% at 50% 0%, rgb(42 175 204 / 0.10) 0%, transparent 70%);

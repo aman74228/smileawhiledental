@@ -1,0 +1,47 @@
+<!-- ===================== SECTION: about =====================
+     WP: template-parts/home/about.php · statement + proof points from ACF
+     Copy adapted from holland-smiles.com ("we prioritize your comfort with
+     personalized and modern dentistry"; "the latest techniques with a personal touch").
+     ========================================================== -->
+<section class="section about" id="about" aria-labelledby="about-title">
+  <div class="container about__grid">
+    <div class="about__aside">
+      <p class="eyebrow" data-reveal>About the practice</p>
+      <figure class="about__media" data-reveal-media>
+        <!-- @picture team-member-reception-a 4x5 class="about__img" sizes="(min-width: 1024px) 28vw, (min-width: 768px) 40vw, 80vw" alt="A member of the practice team at the reception desk" -->
+      </figure>
+    </div>
+
+    <div class="about__main">
+      <h2 class="about__statement" id="about-title" data-reveal>
+        At {{site.name}}, we prioritize your comfort with
+        <span class="about__key">personalized, modern dentistry</span>
+        in a calm, home-based practice.
+      </h2>
+      <p class="t-body-lg about__lede" data-reveal>
+        Our approach combines the latest techniques with a personal touch for every patient,
+        from a child's first check-up to implants and Invisalign.
+      </p>
+
+      <ul class="about__facts" role="list">
+        <li class="about__fact" data-reveal>
+          <strong class="about__fact-value" data-placeholder title="Unconfirmed: from holland-smiles.com">40 years</strong>
+          <span class="about__fact-label">of dedicated service to the Holland community</span>
+        </li>
+        <li class="about__fact" data-reveal>
+          <strong class="about__fact-value">Kids &amp; adults</strong>
+          <span class="about__fact-label">Family dentistry for every age, under one roof</span>
+        </li>
+        <li class="about__fact" data-reveal>
+          <strong class="about__fact-value">Home-based</strong>
+          <span class="about__fact-label">A quiet, converted family home on Holland Road</span>
+        </li>
+      </ul>
+
+      <div class="about__links" data-reveal>
+        <a class="link" href="/our-practice/#doctor">Meet {{site.doctor.displayName}}</a>
+        <a class="link" href="/our-practice/#team">Meet the team</a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,6 +1,6 @@
 {
   "dr-patel-operatory": {
-    "alt": "Dr. Patel smiling in a treatment room at Smileawhile Dental",
+    "alt": "Dr. Patel smiling in a treatment room",
     "crops": {
       "4x5": {
         "width": 1800,
@@ -334,7 +334,7 @@
     }
   },
   "team-group": {
-    "alt": "The Smileawhile Dental team in the waiting room",
+    "alt": "The practice team in the waiting room",
     "crops": {
       "4x3": {
         "width": 640,

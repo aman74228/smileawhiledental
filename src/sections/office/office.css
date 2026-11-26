@@ -1,0 +1,46 @@
+/* ==========================================================================
+   Section: office
+   Mobile/tablet: head → exterior 3:2 → reception 3:2 (art-directed crop)
+   Desktop (≥1024): head split 6/5; exterior 3:2 (7 cols) beside a reception
+   portrait (5 cols) that stretches to the same height.
+   ========================================================================== */
+
+.office { padding-top: 0; }   /* flows straight on from About */
+
+.office__head { display: grid; gap: var(--space-6); margin-bottom: clamp(2.5rem, 2rem + 2vw, 4rem); }
+.office__title { margin-top: var(--space-5); max-width: 14ch; }
+.office__intro { display: grid; gap: var(--space-5); align-content: end; justify-items: start; }
+.office__intro .t-body-lg { max-width: 40ch; }
+.office__link { font-size: var(--fs-small); }
+
+.office__gallery { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-6); }
+.office__item { margin: 0; display: grid; grid-template-rows: 1fr auto; gap: var(--space-3); min-width: 0; }
+.office__frame {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  background: var(--slate-100);
+}
+.office__frame picture { position: absolute; inset: 0; }
+.office__img { width: 100%; height: 100%; object-fit: cover; }
+.office__item--lg .office__img { object-position: 50% 40%; }
+.office__caption { font-size: var(--fs-small); color: var(--color-text-muted); }
+
+@media (min-width: 48rem) and (max-width: 63.99rem) {
+  .office__gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-4); }
+  .office__item--lg { grid-column: 1 / -1; }
+}
+
+@media (min-width: 64rem) {
+  .office__head { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--grid-gap); align-items: end; }
+  .office__head > :first-child { grid-column: 1 / span 6; }
+  .office__intro { grid-column: 8 / span 5; }
+
+  .office__gallery { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--grid-gap); align-items: stretch; }
+  .office__item--lg { grid-column: 1 / span 7; }
+  .office__item--side { grid-column: 8 / span 5; }
+  /* Side frame takes the row height set by the 3:2 exterior. */
+  .office__item--side .office__frame { aspect-ratio: auto; height: 100%; min-height: 0; }
+  .office__item--side .office__img { object-position: 62% 30%; }
+}

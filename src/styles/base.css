@@ -92,6 +92,7 @@ a { color: var(--color-text-link); text-underline-offset: 0.18em; }
   text-underline-offset: 0.3em;
 }
 .show-placeholders [data-placeholder]:is(img, picture, .logo-slot) {
+  padding-inline: 4px;
   text-decoration: none;
   outline: 1px dashed rgb(201 138 18 / 0.45); outline-offset: 4px; border-radius: 4px;
 }

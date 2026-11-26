@@ -54,13 +54,27 @@
   gap: var(--space-3) var(--space-8);
   margin-top: var(--space-4);
 }
+/* Logo slot: fixed 24px-high box. A real SVG/PNG (.logo-slot__img) or the
+   text stand-in (.logo-slot__text) render with the same monochrome treatment. */
 .logo-slot {
-  display: inline-block;
-  color: var(--slate-500);
-  font-size: 1rem; font-weight: var(--fw-medium); letter-spacing: -0.01em;
-  line-height: 1.5;
-  filter: grayscale(1);
+  --logo-h: 24px;
+  display: inline-flex; align-items: center;
+  height: var(--logo-h);
 }
+.logo-slot__img {
+  height: 100%; width: auto; max-width: 140px;
+  object-fit: contain;
+  filter: grayscale(1) brightness(0);   /* any colour logo → solid ink */
+  opacity: 0.55;
+  transition: opacity var(--dur-base) var(--ease-out);
+}
+.logo-slot__text {
+  color: var(--slate-900);
+  opacity: 0.72;                        /* ≈ #5F666E on white: 5.6:1, passes AA as text */
+  font-size: 1rem; font-weight: var(--fw-medium); letter-spacing: -0.01em;
+  line-height: 1;
+}
+@media (hover: hover) { .logo-slot:hover .logo-slot__img { opacity: 0.8; } }
 
 /* ---------- Media ---------- */
 .hero__media { position: relative; margin: 0; }
