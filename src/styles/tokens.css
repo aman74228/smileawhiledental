@@ -79,6 +79,7 @@
   --color-text:            var(--slate-900);      /* 13.2:1 */
   --color-text-secondary:  var(--slate-700);      /* 8.1:1 */
   --color-text-muted:      var(--slate-600);      /* 5.7:1 white · 4.7:1 mist */
+  --color-text-subtle:     var(--slate-500);      /* LARGE TEXT ONLY (≥24px or ≥18.66px bold): 4.45:1 on slate-50, 4.83:1 on white */
   --color-text-inverse:    var(--slate-0);
   --color-text-inverse-muted: rgb(255 255 255 / 0.72);
   --color-text-link:       var(--teal-700);
@@ -98,6 +99,14 @@
   --color-tag-fg:          var(--plum-700);       /* 9.2:1 on plum-50 */
   --color-tag-border:      var(--plum-100);
   --color-hover-tint-plum: var(--plum-50);        /* subtle hover wash */
+
+  /* Brand band (deep teal) — e.g. Advanced Technology. All pairs AA on teal-800. */
+  --color-surface-brand:        var(--teal-800);            /* #034654 */
+  --color-text-on-brand:        #FFFFFF;                    /* 10.46:1 */
+  --color-text-on-brand-muted:  rgb(255 255 255 / 0.72);    /* 6.22:1 body copy */
+  --color-text-on-brand-subtle: rgb(255 255 255 / 0.64);    /* 5.25:1 inactive items */
+  --color-accent-on-brand:      var(--teal-200);            /* 7.01:1 accents, numbers */
+  --color-border-on-brand:      rgb(255 255 255 / 0.14);
 
   /* ---------- Gradients (low saturation, behind key areas only) ---------- */
   --mesh-hero:

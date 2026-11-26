@@ -1,0 +1,40 @@
+<!-- ===================== SECTION: meet the doctor =====================
+     WP: template-parts/home/doctor.php · portrait, bio and credentials from ACF (Team CPT)
+     Name shown as "Dr. Patel" only (full name/credentials unconfirmed). Bio and
+     credentials are visible placeholders until the practice supplies them.
+     "Accepting new patients" intentionally omitted until confirmed.
+     ==================================================================== -->
+<section class="section doctor" id="doctor" aria-labelledby="doctor-title" data-doctor>
+  <div class="container doctor__grid">
+    <figure class="doctor__figure">
+      <div class="doctor__media" data-reveal-media>
+        <!-- @picture dr-patel-reception 4x5 class="doctor__img" sizes="(min-width: 1024px) 38vw, (min-width: 768px) 70vw, 90vw" alt="Dr. Patel at the practice's reception desk" -->
+      </div>
+    </figure>
+
+    <div class="doctor__content">
+      <p class="eyebrow" data-reveal>Meet the doctor</p>
+      <h2 class="t-h1 doctor__name" id="doctor-title" data-reveal>{{site.doctor.displayName}}</h2>
+      <p class="doctor__role" data-reveal>Dentist · <span data-placeholder="Confirm DDS or DMD">{{site.doctor.credentials}}</span></p>
+
+      <p class="t-body-lg doctor__bio" data-reveal data-placeholder="Doctor bio needed from the practice">
+        [Doctor bio: two or three sentences about {{site.doctor.displayName}}'s background, approach to care and what patients can expect at their first visit.]
+      </p>
+
+      <ul class="doctor__creds" role="list" aria-label="Credentials" data-reveal>
+        <li><svg class="doctor__tick" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9"/><path d="m6 10.3 2.6 2.6L14.2 7.4"/></svg><span data-placeholder="Dental school + graduation year">[Dental school, graduation year]</span></li>
+        <li><svg class="doctor__tick" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9"/><path d="m6 10.3 2.6 2.6L14.2 7.4"/></svg><span data-placeholder="Years in practice">[Years in practice]</span></li>
+        <li><svg class="doctor__tick" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9"/><path d="m6 10.3 2.6 2.6L14.2 7.4"/></svg><span data-placeholder="e.g. ADA member">[Professional memberships]</span></li>
+        <li><svg class="doctor__tick" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="9"/><path d="m6 10.3 2.6 2.6L14.2 7.4"/></svg><span data-placeholder="e.g. Invisalign, CEREC">[Certifications]</span></li>
+      </ul>
+
+      <div class="doctor__ctas" data-reveal>
+        <a class="btn btn--primary" href="{{site.booking.href}}" data-magnetic>
+          <span class="btn__label">Book with {{site.doctor.displayName}}</span>
+          <span class="btn__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        </a>
+        <a class="link" href="/our-practice/#team">Meet the full team</a>
+      </div>
+    </div>
+  </div>
+</section>

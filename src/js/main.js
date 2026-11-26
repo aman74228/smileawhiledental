@@ -7,6 +7,9 @@ import '../sections/hero/hero.css';
 import '../sections/about/about.css';
 import '../sections/office/office.css';
 import '../sections/treatments/treatments.css';
+import '../sections/review/review.css';
+import '../sections/technology/technology.css';
+import '../sections/doctor/doctor.css';
 import '../sections/sticky-cta/sticky-cta.css';
 import '../styles/dev-stub.css';
 
@@ -17,6 +20,9 @@ import { initHero } from '../sections/hero/hero.js';
 import { initReveals } from './reveal.js';
 import { initTreatments } from '../sections/treatments/treatments.js';
 import { initStickyCta } from '../sections/sticky-cta/sticky-cta.js';
+import { initTechnology } from '../sections/technology/technology.js';
+import { initDoctor } from '../sections/doctor/doctor.js';
+import { initReviewMode } from './review-mode.js';
 
 // Motion module booted → cancel the inline failsafe that would un-hide content.
 clearTimeout(window.__revealFailsafe);
@@ -25,7 +31,10 @@ document.documentElement.classList.toggle('reduced-motion', reducedMotion.matche
 initSmoothScroll();
 initHeader();
 initHero();
+initReviewMode();
 initTreatments();
+initTechnology();
+initDoctor();
 initReveals();
 initStickyCta();
 initMagnetic();

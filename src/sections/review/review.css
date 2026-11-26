@@ -1,0 +1,27 @@
+/* ==========================================================================
+   Section: review — one large quote, centred, on white
+   ========================================================================== */
+.review__inner { display: grid; justify-items: center; text-align: center; max-width: 60rem; }
+.review__figure { margin: var(--space-8) 0 0; display: grid; justify-items: center; gap: var(--space-6); }
+.review__mark { width: 40px; height: 30px; fill: var(--teal-200); }
+.review__stars { color: var(--color-star); }
+.review__stars svg { width: 104px; height: 19px; }
+.review__quote { margin: 0; }
+.review__quote p {
+  font-size: var(--fs-h3);
+  line-height: 1.3;
+  letter-spacing: var(--ls-h3);
+  font-weight: var(--fw-medium);
+  color: var(--color-text);
+  text-wrap: balance;
+  max-width: 30ch;
+}
+.review__cite { display: grid; gap: 4px; font-size: var(--fs-small); }
+.review__name { font-weight: var(--fw-medium); color: var(--color-text); }
+.review__source { color: var(--color-text-muted); }
+.review__ctas { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: var(--space-4) var(--space-8); margin-top: var(--space-10); }
+.review__more { font-size: var(--fs-small); }
+
+@media (min-width: 64rem) {
+  .review__quote p { font-size: clamp(2rem, 1.3rem + 1.2vw, 2.625rem); }
+}

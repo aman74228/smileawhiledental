@@ -30,7 +30,8 @@ body {
 }
 
 h1, h2, h3, h4, p, ul, ol, figure, blockquote, dl, dd { margin: 0; }
-ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
+/* :where() keeps this reset at zero specificity so component classes can set padding. */
+:where(ul, ol)[role="list"] { list-style: none; padding: 0; }
 img, picture, svg, video { display: block; max-width: 100%; }
 img { height: auto; }
 button, input, select, textarea { font: inherit; color: inherit; }
@@ -83,15 +84,20 @@ a { color: var(--color-text-link); text-underline-offset: 0.18em; }
 }
 .skip-link:focus-visible { transform: none; outline-color: var(--teal-400); }
 
-/* ---------- Placeholder flag (unconfirmed content) ----------
-   Anything marked [data-placeholder] gets a dashed amber underline while
-   site.json → showPlaceholders is true. Turn off before launch. */
-.show-placeholders [data-placeholder] {
+/* ---------- Review mode (?review=1) ----------
+   Default = clean client view: no markers. With ?review=1 the inline head
+   script adds .review-mode, which:
+     • marks every [data-placeholder="note"] (unconfirmed content) with a dashed amber flag
+       (review.js turns the note into a tooltip)
+     • reveals .review-only elements (e.g. "Interior photos coming soon" tiles) */
+.review-only { display: none !important; }
+.review-mode .review-only { display: revert !important; }
+.review-mode [data-placeholder] {
   text-decoration: underline dashed #C98A12;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.3em;
 }
-.show-placeholders [data-placeholder]:is(img, picture, .logo-slot) {
+.review-mode [data-placeholder]:is(img, picture, .logo-slot) {
   padding-inline: 4px;
   text-decoration: none;
   outline: 1px dashed rgb(201 138 18 / 0.45); outline-offset: 4px; border-radius: 4px;
@@ -109,3 +115,11 @@ a { color: var(--color-text-link); text-underline-offset: 0.18em; }
     scroll-behavior: auto !important;
   }
 }
+
+.review-badge {
+  position: fixed; left: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); z-index: var(--z-modal);
+  padding: 8px 12px; border-radius: var(--radius-pill);
+  background: #FFF6E5; color: #7A4D00; border: 1px dashed #C98A12;
+  font-size: 12px; font-weight: var(--fw-medium); text-decoration: none;
+}
+@media (max-width: 63.99rem) { .review-badge { bottom: calc(var(--sticky-cta-h, 76px) + 12px + env(safe-area-inset-bottom)); } }

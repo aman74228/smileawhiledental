@@ -1,0 +1,36 @@
+<!-- ===================== SECTION: technology (signature 1: pinned) =====================
+     WP: template-parts/home/technology.php · items = ACF repeater (icon, title, text)
+     Deep brand-teal band (--color-surface-brand) to break the white/grey rhythm.
+     ≥1024px: intro column is pinned (sticky) while the 8 items scroll past; the item at the
+     centre of the viewport becomes active and drives the counter + progress bar.
+     <1024px or reduced motion: a plain list, all items at full contrast.
+     All items pending client confirmation that the equipment is in the practice.
+     ==================================================================================== -->
+<section class="section tech" id="technology" aria-labelledby="tech-title" data-tech>
+  <div class="container tech__grid">
+    <div class="tech__intro">
+      <div class="tech__intro-inner">
+        <p class="eyebrow tech__eyebrow" data-reveal>Advanced technology</p>
+        <h2 class="t-h2 tech__title" id="tech-title" data-reveal>Advanced technology for precise, comfortable care</h2>
+        <p class="t-body-lg tech__lede" data-reveal>We invest in modern, low-radiation equipment so every diagnosis is clearer, every treatment is gentler, and you spend less time in the chair.</p>
+        <div class="tech__progress" aria-hidden="true" data-reveal>
+          <span class="tech__count t-num"><span data-tech-current>01</span> / <span data-tech-total>08</span></span>
+          <span class="tech__bar"><span class="tech__bar-fill" data-tech-bar></span></span>
+        </div>
+      </div>
+    </div>
+
+    <ol class="tech__list" role="list" data-placeholder="Confirm each technology is in the practice">
+      {{#each site.technology as t}}
+      <li class="tech-item" data-tech-item>
+        <span class="glass-tile tech-item__tile" aria-hidden="true"><svg><use href="#{{t.icon}}"/></svg></span>
+        <div class="tech-item__text">
+          <span class="tech-item__n t-num" aria-hidden="true">{{@n}}</span>
+          <h3 class="tech-item__title">{{t.title}}</h3>
+          <p class="tech-item__desc">{{t.text}}</p>
+        </div>
+      </li>
+      {{/each}}
+    </ol>
+  </div>
+</section>

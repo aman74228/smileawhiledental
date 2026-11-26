@@ -2,15 +2,19 @@
      WP: template-parts/home/about.php · statement + proof points from ACF
      Copy adapted from holland-smiles.com ("we prioritize your comfort with
      personalized and modern dentistry"; "the latest techniques with a personal touch").
+     "calm, home-based" is used ONLY here (statement) to avoid repetition.
      ========================================================== -->
 <section class="section about" id="about" aria-labelledby="about-title">
   <div class="container about__grid">
-    <div class="about__aside">
-      <p class="eyebrow" data-reveal>About the practice</p>
-      <figure class="about__media" data-reveal-media>
-        <!-- @picture team-member-reception-a 4x5 class="about__img" sizes="(min-width: 1024px) 28vw, (min-width: 768px) 40vw, 80vw" alt="A member of the practice team at the reception desk" -->
-      </figure>
-    </div>
+    <p class="eyebrow about__eyebrow" data-reveal>About the practice</p>
+
+    <figure class="about__figure">
+      <div class="about__media" data-reveal-media>
+        <!-- @picture team-member-reception-a 4x5 class="about__img" sizes="(min-width: 1024px) 38vw, (min-width: 768px) 60vw, 90vw" alt="[NAME], [ROLE], at the reception desk" -->
+      </div>
+      <!-- Unidentified team member: caption makes clear this is not the dentist. -->
+      <figcaption class="about__caption" data-placeholder="Team member name and role needed">[NAME], [ROLE]</figcaption>
+    </figure>
 
     <div class="about__main">
       <h2 class="about__statement" id="about-title" data-reveal>
@@ -25,16 +29,16 @@
 
       <ul class="about__facts" role="list">
         <li class="about__fact" data-reveal>
-          <strong class="about__fact-value" data-placeholder title="Unconfirmed: from holland-smiles.com">40 years</strong>
-          <span class="about__fact-label">of dedicated service to the Holland community</span>
+          <strong class="about__fact-value" data-placeholder="Pending client confirmation that this is the same practice (claim from holland-smiles.com)">Serving Holland for 40 years</strong>
+          <span class="about__fact-label">A long-standing local practice, now with modern dentistry</span>
         </li>
         <li class="about__fact" data-reveal>
           <strong class="about__fact-value">Kids &amp; adults</strong>
           <span class="about__fact-label">Family dentistry for every age, under one roof</span>
         </li>
         <li class="about__fact" data-reveal>
-          <strong class="about__fact-value">Home-based</strong>
-          <span class="about__fact-label">A quiet, converted family home on Holland Road</span>
+          <strong class="about__fact-value">{{site.address.street}}</strong>
+          <span class="about__fact-label">A converted family home, easy to find</span>
         </li>
       </ul>
 

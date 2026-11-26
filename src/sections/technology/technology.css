@@ -1,0 +1,75 @@
+/* ==========================================================================
+   Section: technology — deep brand teal, light text (all pairs AA, see tokens)
+   ========================================================================== */
+.tech {
+  position: relative; isolation: isolate;
+  background: var(--color-surface-brand);
+  color: var(--color-text-on-brand);
+  overflow: clip;
+}
+.tech::before {    /* low-saturation radial lift so the band isn't flat */
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background:
+    radial-gradient(50% 45% at 85% 0%, rgb(42 175 204 / 0.22), transparent 70%),
+    radial-gradient(45% 50% at 0% 100%, rgb(0 48 58 / 0.6), transparent 70%);
+}
+.tech__eyebrow { color: var(--color-text-on-brand-muted); }
+.tech__eyebrow::before { background: var(--teal-300); box-shadow: 0 0 0 3px rgb(117 200 222 / 0.2); }
+.tech__title { margin-top: var(--space-5); color: var(--color-text-on-brand); max-width: 16ch; }
+.tech__lede { margin-top: var(--space-6); color: var(--color-text-on-brand-muted); max-width: 40ch; }
+
+.tech__grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-12); }
+
+/* Progress (desktop only) */
+.tech__progress { display: none; }
+
+/* Items */
+.tech__list { display: grid; gap: var(--space-2); }
+.tech-item {
+  display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--space-5);
+  align-items: start;
+  padding: var(--space-6) 0;
+  border-top: 1px solid var(--color-border-on-brand);
+}
+.tech-item:last-child { border-bottom: 1px solid var(--color-border-on-brand); }
+.tech-item__tile { --size: 56px; }
+.tech-item__text { display: grid; gap: var(--space-2); padding-top: 4px; }
+.tech-item__n { font-size: var(--fs-small); color: var(--color-accent-on-brand); }
+.tech-item__title { font-size: var(--fs-h4); font-weight: var(--fw-medium); letter-spacing: -0.015em; line-height: 1.25; color: var(--color-text-on-brand); }
+.tech-item__desc { font-size: var(--fs-body); line-height: 1.6; color: var(--color-text-on-brand-muted); max-width: 46ch; }
+
+/* ---------- Desktop: pinned intro + active item ---------- */
+@media (min-width: 64rem) {
+  .tech__grid { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--grid-gap); }
+  .tech__intro { grid-column: 1 / span 5; }
+  .tech__intro-inner { position: sticky; top: calc(50vh - 11rem); }
+  .tech__list { grid-column: 7 / span 6; gap: 0; padding-block: 18vh; }
+
+  .tech__progress { display: flex; align-items: center; gap: var(--space-4); margin-top: var(--space-10); max-width: 22rem; }
+  .tech__count { font-size: var(--fs-small); color: var(--color-text-on-brand-muted); min-width: 4.5ch; }
+  .tech__count span:first-child { color: var(--color-text-on-brand); }
+  .tech__bar { flex: 1; height: 2px; border-radius: 2px; background: var(--color-border-on-brand); overflow: hidden; }
+  .tech__bar-fill { display: block; height: 100%; background: var(--teal-300); transform-origin: left; transform: scaleX(0); }
+
+  .tech-item { min-height: 34vh; align-content: center; padding: var(--space-8) 0; border: 0; }
+  .tech-item:last-child { border: 0; }
+  .tech-item__tile { --size: 72px; border-radius: 20px; }
+  .tech-item__tile svg { width: 42px; height: 42px; }
+  .tech-item__title { font-size: clamp(1.5rem, 1.1rem + 0.8vw, 2rem); letter-spacing: -0.025em; }
+
+  /* Inactive items are dimmed with COLOUR, not opacity, so text stays AA (5.25:1). */
+  .is-tracking .tech-item__title,
+  .is-tracking .tech-item__n { color: var(--color-text-on-brand-subtle); }
+  .is-tracking .tech-item__desc { color: var(--color-text-on-brand-subtle); }
+  .is-tracking .tech-item__tile { opacity: 0.55; transform: scale(0.92); }   /* tile is decorative */
+  .tech-item__title, .tech-item__n, .tech-item__desc { transition: color var(--dur-base) var(--ease-out); }
+  .tech-item__tile { transition: opacity var(--dur-base) var(--ease-out), transform var(--dur-slow) var(--ease-out), box-shadow var(--dur-base) var(--ease-out); }
+
+  .is-tracking .tech-item.is-active .tech-item__title { color: var(--color-text-on-brand); }
+  .is-tracking .tech-item.is-active .tech-item__n { color: var(--color-accent-on-brand); }
+  .is-tracking .tech-item.is-active .tech-item__desc { color: var(--color-text-on-brand-muted); }
+  .is-tracking .tech-item.is-active .tech-item__tile {
+    opacity: 1; transform: scale(1);
+    box-shadow: var(--shadow-glass), 0 0 0 1px rgb(255 255 255 / 0.5), 0 0 0 6px rgb(117 200 222 / 0.18);
+  }
+}

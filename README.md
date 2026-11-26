@@ -5,7 +5,10 @@ Static, WordPress-portable build: Vite + semantic HTML partials + modern CSS (cu
 ## Status
 - **Phase 1 (Step 0):** design system + wireframe, approved.
 - **Phase 2:** header + hero, approved.
-- **Phase 3, batch 1:** About, Our office, Featured treatments + mobile sticky Call/Book bar, **awaiting review**. Remaining sections are temporary `.dev-stub` blocks (they also provide the `#appointment` target).
+- **Phase 3, batch 1:** About, Our office, Featured treatments + mobile sticky Call/Book bar, reviewed and revised.
+- **Phase 3, batch 2:** Quote + Google review, Advanced technology (pinned), Meet the doctor, **awaiting review**. Remaining sections are temporary `.dev-stub` blocks (they also provide the `#appointment` target).
+
+**Review mode:** append `?review=1` to the URL to see unconfirmed-content markers and review-only tiles. The default is the clean client view.
 
 ## Commands
 ```bash
@@ -38,6 +41,7 @@ src/sections/<name>/               one folder per section: <name>.html + .css + 
   header/                          sticky header, mega-menu, mobile menu
   hero/                            hero (includes the trust-logo row)
   about/ office/ treatments/       Phase 3 batch 1
+  review/ technology/ doctor/      Phase 3 batch 2
   sticky-cta/                      mobile/tablet Call + Book bar
 src/styles/tokens.css              design tokens (→ theme.json)
 src/styles/base.css                reset, type utilities, layout, a11y, placeholder flag
@@ -47,6 +51,7 @@ src/js/main.js                     entry; imports styles + boots sections
 src/js/motion.js                   GSAP/Lenis setup, house easing, durations, reduced motion
 src/js/magnetic.js                 magnetic CTA
 src/js/reveal.js                   section reveals: [data-reveal], [data-reveal-media], [data-parallax]
+src/js/review-mode.js              ?review=1 tooltips + badge
 src/icons/glass-icons.svg          glass icon sprite (inlined into the page)
 build/html-partials.js             tiny Vite plugin: @include, {{site.*}}, {{#each}}, {{#if}}, @picture
 public/fonts/                      Google Sans Variable, Latin WOFF2 subset (77 KB; the 5 MB TTF is not committed)
@@ -61,7 +66,7 @@ preview/                           Step 0 styleguide (source + built)
 
 ## Content rules
 - Brand name (pending: "SmileaDental" vs "Smileawhile Dental") and clinic facts live only in `src/data/site.json`. Hours there are **PLACEHOLDERS** and are deliberately not in the Dentist schema.
-- Unconfirmed visible content carries `data-placeholder` and shows a dashed amber flag while `showPlaceholders` is `true`. Set it to `false` at launch.
+- Unconfirmed content carries `data-placeholder="note"`; flags show only with `?review=1`.
 - No "24/7", "day or night", "on-call" or out-of-hours emergency claims anywhere (the practice does not take emergency calls).
 
 ## WordPress mapping (summary)

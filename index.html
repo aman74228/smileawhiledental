@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-US" class="{{#if site.showPlaceholders}}show-placeholders{{/if}}">
+<html lang="en-US">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -18,6 +18,9 @@
     // Hide [data-reveal] content only when JS runs; un-hide after 3s if the
     // motion module fails to boot, so content can never stay invisible.
     document.documentElement.classList.add('js');
+    // Review mode (?review=1): shows "unconfirmed" markers and review-only tiles.
+    // Default is the clean client view. Set before first paint to avoid a flash.
+    if (/[?&]review=1(&|$)/.test(location.search)) document.documentElement.classList.add('review-mode');
     window.__revealFailsafe = setTimeout(function () { document.documentElement.classList.remove('js'); }, 3000);
   </script>
 
@@ -53,13 +56,16 @@
     <!-- @include src/sections/about/about.html -->
     <!-- @include src/sections/office/office.html -->
     <!-- @include src/sections/treatments/treatments.html -->
+    <!-- @include src/sections/review/review.html -->
+    <!-- @include src/sections/technology/technology.html -->
+    <!-- @include src/sections/doctor/doctor.html -->
 
     <!-- DEV STUBS (temporary): stand in for the remaining Phase 3 sections and the
          #appointment target. Delete each as the real section lands. -->
     <section class="dev-stub" aria-label="Upcoming sections">
       <div class="container">
         <p class="eyebrow">Phase 3 · next batches</p>
-        <p class="t-h2 dev-stub__title">Quote + review, Advanced technology, Meet the doctor, Office tour, Testimonials and Contact continue here.</p>
+        <p class="t-h2 dev-stub__title">Office tour, Testimonials, Contact and the appointment form continue here.</p>
       </div>
     </section>
     <section class="dev-stub dev-stub--alt" id="appointment" aria-label="Appointment form (coming in Phase 3)" data-hide-sticky>

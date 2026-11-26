@@ -39,7 +39,7 @@ const PHOTOS = [
   { name: 'dr-patel-reception', file: 'dr-patel-reception.webp',
     crops: { '4x5': { left: 800, top: 0, width: 1229, height: 1536 },
              '3x2': { left: 0, top: 85, width: 2048, height: 1365 } },
-    glare: { x: 1355, y: 520, r: 60, strength: 0.35 },
+    glare: { x: 1332, y: 812, r: 95, strength: 0.6 },   // loupe headlamp (located by brightness scan)
     alt: 'Dr. Patel standing beside the reception desk' },
   { name: 'team-member-reception-a', file: 'team-member-reception-a.webp',
     crops: { '4x5': { left: 1657, top: 0, width: 3427, height: 4284 } },
@@ -48,7 +48,9 @@ const PHOTOS = [
     crops: { '4x5': { left: 736, top: 0, width: 1229, height: 1536 } },
     alt: '[TEAM MEMBER NAME] at the reception desk' },
   { name: 'exterior-front', file: 'exterior-front.webp',
-    crops: { '3x2': { left: 0, top: 60, width: 1280, height: 853 } },
+    // 4:3 anchored at the top: keeps the house, trims most of the driveway.
+    crops: { '3x2': { left: 0, top: 60, width: 1280, height: 853 },
+             '4x3': { left: 100, top: 0, width: 1080, height: 810 } },
     alt: 'The practice building on Holland Road, a converted family home with parking out front' },
   { name: 'exterior-wide', file: 'exterior-wide.webp',
     crops: { '3x2': { left: 0, top: 60, width: 1280, height: 853 } },

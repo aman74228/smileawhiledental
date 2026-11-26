@@ -231,6 +231,30 @@
             "webp": "exterior-front-3x2-1280.webp"
           }
         ]
+      },
+      "4x3": {
+        "width": 1080,
+        "height": 810,
+        "files": [
+          {
+            "w": 480,
+            "h": 360,
+            "avif": "exterior-front-4x3-480.avif",
+            "webp": "exterior-front-4x3-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 600,
+            "avif": "exterior-front-4x3-800.avif",
+            "webp": "exterior-front-4x3-800.webp"
+          },
+          {
+            "w": 1080,
+            "h": 810,
+            "avif": "exterior-front-4x3-1080.avif",
+            "webp": "exterior-front-4x3-1080.webp"
+          }
+        ]
       }
     }
   },

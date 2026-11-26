@@ -9,7 +9,6 @@
   },
   "tagline": "Family & cosmetic dentistry · Holland, PA",
   "url": "[SITE URL]",
-  "showPlaceholders": true,
   "phone": {
     "display": "(215) 355-4242",
     "international": "+1 (215) 355-4242",
@@ -257,5 +256,53 @@
   "stickyBar": {
     "call": "Call",
     "book": "Book"
-  }
+  },
+  "reviews": {
+    "_comment": "Google Business Profile reviews link: PLACEHOLDER until the client supplies it.",
+    "url": "#",
+    "label": "Read our Google reviews",
+    "placeholder": true
+  },
+  "technology": [
+    {
+      "icon": "gi-cbct",
+      "title": "3D CBCT scanning",
+      "text": "Detailed 3D images of teeth, bone and nerves for safer implant planning and precise diagnosis."
+    },
+    {
+      "icon": "gi-xray",
+      "title": "Digital radiography",
+      "text": "Instant, high-resolution X-rays with much lower radiation than traditional film."
+    },
+    {
+      "icon": "gi-scanner",
+      "title": "3D intraoral scanner",
+      "text": "Fast, comfortable digital impressions, with no messy trays or gagging."
+    },
+    {
+      "icon": "gi-camera",
+      "title": "Intraoral camera",
+      "text": "See exactly what we see, on screen, so every treatment decision is clear."
+    },
+    {
+      "icon": "gi-cerec",
+      "title": "CEREC same-day crowns",
+      "text": "Crowns designed, milled and fitted in a single visit, with no temporaries."
+    },
+    {
+      "icon": "gi-laser",
+      "title": "Soft-tissue dental laser",
+      "text": "Gentler gum treatments with less bleeding, fewer stitches and faster healing."
+    },
+    {
+      "icon": "gi-smile-design",
+      "title": "Digital smile design",
+      "text": "Preview your new smile before treatment begins, and shape it together with us."
+    },
+    {
+      "icon": "gi-anesthesia",
+      "title": "Computer-guided anesthesia",
+      "text": "Precise, steady numbing for a far more comfortable injection."
+    }
+  ]
 }

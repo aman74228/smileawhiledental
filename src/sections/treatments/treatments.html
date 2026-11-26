@@ -30,7 +30,10 @@
         {{#each site.featured as f}}
         <div class="treatment-card" id="treatment-{{f.slug}}" role="listitem" data-treatment>
           <div class="treatment-card__visual treatment-card__visual--{{f.tone}}">
-            <span class="glass-tile glass-tile--xl treatment-card__icon" aria-hidden="true"><svg><use href="#{{f.icon}}"/></svg></span>
+            <span class="treatment-card__icon-wrap" aria-hidden="true">
+              <span class="treatment-card__pulse"></span>
+              <span class="glass-tile glass-tile--xl treatment-card__icon"><svg><use href="#{{f.icon}}"/></svg></span>
+            </span>
             <ul class="treatment-card__tags" role="list" aria-label="Includes">
               {{#each f.tags as tag}}<li>{{tag}}</li>{{/each}}
             </ul>

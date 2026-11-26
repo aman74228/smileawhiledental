@@ -1,0 +1,30 @@
+/* ==========================================================================
+   Section: meet the doctor
+   Mobile/tablet: portrait (4:5, capped width) → content
+   Desktop (≥1024): 5 / 6 split, portrait left, content vertically centred
+   ========================================================================== */
+.doctor__grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-10); }
+.doctor__figure { margin: 0; max-width: 30rem; }
+.doctor__media { aspect-ratio: 4 / 5; border-radius: var(--radius-2xl); overflow: hidden; background: var(--slate-100); }
+.doctor__img, .doctor__media picture { width: 100%; height: 100%; object-fit: cover; object-position: 55% 25%; }
+
+.doctor__name { margin-top: var(--space-5); }
+.doctor__role { margin-top: var(--space-3); font-size: var(--fs-body); color: var(--color-text-muted); }
+.doctor__bio { margin-top: var(--space-6); max-width: 46ch; }
+
+.doctor__creds { display: grid; gap: var(--space-3); margin-top: var(--space-8); padding-top: var(--space-6); border-top: 1px solid var(--color-border); }
+.doctor__creds li { display: flex; align-items: center; gap: var(--space-3); font-size: var(--fs-body); color: var(--color-text-secondary); }
+.doctor__tick { flex: none; width: 20px; height: 20px; fill: var(--teal-50); stroke: var(--teal-600); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.doctor__tick circle { stroke: var(--teal-100); }
+
+.doctor__ctas { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4) var(--space-8); margin-top: var(--space-10); }
+.doctor__ctas .link { font-size: var(--fs-small); }
+
+@media (min-width: 48rem) and (max-width: 63.99rem) {
+  .doctor__figure { max-width: 70%; }
+}
+@media (min-width: 64rem) {
+  .doctor__grid { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--grid-gap); align-items: center; }
+  .doctor__figure { grid-column: 1 / span 5; max-width: none; }
+  .doctor__content { grid-column: 7 / span 6; }
+}

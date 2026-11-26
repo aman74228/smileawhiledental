@@ -63,4 +63,76 @@
     <path d="M6.6 15.9l3.6 1.25M9.7 10l2.9 2.35M16 4.75v5.25M22.3 10l-2.9 2.35M25.4 15.9l-3.6 1.25"/>
     <path stroke="#fff" stroke-opacity=".95" d="M8.1 12.3c.9-2.1 2.1-3.8 3.5-4.9"/>
   </symbol>
+
+  <!-- ===== Technology set (same grid, stroke, fill and light direction) ===== -->
+
+  <!-- 3D CBCT: gantry ring on a stand -->
+  <symbol id="gi-cbct" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path fill="url(#gi-fill)" fill-rule="evenodd" d="M16 4.75a10.75 10.75 0 1 1 0 21.5 10.75 10.75 0 0 1 0-21.5Zm0 5a5.75 5.75 0 1 0 0 11.5 5.75 5.75 0 0 0 0-11.5Z"/>
+    <path d="M11 29.25h10M16 26.25v3"/>
+    <circle cx="16" cy="15.5" r="1.6" fill="currentColor" stroke="none"/>
+    <path stroke="#fff" stroke-opacity=".95" d="M8.6 11.2c.8-1.8 2.2-3.2 4-4"/>
+  </symbol>
+
+  <!-- Digital radiography: sensor with a tooth image -->
+  <symbol id="gi-xray" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="5.25" y="5.25" width="21.5" height="21.5" rx="5" fill="url(#gi-fill)"/>
+    <path fill="url(#gi-fill-soft)" d="M12.9 10.75c-1.6 0-2.65 1.3-2.65 2.95 0 1.75.8 2.8 1.2 4.4.45 1.8.65 4.15 1.85 4.15s1.2-3.15 2.7-3.15 1.5 3.15 2.7 3.15 1.4-2.35 1.85-4.15c.4-1.6 1.2-2.65 1.2-4.4 0-1.65-1.05-2.95-2.65-2.95-1.35 0-1.8.85-3.1.85s-1.75-.85-3.1-.85Z"/>
+    <path stroke="#fff" stroke-opacity=".95" d="M8.4 9.6c.35-1.05 1.1-1.7 2.1-1.85"/>
+  </symbol>
+
+  <!-- 3D intraoral scanner: wand with scan window -->
+  <symbol id="gi-scanner" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <g transform="rotate(35 16 16)">
+      <rect x="12.75" y="3.25" width="6.5" height="25.5" rx="3.25" fill="url(#gi-fill)"/>
+      <rect x="14.25" y="6" width="3.5" height="4.5" rx="1.2" fill="url(#gi-fill-soft)"/>
+      <path stroke="#fff" stroke-opacity=".95" d="M14.4 13.5v4"/>
+    </g>
+    <path d="M23.6 4.4c1.4.4 2.6 1.6 3 3M22.4 7.1c.7.2 1.3.8 1.5 1.5"/>
+  </symbol>
+
+  <!-- Intraoral camera: camera body + lens -->
+  <symbol id="gi-camera" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path fill="url(#gi-fill)" d="M8.75 9.25h2.4l1.6-2.75h6.5l1.6 2.75h2.4a3.5 3.5 0 0 1 3.5 3.5v9.5a3.5 3.5 0 0 1-3.5 3.5H8.75a3.5 3.5 0 0 1-3.5-3.5v-9.5a3.5 3.5 0 0 1 3.5-3.5Z"/>
+    <circle cx="16" cy="17.25" r="4.75" fill="url(#gi-fill-soft)"/>
+    <circle cx="16" cy="17.25" r="1.75"/>
+    <path stroke="#fff" stroke-opacity=".95" d="M8.2 13.2c.2-.8.8-1.3 1.6-1.4"/>
+  </symbol>
+
+  <!-- CEREC same-day crowns: crown + clock badge -->
+  <symbol id="gi-cerec" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path fill="url(#gi-fill)" d="M8.75 6.25h12.5A2.75 2.75 0 0 1 24 9c0 3.7-2.3 6.25-5.2 6.25h-7.6C8.3 15.25 6 12.7 6 9a2.75 2.75 0 0 1 2.75-2.75Z"/>
+    <path fill="url(#gi-fill-soft)" d="M10.25 15.25c.3 3.5 1 8 2.6 8 1.5 0 1.6-4 2.15-4s.65 4 2.15 4c1.1 0 1.7-2.2 2.1-4.6"/>
+    <circle cx="23" cy="22.75" r="7" fill="#fff" stroke="none"/>
+    <circle cx="23" cy="22.75" r="5.75" fill="url(#gi-fill-solid)"/>
+    <path stroke="#fff" d="M23 19.9v3l2 1.4"/>
+    <path stroke="#fff" stroke-opacity=".95" d="M8.6 9.6c.2-.8.8-1.3 1.6-1.4"/>
+  </symbol>
+
+  <!-- Soft-tissue laser: handpiece, beam, gum line -->
+  <symbol id="gi-laser" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <g transform="rotate(40 19 10)">
+      <rect x="16" y="0.75" width="6" height="16.5" rx="3" fill="url(#gi-fill)"/>
+      <path stroke="#fff" stroke-opacity=".95" d="M17.6 4.2v4"/>
+    </g>
+    <path stroke-dasharray="1.2 2.4" d="M12.9 16.3 7.6 23"/>
+    <path fill="url(#gi-fill-soft)" d="M3.75 25.5c2-1.6 4.1-1.6 6.1 0s4.1 1.6 6.1 0 4.1-1.6 6.1 0 4.1 1.6 6.2 0v3.25H3.75V25.5Z"/>
+  </symbol>
+
+  <!-- Digital smile design: frame, guides and smile curve -->
+  <symbol id="gi-smile-design" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="5.25" y="5.25" width="21.5" height="21.5" rx="5.5" fill="url(#gi-fill)"/>
+    <path stroke-opacity=".45" stroke-dasharray="1.5 2" d="M16 8.5v15M8.5 13h15"/>
+    <path fill="url(#gi-fill-soft)" d="M9.75 15.5c1.9 3.6 4 5.25 6.25 5.25s4.35-1.65 6.25-5.25c-4.1 1.1-8.4 1.1-12.5 0Z"/>
+    <path stroke="#fff" stroke-opacity=".95" d="M8.4 9.9c.35-1.05 1.1-1.75 2.1-1.9"/>
+  </symbol>
+
+  <!-- Computer-guided anesthesia: precision dial -->
+  <symbol id="gi-anesthesia" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <path fill="url(#gi-fill)" d="M4.75 22.75a11.25 11.25 0 0 1 22.5 0v1.5a2 2 0 0 1-2 2H6.75a2 2 0 0 1-2-2v-1.5Z"/>
+    <path d="M8.2 15.3l1.3 1M16 11.5v1.6M23.8 15.3l-1.3 1"/>
+    <path stroke-width="2" d="M16 22.25l4.6-5.6"/>
+    <circle cx="16" cy="22.25" r="1.9" fill="url(#gi-fill-solid)"/>
+    <path stroke="#fff" stroke-opacity=".95" d="M7.6 18.6c.6-2 1.9-3.7 3.6-4.8"/>
+  </symbol>
 </svg>

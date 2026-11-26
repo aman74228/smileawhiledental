@@ -1,9 +1,9 @@
 // Featured treatments
 //   ≥1024px  ARIA tablist (vertical): click / ←↑→↓ / Home / End switch the card.
-//            Card change = crossfade + 12px rise (0.5s); reduced motion = fade.
+//            Card change = 0.4s crossfade + one ring pulse from the tile; reduced motion = fade only. No auto-advance.
 //   <1024px  native scroll-snap carousel; the "01 / 04" counter follows the
 //            card in view. Tab semantics are removed so nothing is announced twice.
-import { gsap, EASE, isReduced } from '../../js/motion.js';
+import { gsap, isReduced } from '../../js/motion.js';
 
 export function initTreatments() {
   const root = document.querySelector('[data-treatments]');
@@ -34,10 +34,13 @@ export function initTreatments() {
     current.textContent = pad(active);
     if (focus) tabs[active].focus();
     if (animate && prev !== active) {
-      const reduced = isReduced();
-      gsap.fromTo(cards[active], { opacity: 0, y: reduced ? 0 : 12 }, { opacity: 1, y: 0, duration: 0.5, ease: EASE, clearProps: 'transform' });
-      gsap.fromTo(cards[active].querySelector('.treatment-card__icon'), { y: reduced ? 0 : 10, scale: reduced ? 1 : 0.96 }, { y: 0, scale: 1, duration: 0.7, ease: EASE, clearProps: 'transform' });
-      gsap.to(cards[prev], { opacity: 0, duration: 0.25, ease: 'power1.out' });
+      // 0.4s crossfade (icon, tags and copy change together) + one soft ring pulse.
+      gsap.to(cards[prev], { opacity: 0, duration: 0.4, ease: 'power1.inOut', overwrite: true });
+      gsap.fromTo(cards[active], { opacity: 0 }, { opacity: 1, duration: 0.4, ease: 'power1.inOut', overwrite: true });
+      if (!isReduced()) {
+        const pulse = cards[active].querySelector('.treatment-card__pulse');
+        gsap.fromTo(pulse, { scale: 1, opacity: 0.7 }, { scale: 1.55, opacity: 0, duration: 0.9, ease: 'power2.out', delay: 0.1 });
+      }
     }
   };
 

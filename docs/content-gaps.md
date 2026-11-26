@@ -1,7 +1,7 @@
 # Content gaps & open decisions
 
 Status legend: **BLOCKER** = needed before the related phase · **NEEDED** = before that section ships · **CONFIRM** = we have a value, client must verify.
-Anything unconfirmed that is visible on the site is marked `data-placeholder` (dashed amber underline/outline while `site.json → showPlaceholders` is `true`).
+Anything unconfirmed is marked `data-placeholder="note"`. Markers are hidden in the default client view; open the page with **`?review=1`** to see dashed amber flags (hover for the note) and review-only tiles.
 
 ## Resolved
 | # | Item | Decision |
@@ -42,11 +42,23 @@ Anything unconfirmed that is visible on the site is marked `data-placeholder` (d
 - **Logo:** the header uses a temporary Google Sans text wordmark ("Smileawhile Dental"). Final logo SVG needed.
 - **Trust logos** (hero): Invisalign, CEREC, ADA, CareCredit render as text stand-ins in fixed 24px slots. **Official files are needed from the client's provider portals** (Invisalign Doctor Site, Dentsply Sirona / CEREC, ADA member toolkit, CareCredit Provider Center), plus confirmation that the practice may display each mark. Drop-in: replace `.logo-slot__text` with `<img class="logo-slot__img" … height="24">` (see comment in `hero.html`).
 
+## Team
+- **About section photo:** the woman at reception is unidentified. Caption shows **"[NAME], [ROLE]"** so visitors don't read her as the dentist. Need her name and role (and permission to feature her).
+- Second team member photo (`team-member-reception-b`) and the group photo: names/roles needed for Meet the Team.
+
+## Featured review (homepage)
+- **NEEDED:** one real 5-star Google review (2–3 sentences), patient first name + last initial, and written permission. The section shows a bracketed placeholder until then.
+- The content-source testimonials can't be used: one implies out-of-hours care ("same evening"); the other credits "Dr. Reyes", who doesn't exist. Patient quotes are never edited.
+- **NEEDED:** Google Business Profile reviews URL ("Read our Google reviews").
+
+## Meet the doctor (homepage)
+- **NEEDED:** bio (2–3 sentences), dental school + year, years in practice, memberships, certifications. All show as bracketed placeholders.
+
 ## Kept off the site until confirmed
 - **"Accepting new patients"**: claimed by the content source; not shown anywhere. CONFIRM before using.
 - Google rating / review count
 - "Free parking right outside" is shown in the Office section but flagged (`data-placeholder`)
-- "40 years of dedicated service" is shown in About but flagged (`data-placeholder`)
+- **"Serving Holland for 40 years"** (About) is shown but flagged: **confirm this is the same practice** as the 40-year claim on holland-smiles.com.
 
 ## Claims & numbers (not displayed until confirmed)
 - Google rating and review count (content source said 4.9 / 250+). Hero shows **no** rating per Phase 2 brief.
@@ -71,11 +83,15 @@ These look sourced from other clinics or stock libraries, not this practice:
 Homepage Featured Treatments therefore uses brand visuals (glass icon + tags), not these photos. Clinical photos will be used on service pages only once rights are confirmed.
 
 ## Copy edits made (FYI)
+- "Computer-guided anaesthesia" → US spelling "anesthesia".
+- "calm, home-based" now appears only in the About statement (Office heading is "Easy to find, easy to park").
 - US spelling applied: "prioritize" (client-supplied emergency line said "prioritise").
 - Implants copy softened from "look, feel and function **exactly** like natural teeth" to "…like natural teeth" (avoids an absolute clinical claim).
 
 ## Photography (see `docs/photo-inventory.md`)
-- The operatory photo is held back from the homepage (yellow cast). Dr. Patel's reception photo has a strong headlamp reflection. Both strengthen the case for a short professional shoot.
+- The operatory photo is held back from the homepage (yellow cast). Dr. Patel's reception photo had a headlamp reflection (now toned down). Both strengthen the case for a short professional shoot.
+- **Interior photos needed** (reception, waiting room, treatment rooms). Our Office shows the exterior only; a "coming soon" tile appears in review mode.
+- **Exterior resolution:** the only exterior source is 1080 px wide; at full container width on large screens it is visibly soft. A higher-res original or reshoot is needed.
 - Recommended: a short professional shoot (soft-light portrait of Dr. Patel without the headlamp, team, waiting room, technology)
 - Higher-res originals of the exterior photos and the team group photo (640×480 today)
 - Preventive / general care image for the featured treatments card
