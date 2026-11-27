@@ -1,0 +1,109 @@
+<!-- ===================== TEMPLATE: service category page =====================
+     WP: single-service.php (Services CPT) · all content from services.json (ACF fields)
+     FAQPage schema is emitted in <head> from service.faqSchema.
+     ========================================================================== -->
+<!-- @include src/partials/page-start.html -->
+
+<section class="page-hero service-hero" aria-labelledby="page-title">
+  <div class="page-hero__bg" aria-hidden="true"></div>
+  <div class="container service-hero__grid">
+    <div class="service-hero__copy">
+      <nav class="breadcrumb" aria-label="Breadcrumb" data-reveal>
+        <ol role="list"><li><a href="/">Home</a></li><li><a href="/services/">Services</a></li><li aria-current="page">{{service.name}}</li></ol>
+      </nav>
+      <p class="eyebrow page-hero__eyebrow" data-reveal>Services</p>
+      <h1 class="t-h1 page-hero__title" id="page-title" data-hero-title>{{service.name}}</h1>
+      <p class="t-body-lg page-hero__lede" data-reveal data-dummy="true" data-note="Dummy intro copy">{{service.intro}}</p>
+      <div class="service-hero__actions" data-reveal>
+        <a class="btn btn--primary" href="{{bookHref}}" data-magnetic>
+          <span class="btn__label">{{site.booking.label}}</span>
+          <span class="btn__arrow" aria-hidden="true"><svg><use href="#ui-arrow"/></svg></span>
+        </a>
+        <a class="btn btn--secondary" href="tel:{{site.phone.tel}}">
+          <svg class="btn__icon" aria-hidden="true"><use href="#ui-phone"/></svg><span class="t-num">Call {{site.phone.display}}</span>
+        </a>
+      </div>
+      {{#if service.notice}}
+      <p class="service-notice" role="note" data-reveal><svg aria-hidden="true"><use href="#ui-alert"/></svg><span>{{service.notice}}</span></p>
+      {{/if}}
+    </div>
+    <div class="service-hero__visual" data-reveal-media>
+      <!-- @picture {{service.image}} 4x3 class="service-hero__img" sizes="(min-width: 1024px) 40vw, 100vw" slot="{{service.icon}}|Service photo: {{service.name}}" alt="{{service.name}} at {{site.name}}" -->
+    </div>
+  </div>
+</section>
+
+<div class="section service-body">
+  <div class="container service-body__grid">
+    <nav class="service-nav" aria-label="Treatments on this page">
+      <p class="service-nav__title">On this page</p>
+      <ul role="list">
+        {{#each service.items as it}}<li><a class="service-nav__link" href="#{{it.slug}}" data-spy-link>{{it.name}}</a></li>{{/each}}
+        <li><a class="service-nav__link" href="#what-to-expect" data-spy-link>What to expect</a></li>
+        <li><a class="service-nav__link" href="#faq" data-spy-link>FAQs</a></li>
+      </ul>
+    </nav>
+
+    <div class="service-body__content">
+      {{#each service.items as it}}
+      <section class="service-item" id="{{it.slug}}" aria-labelledby="{{it.slug}}-title" data-spy-target>
+        <span class="service-item__n t-num" aria-hidden="true">{{@n}}</span>
+        <h2 class="service-item__title" id="{{it.slug}}-title" data-reveal>{{it.name}}</h2>
+        <p class="service-item__text" data-reveal data-dummy="true" data-note="Dummy description">{{it.text}}</p>
+        <a class="link service-item__link" href="{{bookHref}}" data-reveal>Ask about {{it.name}}</a>
+      </section>
+      {{/each}}
+
+      <section class="service-expect" id="what-to-expect" aria-labelledby="expect-title" data-spy-target>
+        <p class="eyebrow" data-reveal>Your visit</p>
+        <h2 class="t-h2 service-expect__title" id="expect-title" data-reveal>What to expect</h2>
+        <ol class="expect-steps" role="list">
+          {{#each service.steps as st}}
+          <li class="expect-step" data-reveal>
+            <span class="expect-step__n t-num" aria-hidden="true">{{@n}}</span>
+            <h3 class="expect-step__title">{{st.title}}</h3>
+            <p class="expect-step__text" data-dummy="true" data-note="Dummy step copy">{{st.text}}</p>
+          </li>
+          {{/each}}
+        </ol>
+      </section>
+
+      {{#if serviceTech}}
+      <section class="service-tech" aria-labelledby="stech-title">
+        <h2 class="t-h3 service-tech__title" id="stech-title" data-reveal>Technology we use</h2>
+        <ul class="service-tech__list" role="list">
+          {{#each serviceTech as t}}
+          <li class="service-tech__item" data-reveal>
+            <span class="glass-tile glass-tile--sm" aria-hidden="true"><svg><use href="#{{t.icon}}"/></svg></span>
+            <span><strong>{{t.title}}</strong><span>{{t.text}}</span></span>
+          </li>
+          {{/each}}
+        </ul>
+        <a class="link service-tech__more" href="/#technology">See all our technology</a>
+      </section>
+      {{/if}}
+
+      <section class="faq" id="faq" aria-labelledby="faq-title" data-spy-target>
+        <h2 class="t-h2 faq__title" id="faq-title" data-reveal>Frequently asked questions</h2>
+        <div class="faq__list" data-dummy="true" data-note="Dummy FAQs (also in FAQPage schema)">
+          {{#each service.faqs as f}}
+          <div class="faq__item" data-accordion-item data-reveal>
+            <h3 class="faq__q">
+              <button class="faq__btn" type="button" aria-expanded="false" aria-controls="{{service.slug}}-faq-{{@index}}" id="{{service.slug}}-faq-btn-{{@index}}" data-accordion-btn>
+                <span>{{f.q}}</span>
+                <svg aria-hidden="true"><use href="#ui-plus"/></svg>
+              </button>
+            </h3>
+            <div class="faq__a" id="{{service.slug}}-faq-{{@index}}" role="region" aria-labelledby="{{service.slug}}-faq-btn-{{@index}}" hidden>
+              <div class="faq__a-inner"><p>{{f.a}}</p></div>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<!-- @include src/sections/cta/cta.html -->
+<!-- @include src/partials/page-end.html -->

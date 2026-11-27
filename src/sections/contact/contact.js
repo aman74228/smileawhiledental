@@ -6,9 +6,9 @@ const fmt = (hhmm) => {
   return `${((h + 11) % 12) + 1}:${String(m).padStart(2, '0')} ${h < 12 ? 'am' : 'pm'}`;
 };
 
-function openStatus(root) {
-  const list = root.querySelector('[data-hours]');
-  const out = root.querySelector('[data-open-status]');
+function openStatus(scope) {
+  const list = scope.querySelector('[data-hours]');
+  const out = scope.querySelector('[data-open-status]');
   if (!list || !out) return;
   let days; try { days = JSON.parse(list.dataset.hours); } catch { return; }
   const byDay = (d) => days.find((x) => x.days.includes(d) && !x.closed);
@@ -33,9 +33,8 @@ function openStatus(root) {
   out.hidden = false;
 }
 
-function mapFacade(root) {
-  const facade = root.querySelector('[data-map]');
-  const btn = facade?.querySelector('[data-map-load]');
+function mapFacade(facade) {
+  const btn = facade.querySelector('[data-map-load]');
   btn?.addEventListener('click', () => {
     const iframe = document.createElement('iframe');
     iframe.src = facade.dataset.mapSrc;
@@ -48,6 +47,8 @@ function mapFacade(root) {
   });
 }
 
+// Runs on every page: any [data-hours-scope] gets a live status, any [data-map] a facade.
 export function initContact() {
-  document.querySelectorAll('[data-contact]').forEach((root) => { openStatus(root); mapFacade(root); });
+  document.querySelectorAll('[data-hours-scope]').forEach(openStatus);
+  document.querySelectorAll('[data-map]').forEach(mapFacade);
 }

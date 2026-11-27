@@ -121,6 +121,7 @@ function pageContext(html, data, file) {
     const svc = data.services?.categories?.find((s) => s.slug === params.service);
     if (!svc) throw new Error(`${file}: unknown service "${params.service}"`);
     ctx.service = svc;
+    ctx.serviceTech = (svc.tech || []).map((icon) => data.site.technology.find((t) => t.icon === icon)).filter(Boolean);
     page.title = `${svc.name} in Holland, PA | ${data.site.name}`;
     page.description = svc.metaDescription || svc.summary;
     page.path = `/services/${svc.slug}/`;

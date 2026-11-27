@@ -21,7 +21,7 @@ export function initHeader() {
 
 /* ---------------- Scroll states ---------------- */
 function initScrollStates(header, state) {
-  const hero = document.querySelector('[data-hero]');
+  const hero = document.querySelector('[data-hero], .page-hero');   // home hero or inner-page hero
   const setGlass = (on) => header.classList.toggle('is-glass', on);
 
   if (hero) {

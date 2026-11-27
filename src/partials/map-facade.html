@@ -1,0 +1,21 @@
+<!-- Shared click-to-load map facade (no Google request until the visitor asks). -->
+<div class="map-facade" data-map data-map-src="{{site.map.embed}}">
+  <div class="map-facade__art" aria-hidden="true">
+    <span class="map-facade__road map-facade__road--a"></span>
+    <span class="map-facade__road map-facade__road--b"></span>
+    <span class="map-facade__road map-facade__road--c"></span>
+    <span class="map-facade__pin"><svg><use href="#ui-pin"/></svg></span>
+  </div>
+  <div class="map-facade__card">
+    <p class="map-facade__label">{{site.name}}</p>
+    <p class="map-facade__addr">{{site.address.singleLine}}</p>
+    <div class="map-facade__actions">
+      <button class="btn btn--primary btn--sm" type="button" data-map-load>
+        <span class="btn__label">Show interactive map</span>
+        <span class="btn__arrow" aria-hidden="true"><svg><use href="#ui-arrow"/></svg></span>
+      </button>
+      <a class="link contact__small" href="{{site.map.directions}}" target="_blank" rel="noopener">Open in Google Maps<span class="visually-hidden"> (opens in a new tab)</span></a>
+    </div>
+    <p class="map-facade__hint">Loads Google Maps, which may set cookies.</p>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<!-- Shared inner-page hero: breadcrumb, eyebrow, H1, lede, optional in-page nav (from pages.json). -->
+<section class="page-hero" aria-labelledby="page-title">
+  <div class="page-hero__bg" aria-hidden="true"></div>
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb" data-reveal>
+      <ol role="list"><li><a href="/">Home</a></li><li aria-current="page">{{page.crumb}}</li></ol>
+    </nav>
+    <p class="eyebrow page-hero__eyebrow" data-reveal>{{page.eyebrow}}</p>
+    <h1 class="t-h1 page-hero__title" id="page-title" data-hero-title>{{page.h1}}</h1>
+    <p class="t-body-lg page-hero__lede" data-reveal>{{page.lede}}</p>
+    {{#if page.subnav}}
+    <nav class="subnav" aria-label="On this page" data-reveal>
+      <ul role="list">{{#each page.subnav as s}}<li><a class="subnav__link" href="{{s.href}}">{{s.label}}</a></li>{{/each}}</ul>
+    </nav>
+    {{/if}}
+  </div>
+</section>

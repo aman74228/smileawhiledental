@@ -6,7 +6,7 @@ export function initStickyCta() {
   const bar = document.querySelector('[data-sticky-cta]');
   if (!bar) return;
   const mq = window.matchMedia('(max-width: 63.99rem)');
-  const hero = document.querySelector('[data-hero]');
+  const hero = document.querySelector('[data-hero], .page-hero');
   const state = { pastHero: !hero, hideZones: new Set(), menuOpen: false };
 
   const update = () => {

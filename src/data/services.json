@@ -69,7 +69,7 @@
       ],
       "faqs": [
         {
-          "q": "Do you offer 24/7 emergency care?",
+          "q": "Can I get emergency care after hours?",
           "a": "No. We don't have an after-hours line. Call during office hours and we'll prioritize urgent problems. For severe swelling, difficulty breathing or uncontrolled bleeding, go to the nearest emergency room."
         },
         {
@@ -89,7 +89,7 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Do you offer 24/7 emergency care?",
+            "name": "Can I get emergency care after hours?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "No. We don't have an after-hours line. Call during office hours and we'll prioritize urgent problems. For severe swelling, difficulty breathing or uncontrolled bleeding, go to the nearest emergency room."

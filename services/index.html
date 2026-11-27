@@ -1,0 +1,28 @@
+<!-- @page key=services -->
+<!-- @include src/partials/page-start.html -->
+<!-- @include src/partials/page-hero.html -->
+
+<!-- Services hub · WP: Services CPT archive (category cards + sub-service links) -->
+<section class="section services-hub" aria-labelledby="hub-title">
+  <div class="container">
+    <h2 class="visually-hidden" id="hub-title">All services</h2>
+    <ul class="hub__grid" role="list">
+      {{#each services.categories as c}}
+      <li class="hub-card" data-reveal>
+        <div class="hub-card__top">
+          <span class="glass-tile" aria-hidden="true"><svg><use href="#{{c.icon}}"/></svg></span>
+          <h3 class="hub-card__title"><a class="hub-card__link" href="/services/{{c.slug}}/">{{c.name}}</a></h3>
+          <p class="hub-card__summary">{{c.summary}}</p>
+        </div>
+        <ul class="hub-card__items" role="list" aria-label="{{c.name}} treatments">
+          {{#each c.items as it}}<li><a href="/services/{{c.slug}}/#{{it.slug}}">{{it.name}}</a></li>{{/each}}
+        </ul>
+        <span class="hub-card__more" aria-hidden="true">Explore {{c.name}} <svg><use href="#ui-arrow"/></svg></span>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</section>
+
+<!-- @include src/sections/cta/cta.html -->
+<!-- @include src/partials/page-end.html -->
