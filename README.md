@@ -10,6 +10,10 @@ Static, WordPress-portable multi-page site: Vite + HTML partials + modern CSS (c
 - **`npm run build` fails until all dummy content is replaced** (production guard). Review builds: `npm run build:preview`.
 - Replacement checklist: `docs/content-gaps.md` (generated: `npm run content-report`).
 
+## Preview deploy (Netlify)
+- Site: **https://smileawhile-dental-preview.netlify.app** (preview build, noindex).
+- Redeploy: `bash scripts/deploy-netlify.sh` (token comes from the cloud environment, never the repo).
+
 ## Commands
 ```bash
 npm install
