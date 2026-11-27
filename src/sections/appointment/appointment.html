@@ -1,0 +1,123 @@
+<!-- ===================== SECTION: appointment form (shared: home + contact page) =====================
+     WP: Gravity Forms. Field map (form "Request an appointment"):
+       1 Full name (Name, simple)      → input name="full_name"      data-gf-id="1"
+       2 Phone (Phone, standard)       → input name="phone"          data-gf-id="2"
+       3 Email (Email)                 → input name="email"          data-gf-id="3"
+       4 Patient type (Radio)          → input name="patient_type"   data-gf-id="4"  New patient | Existing patient
+       5 Reason for visit (Drop Down)  → select name="reason"        data-gf-id="5"
+       6 Preferred day (Drop Down)     → select name="preferred_day" data-gf-id="6"
+       7 Preferred time (Drop Down)    → select name="preferred_time" data-gf-id="7"
+       8 Message (Paragraph, optional) → textarea name="message"     data-gf-id="8"
+       Honeypot → Gravity Forms' built-in anti-spam honeypot
+     Endpoint: data-endpoint (from site.json → form.endpoint). Empty = demo mode (validates,
+     simulates sending, shows success). Gravity Forms REST: /wp-json/gf/v2/forms/{id}/submissions
+     ================================================================================================== -->
+<section class="section appointment" id="appointment" aria-labelledby="appointment-title" data-hide-sticky>
+  <div class="container appointment__grid">
+    <div class="appointment__intro">
+      <p class="eyebrow" data-reveal>Book an appointment</p>
+      <h2 class="t-h2 appointment__title" id="appointment-title" data-reveal>Request your visit</h2>
+      <p class="t-body-lg appointment__lede" data-reveal>Fill in the form and we'll call you to confirm a time. Prefer to talk? Call us during office hours.</p>
+
+      <div class="appointment__cards" data-reveal>
+        <a class="appt-card" href="tel:{{site.phone.tel}}">
+          <span class="appt-card__icon" aria-hidden="true"><svg><use href="#ui-phone"/></svg></span>
+          <span><span class="appt-card__label">Call us</span><span class="appt-card__value t-num">{{site.phone.display}}</span></span>
+        </a>
+        <div class="appt-card appt-card--quiet">
+          <span class="appt-card__icon" aria-hidden="true"><svg><use href="#ui-clock"/></svg></span>
+          <span><span class="appt-card__label">Urgent tooth pain?</span><span class="appt-card__text">Call during office hours and we'll prioritize you.</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="appointment__panel" data-reveal>
+      <form class="appt-form gform_wrapper" id="appt-form" novalidate data-appt-form data-endpoint="{{site.form.endpoint}}" aria-describedby="appt-form-note">
+        <div class="appt-form__errors" role="alert" tabindex="-1" data-form-summary hidden>
+          <p class="appt-form__errors-title">Please check the highlighted fields.</p>
+          <ul role="list" data-form-summary-list></ul>
+        </div>
+
+        <div class="appt-form__fields">
+          <div class="field gfield" data-field>
+            <label class="field__label" for="appt-name">Full name</label>
+            <input class="field__input" id="appt-name" name="full_name" type="text" autocomplete="name" required data-gf-id="1" aria-describedby="appt-name-msg">
+            <p class="field__msg" id="appt-name-msg" data-msg></p>
+          </div>
+          <div class="field gfield" data-field>
+            <label class="field__label" for="appt-phone">Phone</label>
+            <input class="field__input t-num" id="appt-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required data-gf-id="2" aria-describedby="appt-phone-msg" data-validate="phone">
+            <p class="field__msg" id="appt-phone-msg" data-msg></p>
+          </div>
+          <div class="field gfield field--full" data-field>
+            <label class="field__label" for="appt-email">Email</label>
+            <input class="field__input" id="appt-email" name="email" type="email" autocomplete="email" required data-gf-id="3" aria-describedby="appt-email-msg">
+            <p class="field__msg" id="appt-email-msg" data-msg></p>
+          </div>
+
+          <fieldset class="field gfield field--full" data-field data-group="radio">
+            <legend class="field__label">Patient type</legend>
+            <div class="choice-group">
+              <label class="choice"><input type="radio" name="patient_type" value="New patient" required data-gf-id="4"><span>New patient</span></label>
+              <label class="choice"><input type="radio" name="patient_type" value="Existing patient" data-gf-id="4"><span>Existing patient</span></label>
+            </div>
+            <p class="field__msg" data-msg></p>
+          </fieldset>
+
+          <div class="field gfield field--full" data-field>
+            <label class="field__label" for="appt-reason">Reason for visit</label>
+            <select class="field__input" id="appt-reason" name="reason" required data-gf-id="5" aria-describedby="appt-reason-msg">
+              <option value="">Choose one</option>
+              {{#each site.form.reasons as r}}<option>{{r}}</option>{{/each}}
+            </select>
+            <p class="field__msg" id="appt-reason-msg" data-msg></p>
+          </div>
+
+          <div class="field gfield" data-field>
+            <label class="field__label" for="appt-day">Preferred day</label>
+            <select class="field__input" id="appt-day" name="preferred_day" data-gf-id="6">
+              <option>Any weekday</option><option>Monday</option><option>Tuesday</option><option>Wednesday</option><option>Thursday</option><option>Friday</option>
+            </select>
+          </div>
+          <div class="field gfield" data-field>
+            <label class="field__label" for="appt-time">Preferred time</label>
+            <select class="field__input" id="appt-time" name="preferred_time" data-gf-id="7">
+              <option>Any time</option><option>Morning</option><option>Afternoon</option>
+            </select>
+          </div>
+
+          <div class="field gfield field--full" data-field>
+            <label class="field__label" for="appt-message">Message <span class="field__optional">(optional)</span></label>
+            <textarea class="field__input field__input--area" id="appt-message" name="message" rows="4" maxlength="1000" data-gf-id="8" aria-describedby="appt-message-hint"></textarea>
+            <p class="field__hint" id="appt-message-hint">Please don't include medical details here; we'll discuss everything by phone.</p>
+          </div>
+
+          <div class="appt-form__hp" aria-hidden="true">
+            <label for="appt-website">Leave this field empty</label>
+            <input id="appt-website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+        </div>
+
+        <div class="appt-form__submit">
+          <button class="btn btn--primary appt-form__btn" type="submit" data-submit>
+            <span class="btn__label" data-submit-label>Request appointment</span>
+            <span class="btn__arrow" aria-hidden="true"><svg class="appt-form__spinner" viewBox="0 0 16 16" data-spinner><circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-dasharray="26 12" stroke-linecap="round"/></svg><svg class="appt-form__arrow"><use href="#ui-arrow"/></svg></span>
+          </button>
+          <p class="appt-form__note" id="appt-form-note">We'll call to confirm within 1 business hour.</p>
+        </div>
+
+        <div class="appt-form__error" role="alert" data-form-error hidden>
+          <svg aria-hidden="true"><use href="#ui-alert"/></svg>
+          <p>Sorry, your request didn't send. Please try again, or call us on <a class="link t-num" href="tel:{{site.phone.tel}}">{{site.phone.display}}</a>.</p>
+        </div>
+      </form>
+
+      <div class="appt-success" data-form-success hidden>
+        <span class="appt-success__icon" aria-hidden="true"><svg><use href="#ui-check"/></svg></span>
+        <h3 class="appt-success__title" tabindex="-1" data-success-title>Thank you. We've got your request.</h3>
+        <p class="appt-success__text">We'll call you within 1 business hour to confirm a time. If it's urgent, call us during office hours on <a class="link t-num" href="tel:{{site.phone.tel}}">{{site.phone.display}}</a>.</p>
+        <button class="link appt-success__again" type="button" data-form-reset>Send another request</button>
+      </div>
+    </div>
+  </div>
+</section>

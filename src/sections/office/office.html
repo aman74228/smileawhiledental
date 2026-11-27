@@ -1,10 +1,7 @@
 <!-- ===================== SECTION: office =====================
-     WP: template-parts/home/office.php · gallery = ACF gallery
-     Exterior only until interior photography exists. Dr. Patel's portrait is
-     reserved for Meet the Doctor; people are never captioned as rooms.
-     Client view: exterior alone, full width. Review view (?review=1): exterior +
-     an "Interior photos coming soon" tile.
-     Arrival copy draws on the content source ("parking right outside", "No long queues").
+     WP: template-parts/home/office.php · exterior + "Arriving" card + interior strip (ACF gallery)
+     Exterior = real client photo (max 1080px: its source width). Interior strip = stock/dummy
+     photo slots until practice photography exists.
      =========================================================== -->
 <section class="section office" id="office" aria-labelledby="office-title">
   <div class="container">
@@ -13,27 +10,50 @@
         <p class="eyebrow" data-reveal>Our office</p>
         <h2 class="t-h2 office__title" id="office-title" data-reveal>Easy to find, easy to park</h2>
       </div>
-      <div class="office__intro">
-        <p class="t-body-lg" data-reveal>
-          <span data-placeholder="Confirm free parking at the door with client">Park right outside</span>,
-          walk a few steps to the front door and check in. No long queues, and no circling for a space.
-        </p>
-        <a class="link office__link" href="/our-practice/#directions" data-reveal>Get directions</a>
-      </div>
+      <p class="t-body-lg office__intro" data-reveal>
+        Park right outside, walk a few steps to the front door and check in. No long queues, and no circling for a space.
+      </p>
     </div>
 
-    <div class="office__gallery">
-      <figure class="office__item office__item--lg">
+    <div class="office__split">
+      <figure class="office__photo">
         <div class="office__frame" data-reveal-media data-parallax>
-          <!-- @picture exterior-front 4x3 class="office__img" sizes="(min-width: 1440px) 1360px, 100vw" -->
+          <!-- @picture exterior-front 4x3 class="office__img" sizes="(min-width: 1440px) 776px, (min-width: 1024px) 55vw, 100vw" -->
         </div>
-        <figcaption class="office__caption">{{site.address.singleLine}}</figcaption>
       </figure>
 
-      <div class="office__pending review-only" aria-label="Review note">
-        <p class="office__pending-title">Interior photos coming soon</p>
-        <p class="office__pending-text">Reception, waiting room and treatment rooms. Shown in review mode only.</p>
-      </div>
+      <aside class="arrive-card" aria-labelledby="arrive-title" data-reveal>
+        <p class="eyebrow">Arriving</p>
+        <h3 class="arrive-card__title" id="arrive-title">{{site.address.street}}</h3>
+        <ul class="arrive-card__list" role="list">
+          <li><svg aria-hidden="true"><use href="#ui-pin"/></svg><span>{{site.address.city}}, {{site.address.region}} {{site.address.postalCode}}</span></li>
+          <li><svg aria-hidden="true"><use href="#ui-car"/></svg><span data-dummy="true" data-note="Confirm free parking at the door">Free parking right outside</span></li>
+          <li><svg aria-hidden="true"><use href="#ui-clock"/></svg><a class="link" href="/our-practice/#hours">See opening hours</a></li>
+        </ul>
+        <a class="btn btn--secondary arrive-card__cta" href="{{site.map.directions}}" target="_blank" rel="noopener">
+          <svg class="btn__icon" aria-hidden="true"><use href="#ui-arrow-up-right"/></svg>
+          Get directions<span class="visually-hidden"> (opens Google Maps in a new tab)</span>
+        </a>
+      </aside>
+    </div>
+
+    <div class="office__strip" aria-label="Inside the practice">
+      <figure class="office__strip-item" data-reveal>
+        <div class="office__strip-frame">
+          <!-- @picture interior-reception 3x2 class="office__img" sizes="(min-width: 1024px) 40vw, 90vw" slot="gi-general|Interior: reception / waiting area" alt="The bright, calm reception and waiting area" -->
+        </div>
+        <figcaption class="office__caption">Reception &amp; waiting area</figcaption>
+      </figure>
+      <figure class="office__strip-item" data-reveal>
+        <div class="office__strip-frame">
+          <!-- @picture interior-treatment 3x2 class="office__img" sizes="(min-width: 1024px) 40vw, 90vw" slot="gi-camera|Interior: modern treatment room" alt="A modern treatment room with a chairside screen" -->
+        </div>
+        <figcaption class="office__caption">Treatment rooms</figcaption>
+      </figure>
+      <a class="office__strip-more" href="/our-practice/#office-tour" data-reveal>
+        <span class="office__strip-more-label">Take the full office tour</span>
+        <span class="office__strip-more-arrow" aria-hidden="true"><svg><use href="#ui-arrow"/></svg></span>
+      </a>
     </div>
   </div>
 </section>

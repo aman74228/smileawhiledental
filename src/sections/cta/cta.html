@@ -1,0 +1,21 @@
+<!-- ===================== SECTION: closing CTA band (brand moment) =====================
+     WP: template-parts/cta-band.php · copy from the content source
+     ==================================================================================== -->
+<section class="cta-band" aria-labelledby="cta-title">
+  <div class="container--max">
+    <div class="cta-band__panel" data-cta-panel>
+      <h2 class="t-h1 cta-band__title" id="cta-title" data-reveal>Ready for a smile you love to show?</h2>
+      <p class="cta-band__text" data-reveal>Book a relaxed first visit. We'll listen first, then explain everything clearly.</p>
+      <div class="cta-band__actions" data-reveal>
+        <a class="btn btn--inverse" href="{{bookHref}}" data-magnetic>
+          <span class="btn__label">{{site.booking.label}}</span>
+          <span class="btn__arrow" aria-hidden="true"><svg><use href="#ui-arrow"/></svg></span>
+        </a>
+        <a class="btn btn--ghost-inverse" href="tel:{{site.phone.tel}}">
+          <svg class="btn__icon" aria-hidden="true"><use href="#ui-phone"/></svg>
+          <span class="t-num">Call {{site.phone.display}}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,5 +1,5 @@
 {
-  "_readme": "Single source of truth for clinic facts. Templates read this at build time ({{site.*}}); src/js/site.js reads it at runtime. In WordPress this becomes theme options / ACF options page.",
+  "_readme": "Single source of truth for clinic facts. Templates read this at build time ({{site.*}}). Anything with \"dummy\": true is sample content the client must replace (see docs/content-gaps.md); a production build fails while any remain.",
   "_brand_comment": "PENDING FINAL CONFIRMATION: \"SmileaDental\" vs \"Smileawhile Dental\". Change name + wordmark here only; header, footer, <title>, meta and schema all read from these fields.",
   "name": "SmileaDental",
   "wordmark": {
@@ -8,13 +8,21 @@
     "spaced": false
   },
   "tagline": "Family & cosmetic dentistry · Holland, PA",
-  "url": "[SITE URL]",
+  "url": {
+    "value": "https://www.smileadental.com",
+    "dummy": true,
+    "note": "Final domain"
+  },
   "phone": {
     "display": "(215) 355-4242",
     "international": "+1 (215) 355-4242",
     "tel": "+12153554242"
   },
-  "email": "[EMAIL]",
+  "email": {
+    "value": "hello@smileadental.com",
+    "dummy": true,
+    "note": "Practice email address"
+  },
   "address": {
     "street": "1030 Holland Rd",
     "city": "Holland",
@@ -24,8 +32,7 @@
     "singleLine": "1030 Holland Rd, Holland, PA 18966"
   },
   "hours": {
-    "_comment": "// PLACEHOLDER HOURS – confirm with client. Dummy values; do NOT add to LocalBusiness/Dentist schema (openingHours) until confirmed.",
-    "placeholder": true,
+    "_comment": "DUMMY HOURS: replace with the real hours. Kept out of LocalBusiness/Dentist schema (openingHours) until confirmed.",
     "summary": "Mon–Thu 9:00 am – 5:00 pm · Fri 9:00 am – 2:00 pm · Sat–Sun Closed",
     "days": [
       {
@@ -58,10 +65,10 @@
         "closed": true,
         "display": "Closed"
       }
-    ]
+    ],
+    "dummy": true
   },
   "booking": {
-    "href": "#appointment",
     "label": "Book an appointment",
     "shortLabel": "Book Now"
   },
@@ -69,24 +76,28 @@
     {
       "label": "Home",
       "href": "/",
-      "current": true
+      "section": "home"
     },
     {
       "label": "Our Practice",
-      "href": "/our-practice/"
+      "href": "/our-practice/",
+      "section": "practice"
     },
     {
       "label": "Services",
       "href": "/services/",
+      "section": "services",
       "mega": true
     },
     {
       "label": "Testimonials",
-      "href": "/testimonials/"
+      "href": "/testimonials/",
+      "section": "testimonials"
     },
     {
       "label": "Contact",
-      "href": "/contact/"
+      "href": "/contact/",
+      "section": "contact"
     }
   ],
   "services": [
@@ -173,25 +184,31 @@
   "trust": [
     {
       "name": "Invisalign",
-      "placeholder": true
+      "dummy": true,
+      "note": "Text stand-in: official Invisalign logo file + permission needed"
     },
     {
       "name": "CEREC",
-      "placeholder": true
+      "dummy": true,
+      "note": "Text stand-in: official CEREC logo file + permission needed"
     },
     {
       "name": "ADA",
-      "placeholder": true
+      "dummy": true,
+      "note": "Text stand-in: official ADA logo file + permission needed"
     },
     {
       "name": "CareCredit",
-      "placeholder": true
+      "dummy": true,
+      "note": "Text stand-in: official CareCredit logo file + permission needed"
     }
   ],
   "doctor": {
     "displayName": "Dr. Patel",
-    "firstName": "[FIRST NAME]",
-    "credentials": "[DDS/DMD]"
+    "credentials": "DMD",
+    "fullTitle": "Dr. Patel, DMD",
+    "dummy": true,
+    "note": "Credential (DMD) and full name to confirm; street sign suggests \"Dr. Akshit Patel, D.M.D.\""
   },
   "hero": {
     "eyebrow": "Family & cosmetic dentistry · Holland, PA",
@@ -202,7 +219,26 @@
       "ratio": "4x5"
     }
   },
-  "social": [],
+  "social": [
+    {
+      "name": "Facebook",
+      "url": "https://www.facebook.com/",
+      "icon": "facebook",
+      "dummy": true
+    },
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/",
+      "icon": "instagram",
+      "dummy": true
+    },
+    {
+      "name": "Google",
+      "url": "https://www.google.com/maps/search/?api=1&query=1030+Holland+Rd+Holland+PA+18966",
+      "icon": "google",
+      "dummy": true
+    }
+  ],
   "featured": [
     {
       "slug": "general-dentistry",
@@ -257,52 +293,87 @@
     "call": "Call",
     "book": "Book"
   },
-  "reviews": {
-    "_comment": "Google Business Profile reviews link: PLACEHOLDER until the client supplies it.",
-    "url": "#",
-    "label": "Read our Google reviews",
-    "placeholder": true
-  },
   "technology": [
     {
       "icon": "gi-cbct",
       "title": "3D CBCT scanning",
-      "text": "Detailed 3D images of teeth, bone and nerves for safer implant planning and precise diagnosis."
+      "text": "Detailed 3D images of teeth, bone and nerves for safer implant planning and precise diagnosis.",
+      "dummy": true,
+      "extra": false
     },
     {
       "icon": "gi-xray",
       "title": "Digital radiography",
-      "text": "Instant, high-resolution X-rays with much lower radiation than traditional film."
+      "text": "Instant, high-resolution X-rays with much lower radiation than traditional film.",
+      "dummy": true,
+      "extra": false
     },
     {
       "icon": "gi-scanner",
       "title": "3D intraoral scanner",
-      "text": "Fast, comfortable digital impressions, with no messy trays or gagging."
+      "text": "Fast, comfortable digital impressions, with no messy trays or gagging.",
+      "dummy": true,
+      "extra": false
     },
     {
       "icon": "gi-camera",
       "title": "Intraoral camera",
-      "text": "See exactly what we see, on screen, so every treatment decision is clear."
+      "text": "See exactly what we see, on screen, so every treatment decision is clear.",
+      "dummy": true,
+      "extra": false
     },
     {
       "icon": "gi-cerec",
       "title": "CEREC same-day crowns",
-      "text": "Crowns designed, milled and fitted in a single visit, with no temporaries."
+      "text": "Crowns designed, milled and fitted in a single visit, with no temporaries.",
+      "dummy": true,
+      "extra": true
     },
     {
       "icon": "gi-laser",
       "title": "Soft-tissue dental laser",
-      "text": "Gentler gum treatments with less bleeding, fewer stitches and faster healing."
+      "text": "Gentler gum treatments with less bleeding, fewer stitches and faster healing.",
+      "dummy": true,
+      "extra": true
     },
     {
       "icon": "gi-smile-design",
       "title": "Digital smile design",
-      "text": "Preview your new smile before treatment begins, and shape it together with us."
+      "text": "Preview your new smile before treatment begins, and shape it together with us.",
+      "dummy": true,
+      "extra": true
     },
     {
       "icon": "gi-anesthesia",
       "title": "Computer-guided anesthesia",
-      "text": "Precise, steady numbing for a far more comfortable injection."
+      "text": "Precise, steady numbing for a far more comfortable injection.",
+      "dummy": true,
+      "extra": true
     }
-  ]
+  ],
+  "reviewsLink": {
+    "url": "https://www.google.com/maps/search/?api=1&query=1030+Holland+Rd+Holland+PA+18966",
+    "label": "Read our Google reviews",
+    "dummy": true,
+    "note": "Google Business Profile reviews URL"
+  },
+  "map": {
+    "query": "1030 Holland Rd, Holland, PA 18966",
+    "embed": "https://www.google.com/maps?q=1030+Holland+Rd,+Holland,+PA+18966&output=embed",
+    "directions": "https://www.google.com/maps/dir/?api=1&destination=1030+Holland+Rd,+Holland,+PA+18966"
+  },
+  "form": {
+    "endpoint": "",
+    "_comment": "Set to the form handler URL (e.g. Gravity Forms REST endpoint or a serverless function). Empty = demo mode: the form validates and shows the success state without sending.",
+    "reasons": [
+      "Check-up & cleaning",
+      "Emergency Dentistry",
+      "Dental Implants",
+      "Periodontal Treatment",
+      "General Dentistry",
+      "Cosmetic Dentistry",
+      "Orthodontics",
+      "Other"
+    ]
+  }
 }

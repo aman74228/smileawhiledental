@@ -13,7 +13,7 @@
       <p class="t-body-lg hero__subline" data-reveal>{{site.hero.subline}}</p>
 
       <div class="hero__ctas" data-reveal>
-        <a class="btn btn--primary hero__cta" href="{{site.booking.href}}" data-magnetic>
+        <a class="btn btn--primary hero__cta" href="{{bookHref}}" data-magnetic>
           <span class="btn__label">{{site.booking.label}}</span>
           <span class="btn__arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
         </a>
@@ -33,7 +33,7 @@
              (Invisalign Doctor Site, Dentsply Sirona/CEREC, ADA member toolkit, CareCredit Provider Center). -->
         <ul class="trust-logos" role="list">
           {{#each site.trust as t}}
-          <li class="logo-slot" data-placeholder="Placeholder: official {{t.name}} logo pending"><span class="logo-slot__text">{{t.name}}</span></li>
+          <li class="logo-slot" data-dummy="true" data-note="Placeholder: official {{t.name}} logo pending"><span class="logo-slot__text">{{t.name}}</span></li>
           {{/each}}
         </ul>
       </div>

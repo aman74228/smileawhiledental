@@ -38,8 +38,12 @@ const PHOTOS = [
     alt: 'Dr. Patel smiling in a treatment room' },
   { name: 'dr-patel-reception', file: 'dr-patel-reception.webp',
     crops: { '4x5': { left: 800, top: 0, width: 1229, height: 1536 },
-             '3x2': { left: 0, top: 85, width: 2048, height: 1365 } },
+             '3x2': { left: 0, top: 85, width: 2048, height: 1365 },
+             'portrait': { left: 968, top: 196, width: 864, height: 1080 } },
     glare: { x: 1332, y: 812, r: 95, strength: 0.6 },   // loupe headlamp (located by brightness scan)
+    // Meet the Doctor: mid-thigh up, centred, straightened 1.3° (measured from the wall corner),
+    // right edge stops before the water cooler.
+    straighten: { angle: -1.3, crops: ['portrait'] },
     alt: 'Dr. Patel standing beside the reception desk' },
   { name: 'team-member-reception-a', file: 'team-member-reception-a.webp',
     crops: { '4x5': { left: 1657, top: 0, width: 3427, height: 4284 } },
@@ -106,9 +110,19 @@ for (const photo of PHOTOS) {
     if (box.width < WIDTHS.at(-1)) widths.push(box.width);
     const sizes = [...new Set(widths)].sort((a, b) => a - b);
     const entry = { width: box.width, height: box.height, files: [] };
+    // Optional straightening for selected crops: rotate the graded image, then
+    // shift the crop box by the canvas growth so it still frames the same subject.
+    let src = base; let rbox = box;
+    if (photo.straighten?.crops.includes(ratio)) {
+      const meta = await sharp(base).metadata();
+      const rotated = await sharp(base).rotate(photo.straighten.angle, { background: '#ffffff' }).toBuffer();
+      const rm = await sharp(rotated).metadata();
+      src = rotated;
+      rbox = { ...box, left: box.left + Math.round((rm.width - meta.width) / 2), top: box.top + Math.round((rm.height - meta.height) / 2) };
+    }
     for (const w of sizes) {
       const h = Math.round((w * box.height) / box.width);
-      const pipe = sharp(base).extract(box).resize(w, h, { kernel: 'lanczos3' }).withMetadata({ orientation: undefined });
+      const pipe = sharp(src).extract(rbox).resize(w, h, { kernel: 'lanczos3' }).withMetadata({ orientation: undefined });
       const stem = `${photo.name}-${ratio}-${w}`;
       await pipe.clone().avif({ quality: 52, effort: 6, chromaSubsampling: '4:2:0' }).toFile(path.join(OUT, `${stem}.avif`));
       await pipe.clone().webp({ quality: 78, effort: 6 }).toFile(path.join(OUT, `${stem}.webp`));

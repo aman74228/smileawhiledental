@@ -1,0 +1,24 @@
+/* ==========================================================================
+   Section: closing CTA band — teal-700 panel (white text 7.41:1)
+   ========================================================================== */
+.cta-band { padding-block: var(--space-section-sm); }
+.cta-band__panel {
+  position: relative; overflow: hidden; isolation: isolate;
+  display: grid; justify-items: center; text-align: center; gap: var(--space-5);
+  padding: clamp(3.5rem, 2.5rem + 5vw, 7.5rem) var(--gutter);
+  border-radius: var(--radius-3xl);
+  background: var(--teal-700);
+  color: #fff;
+}
+.cta-band__panel::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background:
+    radial-gradient(55% 70% at 80% 0%, rgb(42 175 204 / 0.45), transparent 70%),
+    radial-gradient(45% 60% at 10% 100%, rgb(0 48 58 / 0.55), transparent 70%);
+}
+.cta-band__title { color: #fff; max-width: 16ch; }
+.cta-band__text { color: rgb(255 255 255 / 0.82); max-width: 40ch; font-size: var(--fs-body-lg); }
+.cta-band__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-3); margin-top: var(--space-4); }
+.btn--ghost-inverse { --btn-bg: transparent; --btn-fg: #fff; --btn-border: rgb(255 255 255 / 0.5); box-shadow: none; }
+.btn--ghost-inverse:hover { --btn-bg: rgb(255 255 255 / 0.1); --btn-border: #fff; }
+@media (hover: none) { .btn--ghost-inverse:hover { --btn-bg: transparent; } }

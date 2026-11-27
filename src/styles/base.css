@@ -30,6 +30,8 @@ body {
 }
 
 h1, h2, h3, h4, p, ul, ol, figure, blockquote, dl, dd { margin: 0; }
+/* The hidden attribute always wins over component display rules. */
+[hidden] { display: none !important; }
 /* :where() keeps this reset at zero specificity so component classes can set padding. */
 :where(ul, ol)[role="list"] { list-style: none; padding: 0; }
 img, picture, svg, video { display: block; max-width: 100%; }
@@ -87,17 +89,17 @@ a { color: var(--color-text-link); text-underline-offset: 0.18em; }
 /* ---------- Review mode (?review=1) ----------
    Default = clean client view: no markers. With ?review=1 the inline head
    script adds .review-mode, which:
-     • marks every [data-placeholder="note"] (unconfirmed content) with a dashed amber flag
-       (review.js turns the note into a tooltip)
+     • marks every [data-dummy="true"] element (sample/unconfirmed content) with a dashed amber flag
+       (review-mode.js turns its data-note into a tooltip)
      • reveals .review-only elements (e.g. "Interior photos coming soon" tiles) */
 .review-only { display: none !important; }
 .review-mode .review-only { display: revert !important; }
-.review-mode [data-placeholder] {
+.review-mode [data-dummy="true"] {
   text-decoration: underline dashed #C98A12;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.3em;
 }
-.review-mode [data-placeholder]:is(img, picture, .logo-slot) {
+.review-mode [data-dummy="true"]:is(img, picture, .logo-slot, .photo-slot, .team-card__photo) {
   padding-inline: 4px;
   text-decoration: none;
   outline: 1px dashed rgb(201 138 18 / 0.45); outline-offset: 4px; border-radius: 4px;

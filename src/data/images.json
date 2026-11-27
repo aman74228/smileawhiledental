@@ -126,6 +126,30 @@
             "webp": "dr-patel-reception-3x2-1600.webp"
           }
         ]
+      },
+      "portrait": {
+        "width": 864,
+        "height": 1080,
+        "files": [
+          {
+            "w": 480,
+            "h": 600,
+            "avif": "dr-patel-reception-portrait-480.avif",
+            "webp": "dr-patel-reception-portrait-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 1000,
+            "avif": "dr-patel-reception-portrait-800.avif",
+            "webp": "dr-patel-reception-portrait-800.webp"
+          },
+          {
+            "w": 864,
+            "h": 1080,
+            "avif": "dr-patel-reception-portrait-864.avif",
+            "webp": "dr-patel-reception-portrait-864.webp"
+          }
+        ]
       }
     }
   },

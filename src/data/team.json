@@ -1,0 +1,54 @@
+{
+  "_readme": "Doctor bio + team (ALL DUMMY copy and names). Photos: Linda = real About photo, Jessica = real reception photo (names/roles are dummy); Maria and Karen need photos.",
+  "doctor": {
+    "name": "Dr. Patel",
+    "title": "Dr. Patel, DMD",
+    "role": "Dentist",
+    "dummy": true,
+    "lede": "Dr. Patel believes a good dental visit starts with listening. He takes the time to understand what matters to you, explains every option in plain language, and never rushes a decision.",
+    "bio": [
+      "Dr. Patel's gentle approach puts nervous patients at ease, and his focus on family and cosmetic dentistry means everyone from a child's first check-up to a full smile makeover gets the same careful, unhurried attention.",
+      "He uses modern digital tools to show you exactly what he sees, so you always understand your treatment and its cost before anything begins. Outside the practice, he enjoys time with family and exploring Bucks County."
+    ],
+    "credentials": [
+      "Doctor of Dental Medicine (DMD)",
+      "Member, American Dental Association",
+      "Invisalign certified provider",
+      "Ongoing training in implant and cosmetic dentistry"
+    ]
+  },
+  "members": [
+    {
+      "name": "Linda",
+      "role": "Office Manager",
+      "photo": "team-member-reception-a",
+      "icon": "gi-general",
+      "dummy": true,
+      "bio": "Linda keeps the practice running smoothly and is usually the first friendly face you'll see at reception."
+    },
+    {
+      "name": "Maria",
+      "role": "Dental Hygienist",
+      "photo": "team-maria",
+      "icon": "gi-periodontal",
+      "dummy": true,
+      "bio": "Maria's gentle cleanings and practical tips help patients of every age keep their teeth and gums healthy."
+    },
+    {
+      "name": "Jessica",
+      "role": "Dental Assistant",
+      "photo": "team-member-reception-b",
+      "icon": "gi-implants",
+      "dummy": true,
+      "bio": "Jessica works chairside with Dr. Patel and makes sure you're comfortable at every step of your treatment."
+    },
+    {
+      "name": "Karen",
+      "role": "Patient Coordinator",
+      "photo": "team-karen",
+      "icon": "gi-cosmetic",
+      "dummy": true,
+      "bio": "Karen helps you schedule visits, understand your treatment plan and make the most of your insurance."
+    }
+  ]
+}

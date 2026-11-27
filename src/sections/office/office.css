@@ -1,55 +1,69 @@
 /* ==========================================================================
    Section: office
-   Client view: head → exterior (4:3, full width) + address caption.
-   Review view: on desktop the exterior shares the row (8 / 4) with a quiet
-   "Interior photos coming soon" tile; below 1024px everything is one column.
+   Head (title + intro) → split: exterior photo 7/12 (max 1080px) + "Arriving" card 5/12
+   → interior strip (2 photos + "full tour" link). Single column below 1024px.
    ========================================================================== */
-
-.office { padding-top: 0; }   /* flows straight on from About */
+.office { padding-top: 0; }
 
 .office__head { display: grid; gap: var(--space-6); margin-bottom: clamp(2.5rem, 2rem + 2vw, 4rem); }
 .office__title { margin-top: var(--space-5); max-width: 14ch; }
-.office__intro { display: grid; gap: var(--space-5); align-content: end; justify-items: start; }
-.office__intro .t-body-lg { max-width: 40ch; }
-.office__link { font-size: var(--fs-small); }
+.office__intro { max-width: 40ch; align-self: end; }
 
-.office__gallery { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-6); }
-.office__item { margin: 0; display: grid; gap: var(--space-3); min-width: 0; }
-.office__frame {
-  position: relative;
-  aspect-ratio: 4 / 3;
-  border-radius: var(--radius-2xl);
-  overflow: hidden;
-  background: var(--slate-100);
-}
+.office__split { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-5); }
+.office__photo { margin: 0; max-width: 1080px; }
+.office__frame { position: relative; aspect-ratio: 4 / 3; border-radius: var(--radius-2xl); overflow: hidden; background: var(--slate-100); }
 .office__frame picture { position: absolute; inset: 0; }
-.office__img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; /* 4:3 source is already cropped from the top */ }
-.office__caption { font-size: var(--fs-small); color: var(--color-text-muted); }
+.office__img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
 
-.office__pending {
-  display: grid; align-content: center; gap: var(--space-2);
-  min-height: 12rem;
-  padding: var(--space-8);
+.arrive-card {
+  display: grid; align-content: start; gap: var(--space-4);
+  padding: var(--space-8) var(--space-6);
   border-radius: var(--radius-2xl);
-  border: 1px dashed var(--slate-300);
-  background: var(--color-surface-sunken);
-  text-align: center;
+  background: var(--mesh-soft), var(--teal-25);
+  border: 1px solid var(--teal-50);
 }
-.office__pending-title { font-weight: var(--fw-medium); color: var(--color-text-secondary); }
-.office__pending-text { font-size: var(--fs-small); color: var(--color-text-muted); }
+.arrive-card__title { font-size: var(--fs-h3); font-weight: var(--fw-medium); letter-spacing: var(--ls-h3); line-height: var(--lh-h3); }
+.arrive-card__list { display: grid; gap: var(--space-3); margin-top: var(--space-2); }
+.arrive-card__list li { display: flex; align-items: center; gap: var(--space-3); color: var(--color-text-secondary); }
+.arrive-card__list svg { width: 18px; height: 18px; flex: none; color: var(--teal-700); }
+.arrive-card__list .link { font-size: inherit; }
+.arrive-card__cta { justify-self: start; margin-top: var(--space-4); }
 
+.office__strip { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-5); margin-top: var(--space-8); }
+.office__strip-item { margin: 0; display: grid; gap: var(--space-3); }
+.office__strip-frame { position: relative; aspect-ratio: 3 / 2; border-radius: var(--radius-xl); overflow: hidden; background: var(--slate-100); }
+.office__strip-frame picture, .office__strip-frame .photo-slot { position: absolute; inset: 0; }
+.office__caption { font-size: var(--fs-small); color: var(--color-text-muted); }
+.office__strip-more {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--space-4);
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  color: var(--color-text); text-decoration: none;
+  font-size: var(--fs-h4); font-weight: var(--fw-medium); letter-spacing: -0.015em;
+  transition: border-color var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
+}
+.office__strip-more-arrow { display: grid; place-items: center; width: 44px; height: 44px; flex: none; border-radius: 50%; background: var(--teal-50); color: var(--teal-700); transition: transform var(--dur-base) var(--ease-out); }
+.office__strip-more-arrow svg { width: 16px; height: 16px; }
+.office__strip-more:hover { border-color: transparent; box-shadow: var(--shadow-md); }
+.office__strip-more:hover .office__strip-more-arrow { transform: translateX(3px); }
+
+@media (min-width: 48rem) and (max-width: 63.99rem) {
+  .office__strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .office__strip-more { grid-column: 1 / -1; }
+}
 @media (min-width: 64rem) {
-  .office__head { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--grid-gap); align-items: end; }
+  .office__head { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--grid-gap); }
   .office__head > :first-child { grid-column: 1 / span 6; }
   .office__intro { grid-column: 8 / span 5; }
-
-  /* Full width, 4:3, but never taller than the viewport allows: the extra
-     height is cropped from the bottom (driveway), never the house. */
-  .office__frame { max-height: min(78svh, 46rem); width: 100%; }
-  /* When the cap letterboxes the frame, centre on the building (porch + door), not the sky. */
-  .office__img { object-position: 50% 68%; }
-
-  .review-mode .office__gallery { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--grid-gap); }
-  .review-mode .office__item--lg { grid-column: 1 / span 8; }
-  .review-mode .office__pending { grid-column: 9 / span 4; align-self: stretch; margin-bottom: calc(var(--space-3) + 1.4em); }
+  .office__split { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--grid-gap); align-items: stretch; }
+  .office__photo { grid-column: 1 / span 7; }
+  .arrive-card { grid-column: 8 / span 5; align-content: center; padding: var(--space-10); }
+  .office__strip { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--grid-gap); margin-top: var(--grid-gap); }
+  /* One shared height so captions align across different column widths. */
+  .office__strip-item:nth-child(1) { grid-column: 1 / span 5; }
+  .office__strip-item:nth-child(2) { grid-column: 6 / span 4; }
+  .office__strip-frame { aspect-ratio: auto; height: clamp(15rem, 20vw, 19rem); }
+  .office__strip-more { grid-column: 10 / span 3; flex-direction: column; align-items: flex-start; justify-content: space-between; align-self: start; height: clamp(15rem, 20vw, 19rem); }
+  .office__strip-more-arrow { align-self: flex-end; }
 }

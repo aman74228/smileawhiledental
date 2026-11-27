@@ -1,0 +1,61 @@
+{
+  "_readme": "Sample reviews (ALL DUMMY). Replace with real Google reviews used with the patient's permission. Never edit a patient's words. Nothing here may imply after-hours or emergency-call availability.",
+  "categories": [
+    "Invisalign",
+    "Implants",
+    "Family",
+    "Cosmetic",
+    "General"
+  ],
+  "items": [
+    {
+      "name": "Rachel M.",
+      "category": "Invisalign",
+      "rating": 5,
+      "featured": true,
+      "dummy": true,
+      "text": "I'd put off straightening my teeth for years because I assumed it would take over my life. Dr. Patel showed me exactly how the aligners would move my teeth before we started, and every check-in was quick and relaxed. I smile in photos now without thinking about it.",
+      "home": false
+    },
+    {
+      "name": "Tom K.",
+      "category": "Implants",
+      "rating": 5,
+      "dummy": true,
+      "text": "Replacing a back tooth felt like a big decision, but nothing was rushed. Every step was explained with my own scans on the screen, and the new tooth feels like it's always been there.",
+      "home": true
+    },
+    {
+      "name": "Priya S.",
+      "category": "Family",
+      "rating": 5,
+      "dummy": true,
+      "text": "Both of my kids used to dread the dentist. The team here is so patient with them that they now ask when their next visit is. Booking all three of us back to back is a huge help.",
+      "home": true
+    },
+    {
+      "name": "Daniel R.",
+      "category": "Cosmetic",
+      "rating": 5,
+      "dummy": true,
+      "text": "I wanted my smile to look brighter but still natural. We talked through options and costs first, with no pressure at all, and the result is exactly what I hoped for.",
+      "home": true
+    },
+    {
+      "name": "Linda W.",
+      "category": "General",
+      "rating": 5,
+      "dummy": true,
+      "text": "Friendly from the moment you walk in. My cleaning was gentle and thorough, and I left with a clear plan and no surprises on the bill.",
+      "home": false
+    },
+    {
+      "name": "Marcus J.",
+      "category": "Family",
+      "rating": 5,
+      "dummy": true,
+      "text": "We've brought the whole family here for check-ups. Appointments run on time, the office is calm and spotless, and everyone remembers our names.",
+      "home": false
+    }
+  ]
+}

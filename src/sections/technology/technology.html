@@ -1,9 +1,10 @@
 <!-- ===================== SECTION: technology (signature 1: pinned) =====================
      WP: template-parts/home/technology.php · items = ACF repeater (icon, title, text)
      Deep brand-teal band (--color-surface-brand) to break the white/grey rhythm.
-     ≥1024px: intro column is pinned (sticky) while the 8 items scroll past; the item at the
-     centre of the viewport becomes active and drives the counter + progress bar.
-     <1024px or reduced motion: a plain list, all items at full contrast.
+     ≥1024px: intro column is pinned (sticky) while the 8 items scroll past (~190px each); the item
+     at the viewport centre becomes active, drives the counter + progress bar, and a soft radial
+     glow glides to it.
+     <1024px: compact list, first 4 items + "Show all technology" toggle; full contrast, no pin.
      All items pending client confirmation that the equipment is in the practice.
      ==================================================================================== -->
 <section class="section tech" id="technology" aria-labelledby="tech-title" data-tech>
@@ -20,9 +21,11 @@
       </div>
     </div>
 
-    <ol class="tech__list" role="list" data-placeholder="Confirm each technology is in the practice">
+    <div class="tech__list-wrap">
+    <ol class="tech__list" id="tech-list" role="list" data-dummy="true" data-note="Confirm each technology is in the practice">
+      <li class="tech__glow" aria-hidden="true" data-tech-glow></li>
       {{#each site.technology as t}}
-      <li class="tech-item" data-tech-item>
+      <li class="tech-item{{#if t.extra}} tech-item--extra{{/if}}" data-tech-item>
         <span class="glass-tile tech-item__tile" aria-hidden="true"><svg><use href="#{{t.icon}}"/></svg></span>
         <div class="tech-item__text">
           <span class="tech-item__n t-num" aria-hidden="true">{{@n}}</span>
@@ -32,5 +35,10 @@
       </li>
       {{/each}}
     </ol>
+    <button class="tech__toggle" type="button" aria-expanded="false" aria-controls="tech-list" data-tech-toggle>
+      <span data-tech-toggle-label>Show all technology</span>
+      <svg aria-hidden="true"><use href="#ui-plus"/></svg>
+    </button>
+    </div>
   </div>
 </section>

@@ -1,0 +1,8 @@
+<article class="review-card" data-category="{{r.category}}" data-dummy="true" data-note="Sample review: replace with a real Google review (with permission)">
+  <div class="review-card__top">
+    <span class="tag">{{r.category}}</span>
+    <span class="review-card__stars" role="img" aria-label="Rated {{r.rating}} out of 5"><svg aria-hidden="true"><use href="#ui-star"/></svg><svg aria-hidden="true"><use href="#ui-star"/></svg><svg aria-hidden="true"><use href="#ui-star"/></svg><svg aria-hidden="true"><use href="#ui-star"/></svg><svg aria-hidden="true"><use href="#ui-star"/></svg></span>
+  </div>
+  <blockquote class="review-card__quote"><p>{{r.text}}</p></blockquote>
+  <p class="review-card__name">{{r.name}} <span class="review-card__source">· Google review</span></p>
+</article>

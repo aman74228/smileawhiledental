@@ -1,0 +1,648 @@
+{
+  "_readme": "Service categories (copy is DUMMY sample text unless noted). Drives the Services hub and the 6 category pages via src/templates/service.html. faqSchema is generated from faqs; keep them in sync if editing by hand (scripts regenerate it).",
+  "categories": [
+    {
+      "slug": "emergency-dentistry",
+      "name": "Emergency Dentistry",
+      "icon": "gi-emergency",
+      "tone": "plum",
+      "summary": "Urgent tooth pain? Call us during office hours and we'll prioritize you.",
+      "metaDescription": "Urgent tooth pain, a lost filling or a broken tooth? Call during office hours and we'll prioritize you. Holland, PA.",
+      "intro": "Dental problems rarely wait for a convenient moment. If you're in pain or something has broken, call us during office hours and we'll do our best to see you the same day, relieve your discomfort first, and then talk you through the options.",
+      "notice": "We don't offer an after-hours emergency line. Outside office hours, if you have severe swelling, trouble breathing or swallowing, or uncontrolled bleeding, go to your nearest emergency room or call 911.",
+      "items": [
+        {
+          "slug": "tooth-pain",
+          "name": "Tooth pain",
+          "text": "Toothache can have many causes, from a cracked filling to an infection. We'll find the source quickly with a gentle exam and digital X-rays, ease the pain, and explain what's needed to fix it properly.",
+          "dummy": true
+        },
+        {
+          "slug": "tooth-extraction-and-oral-surgery",
+          "name": "Tooth extraction & oral surgery",
+          "text": "When a tooth can't be saved, we remove it as gently as possible and make sure you're comfortable throughout. We'll also talk you through replacement options so there's a plan for what comes next.",
+          "dummy": true
+        },
+        {
+          "slug": "emergency-root-canal-treatment",
+          "name": "Emergency root canal treatment",
+          "text": "If a tooth's nerve is inflamed or infected, root canal treatment can relieve the pain and save the tooth. We start by making you comfortable, then clean and seal the tooth, often over one or two visits.",
+          "dummy": true
+        },
+        {
+          "slug": "lost-fillings",
+          "name": "Lost fillings",
+          "text": "A lost filling can leave a tooth sensitive and vulnerable. We'll clean the area and place a new tooth-colored filling, or a crown if the tooth needs more support.",
+          "dummy": true
+        },
+        {
+          "slug": "dental-abscess-and-infection",
+          "name": "Dental abscess & infection",
+          "text": "Swelling, throbbing pain or a bad taste can be signs of infection. We'll assess it promptly, start treatment to bring it under control, and explain how to stop it coming back.",
+          "dummy": true
+        },
+        {
+          "slug": "dental-trauma",
+          "name": "Dental trauma",
+          "text": "Chipped, cracked or knocked teeth after a fall or sports injury should be seen quickly. Keep any broken pieces, call us during office hours, and we'll work to protect and restore the tooth.",
+          "dummy": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Call during office hours",
+          "text": "Tell us what's happening. We'll prioritize urgent pain and find you the earliest possible appointment."
+        },
+        {
+          "title": "Relief first",
+          "text": "A focused exam and digital X-rays help us find the cause and ease your discomfort straight away."
+        },
+        {
+          "title": "A clear plan",
+          "text": "We explain the options and costs for a lasting fix, so there are no surprises."
+        }
+      ],
+      "tech": [
+        "gi-xray",
+        "gi-camera",
+        "gi-anesthesia"
+      ],
+      "faqs": [
+        {
+          "q": "Do you offer 24/7 emergency care?",
+          "a": "No. We don't have an after-hours line. Call during office hours and we'll prioritize urgent problems. For severe swelling, difficulty breathing or uncontrolled bleeding, go to the nearest emergency room."
+        },
+        {
+          "q": "What should I do if a tooth is knocked out?",
+          "a": "Handle it by the crown, not the root, rinse it gently and try to place it back in the socket or keep it in milk. Call us straight away during office hours; outside them, visit an emergency room."
+        },
+        {
+          "q": "Can I be seen the same day?",
+          "a": "We keep time aside each day for urgent problems and will always try to see you the same day when you call during office hours."
+        }
+      ],
+      "dummy": true,
+      "image": "service-emergency-dentistry",
+      "faqSchema": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do you offer 24/7 emergency care?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. We don't have an after-hours line. Call during office hours and we'll prioritize urgent problems. For severe swelling, difficulty breathing or uncontrolled bleeding, go to the nearest emergency room."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What should I do if a tooth is knocked out?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Handle it by the crown, not the root, rinse it gently and try to place it back in the socket or keep it in milk. Call us straight away during office hours; outside them, visit an emergency room."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I be seen the same day?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We keep time aside each day for urgent problems and will always try to see you the same day when you call during office hours."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "slug": "dental-implants",
+      "name": "Dental Implants",
+      "icon": "gi-implants",
+      "tone": "teal-deep",
+      "summary": "Single teeth, full arches and All-on-4, planned around you.",
+      "metaDescription": "Dental implants in Holland, PA: single teeth, multiple teeth, full arch, All-on-4, implant dentures and ceramic implants, planned in 3D.",
+      "intro": "Dental implants replace missing teeth with a secure, natural-looking result that's built to last. We plan every case carefully with 3D imaging, explain each option and its cost, and move at a pace that suits you.",
+      "items": [
+        {
+          "slug": "single-tooth-implant",
+          "name": "Single tooth implant",
+          "text": "A single implant replaces one missing tooth without involving the teeth on either side. Once healed, it's topped with a custom crown matched to your smile.",
+          "dummy": true
+        },
+        {
+          "slug": "multiple-tooth-implants",
+          "name": "Multiple tooth implants",
+          "text": "Where several teeth are missing, a small number of implants can support a bridge, restoring your bite without a removable appliance.",
+          "dummy": true
+        },
+        {
+          "slug": "full-arch-implants",
+          "name": "Full arch implants",
+          "text": "A complete set of fixed teeth can be supported on a few carefully placed implants, giving you a stable, confident smile for everyday eating and speaking.",
+          "dummy": true
+        },
+        {
+          "slug": "all-on-4-systems",
+          "name": "All-on-4 systems",
+          "text": "All-on-4 uses four implants to support a full arch of fixed teeth. In many cases it reduces the need for bone grafting and shortens overall treatment time.",
+          "dummy": true
+        },
+        {
+          "slug": "implant-dentures",
+          "name": "Implant dentures",
+          "text": "Clip-in or fixed dentures anchored to implants stay firmly in place, so you can eat and talk without worrying about slipping.",
+          "dummy": true
+        },
+        {
+          "slug": "ceramic-implants",
+          "name": "Ceramic implants",
+          "text": "For patients who prefer a metal-free option, ceramic implants offer a tooth-colored alternative. We'll talk through whether they're right for your situation.",
+          "dummy": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Consultation & 3D scan",
+          "text": "We look at your teeth, gums and bone in 3D and talk through what you'd like to achieve."
+        },
+        {
+          "title": "Your personal plan",
+          "text": "You'll get a written plan with timings and costs, so you can decide with confidence."
+        },
+        {
+          "title": "Placement & new teeth",
+          "text": "After a comfortable placement and healing period, your custom crown, bridge or denture is fitted."
+        }
+      ],
+      "tech": [
+        "gi-cbct",
+        "gi-scanner",
+        "gi-smile-design"
+      ],
+      "faqs": [
+        {
+          "q": "Am I a candidate for dental implants?",
+          "a": "Most adults with good general health can have implants. We'll check your gums and bone with a 3D scan and explain any extra steps, such as grafting, before you decide."
+        },
+        {
+          "q": "How long does implant treatment take?",
+          "a": "It depends on your case. Many patients need a few months from placement to final teeth to allow healing. Your plan will set out a realistic timeline."
+        },
+        {
+          "q": "Do implants hurt?",
+          "a": "Placement is done with local anesthetic, and most patients say it was more comfortable than they expected. We'll give you clear aftercare advice for the first few days."
+        }
+      ],
+      "dummy": true,
+      "image": "service-dental-implants",
+      "faqSchema": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Am I a candidate for dental implants?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most adults with good general health can have implants. We'll check your gums and bone with a 3D scan and explain any extra steps, such as grafting, before you decide."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does implant treatment take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It depends on your case. Many patients need a few months from placement to final teeth to allow healing. Your plan will set out a realistic timeline."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do implants hurt?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Placement is done with local anesthetic, and most patients say it was more comfortable than they expected. We'll give you clear aftercare advice for the first few days."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "slug": "periodontal-treatment",
+      "name": "Periodontal Treatment",
+      "icon": "gi-periodontal",
+      "tone": "teal",
+      "summary": "Gum disease treatment, sinus lifts and laser gum shaping.",
+      "metaDescription": "Gum disease treatment, scaling and root planing, crown lengthening, sinus lifts and laser gum shaping in Holland, PA.",
+      "intro": "Healthy gums are the foundation of a healthy smile. We treat gum disease gently, help you keep it under control, and offer procedures that prepare your mouth for implants or improve the shape of your gumline.",
+      "items": [
+        {
+          "slug": "sinus-lift",
+          "name": "Sinus lift",
+          "text": "A sinus lift adds bone to the upper jaw so there's enough support for implants. It's a routine procedure, carefully planned with 3D imaging.",
+          "dummy": true
+        },
+        {
+          "slug": "crown-lengthening",
+          "name": "Crown lengthening",
+          "text": "Crown lengthening reshapes gum and bone to expose more of a tooth, either to support a new crown or to balance a gummy smile.",
+          "dummy": true
+        },
+        {
+          "slug": "scaling-and-root-planing-gum-disease-treatment",
+          "name": "Scaling & root planing (gum disease treatment)",
+          "text": "This deep clean removes build-up from below the gumline and smooths root surfaces so gums can heal and reattach. It's often the first step in treating gum disease.",
+          "dummy": true
+        },
+        {
+          "slug": "laser-gum-shaping",
+          "name": "Laser gum shaping",
+          "text": "A soft-tissue laser can gently reshape uneven gums with less bleeding and quicker healing, for a more balanced smile.",
+          "dummy": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Gum health check",
+          "text": "We measure your gums, review X-rays and show you what we find on screen."
+        },
+        {
+          "title": "Gentle treatment",
+          "text": "Treatment is carried out comfortably, often over one or two visits, with numbing as needed."
+        },
+        {
+          "title": "Keeping it healthy",
+          "text": "Regular maintenance visits and simple home-care tips help keep gum disease under control."
+        }
+      ],
+      "tech": [
+        "gi-laser",
+        "gi-xray",
+        "gi-camera"
+      ],
+      "faqs": [
+        {
+          "q": "What are the signs of gum disease?",
+          "a": "Bleeding when brushing, red or swollen gums, bad breath and gums that look like they're pulling away from the teeth are common signs. It's often painless early on, so regular check-ups matter."
+        },
+        {
+          "q": "Is scaling and root planing painful?",
+          "a": "We numb the area first, so most patients feel only pressure. Gums can be a little tender for a day or two afterwards."
+        },
+        {
+          "q": "Can gum disease be reversed?",
+          "a": "Early gum disease can often be reversed with professional cleaning and good home care. More advanced disease can be controlled with treatment and regular maintenance."
+        }
+      ],
+      "dummy": true,
+      "image": "service-periodontal-treatment",
+      "faqSchema": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What are the signs of gum disease?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Bleeding when brushing, red or swollen gums, bad breath and gums that look like they're pulling away from the teeth are common signs. It's often painless early on, so regular check-ups matter."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is scaling and root planing painful?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We numb the area first, so most patients feel only pressure. Gums can be a little tender for a day or two afterwards."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can gum disease be reversed?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Early gum disease can often be reversed with professional cleaning and good home care. More advanced disease can be controlled with treatment and regular maintenance."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "slug": "general-dentistry",
+      "name": "General Dentistry",
+      "icon": "gi-general",
+      "tone": "teal",
+      "summary": "Check-ups, fillings, crowns, root canals and dentures.",
+      "metaDescription": "General and family dentistry in Holland, PA: check-ups, cleanings, fillings, crowns, bridges, root canals, TMJ care and dentures.",
+      "intro": "Everyday dental care for every age, from a child's first visit to keeping grandparents' smiles comfortable. We focus on prevention, explain everything clearly, and keep treatment as simple as possible.",
+      "items": [
+        {
+          "slug": "dental-crowns-and-bridges",
+          "name": "Dental crowns & bridges",
+          "text": "Crowns protect and strengthen damaged teeth, while bridges fill gaps left by missing teeth. Both are custom-made to match your natural smile.",
+          "dummy": true
+        },
+        {
+          "slug": "root-canals-and-endodontic-re-treatment",
+          "name": "Root canals & endodontic re-treatment",
+          "text": "Root canal treatment saves an infected tooth by cleaning and sealing it inside. If an older root canal has failed, re-treatment can often save the tooth again.",
+          "dummy": true
+        },
+        {
+          "slug": "cavities-and-fillings",
+          "name": "Cavities & fillings",
+          "text": "We repair cavities with tooth-colored fillings that blend in naturally, using careful numbing so you stay comfortable.",
+          "dummy": true
+        },
+        {
+          "slug": "bite-correction",
+          "name": "Bite correction",
+          "text": "An uneven bite can cause wear, sensitivity or jaw discomfort. We'll find the cause and suggest simple adjustments or restorations to balance it.",
+          "dummy": true
+        },
+        {
+          "slug": "grinding-and-clenching-solutions",
+          "name": "Grinding & clenching solutions",
+          "text": "Grinding can wear teeth down and cause headaches. A custom night guard protects your teeth while you sleep.",
+          "dummy": true
+        },
+        {
+          "slug": "routine-care",
+          "name": "Routine care",
+          "text": "Regular check-ups and cleanings catch small problems early, keep your gums healthy and leave your teeth feeling fresh.",
+          "dummy": true
+        },
+        {
+          "slug": "tmj",
+          "name": "TMJ",
+          "text": "Jaw pain, clicking or headaches can be linked to the jaw joint. We'll assess your bite and jaw and talk through treatments to ease discomfort.",
+          "dummy": true
+        },
+        {
+          "slug": "dentures",
+          "name": "Dentures",
+          "text": "Full and partial dentures are made to fit comfortably and look natural. We'll help you adjust and keep them fitting well over time.",
+          "dummy": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "A relaxed chat",
+          "text": "Tell us about any concerns before we start. We listen before we look."
+        },
+        {
+          "title": "Thorough check-up",
+          "text": "A gentle exam, cleaning and digital X-rays where needed."
+        },
+        {
+          "title": "Clear next steps",
+          "text": "You'll leave knowing what's healthy, what needs attention and what it costs."
+        }
+      ],
+      "tech": [
+        "gi-xray",
+        "gi-camera",
+        "gi-cerec"
+      ],
+      "faqs": [
+        {
+          "q": "How often should I have a check-up?",
+          "a": "Most people benefit from a check-up and cleaning every six months. We'll recommend what's right for you based on your teeth and gums."
+        },
+        {
+          "q": "Do you see children?",
+          "a": "Yes. We see the whole family, and we take extra time to make children's visits relaxed and positive."
+        },
+        {
+          "q": "Do you accept insurance?",
+          "a": "We work with many dental insurance plans and will help you understand your benefits. Call us to check your plan."
+        }
+      ],
+      "dummy": true,
+      "image": "service-general-dentistry",
+      "faqSchema": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How often should I have a check-up?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most people benefit from a check-up and cleaning every six months. We'll recommend what's right for you based on your teeth and gums."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you see children?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We see the whole family, and we take extra time to make children's visits relaxed and positive."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you accept insurance?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We work with many dental insurance plans and will help you understand your benefits. Call us to check your plan."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "slug": "cosmetic-dentistry",
+      "name": "Cosmetic Dentistry",
+      "icon": "gi-cosmetic",
+      "tone": "mist",
+      "summary": "Veneers, whitening, reshaping and total smile restoration.",
+      "metaDescription": "Cosmetic dentistry in Holland, PA: porcelain and minimal-prep veneers, whitening, tooth reshaping and total smile restoration.",
+      "intro": "Small changes can make a big difference to how you feel about your smile. We aim for natural-looking results, preview your new smile digitally before we begin, and always explain your options and costs first.",
+      "items": [
+        {
+          "slug": "porcelain-veneers",
+          "name": "Porcelain veneers",
+          "text": "Thin porcelain shells bonded to the front of your teeth can improve their color, shape and alignment for a natural, long-lasting finish.",
+          "dummy": true
+        },
+        {
+          "slug": "minimal-prep-veneers",
+          "name": "Minimal-prep veneers",
+          "text": "Minimal-prep veneers need little or no reshaping of your natural teeth, making them a conservative way to refresh your smile.",
+          "dummy": true
+        },
+        {
+          "slug": "single-tooth-veneer",
+          "name": "Single tooth veneer",
+          "text": "A single veneer can disguise one chipped, discolored or uneven tooth, carefully color-matched to its neighbors.",
+          "dummy": true
+        },
+        {
+          "slug": "tooth-reshaping",
+          "name": "Tooth reshaping",
+          "text": "Gentle reshaping smooths small chips and uneven edges in a single visit, with no anesthetic usually needed.",
+          "dummy": true
+        },
+        {
+          "slug": "tooth-whitening",
+          "name": "Tooth whitening",
+          "text": "Professional whitening brightens your smile safely, using custom trays or in-office treatment tailored to you.",
+          "dummy": true
+        },
+        {
+          "slug": "total-smile-restoration",
+          "name": "Total smile restoration",
+          "text": "For bigger changes, we combine treatments such as veneers, crowns and whitening into one coordinated plan, previewed before we start.",
+          "dummy": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Talk about your goals",
+          "text": "Show us what you'd like to change and we'll discuss what's possible."
+        },
+        {
+          "title": "Preview your smile",
+          "text": "Digital smile design lets you see the result and refine it before treatment begins."
+        },
+        {
+          "title": "Treatment & finish",
+          "text": "Your treatment is carried out carefully, with time to review and fine-tune the final look."
+        }
+      ],
+      "tech": [
+        "gi-smile-design",
+        "gi-scanner",
+        "gi-cerec"
+      ],
+      "faqs": [
+        {
+          "q": "Will veneers look natural?",
+          "a": "Yes. Each veneer is shaped and color-matched to suit your face and the rest of your smile. You'll preview the design before anything is made."
+        },
+        {
+          "q": "Is professional whitening safe?",
+          "a": "When supervised by a dentist, whitening is safe for most people. We'll check your teeth first and recommend the gentlest effective option."
+        },
+        {
+          "q": "How long do veneers last?",
+          "a": "With good care and regular check-ups, porcelain veneers can last many years. We'll explain how to look after them."
+        }
+      ],
+      "dummy": true,
+      "image": "service-cosmetic-dentistry",
+      "faqSchema": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Will veneers look natural?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Each veneer is shaped and color-matched to suit your face and the rest of your smile. You'll preview the design before anything is made."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is professional whitening safe?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "When supervised by a dentist, whitening is safe for most people. We'll check your teeth first and recommend the gentlest effective option."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long do veneers last?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "With good care and regular check-ups, porcelain veneers can last many years. We'll explain how to look after them."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "slug": "orthodontics",
+      "name": "Orthodontics",
+      "icon": "gi-orthodontics",
+      "tone": "mist",
+      "summary": "Clear aligners to straighten your smile, discreetly.",
+      "metaDescription": "Clear aligner orthodontics in Holland, PA: straighten your teeth discreetly with removable aligners planned digitally.",
+      "intro": "Clear aligners straighten teeth with a series of nearly invisible, removable trays. We plan your treatment digitally, so you can see how your teeth will move before you start, and fit check-ins around your schedule.",
+      "items": [
+        {
+          "slug": "clear-aligners",
+          "name": "Clear aligners",
+          "text": "Custom aligners gradually move your teeth into place. You can take them out to eat, brush and floss, and most people won't notice you're wearing them.",
+          "dummy": true
+        }
+      ],
+      "steps": [
+        {
+          "title": "Digital scan",
+          "text": "A quick, comfortable 3D scan replaces messy impressions."
+        },
+        {
+          "title": "See your new smile",
+          "text": "We show you a preview of how your teeth will move, step by step."
+        },
+        {
+          "title": "Wear & check in",
+          "text": "Wear your aligners as directed, with short check-ins to track progress."
+        }
+      ],
+      "tech": [
+        "gi-scanner",
+        "gi-smile-design",
+        "gi-camera"
+      ],
+      "faqs": [
+        {
+          "q": "How long does clear aligner treatment take?",
+          "a": "It varies with how much your teeth need to move. Many adult cases take several months to a year or more; we'll give you a personal estimate after your scan."
+        },
+        {
+          "q": "How many hours a day do I wear aligners?",
+          "a": "For the best results, aligners are usually worn most of the day and night, and removed only to eat, drink anything but water, and clean your teeth."
+        },
+        {
+          "q": "Am I too old for aligners?",
+          "a": "There's no upper age limit. As long as your teeth and gums are healthy, aligners can work at any adult age."
+        }
+      ],
+      "dummy": true,
+      "image": "service-orthodontics",
+      "faqSchema": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How long does clear aligner treatment take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It varies with how much your teeth need to move. Many adult cases take several months to a year or more; we'll give you a personal estimate after your scan."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How many hours a day do I wear aligners?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For the best results, aligners are usually worn most of the day and night, and removed only to eat, drink anything but water, and clean your teeth."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Am I too old for aligners?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "There's no upper age limit. As long as your teeth and gums are healthy, aligners can work at any adult age."
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

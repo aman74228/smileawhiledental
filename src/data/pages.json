@@ -1,0 +1,56 @@
+{
+  "_readme": "Per-page <title>, meta description and nav section. {name} is replaced with site.name. hasForm = page contains the #appointment form (Book links stay on-page).",
+  "home": {
+    "title": "{name} | Family & Cosmetic Dentist in Holland, PA",
+    "description": "Calm, expert dental care in Holland, PA. Personal, unhurried care for the whole family, from routine check-ups to implants and Invisalign.",
+    "path": "/",
+    "section": "home",
+    "hasForm": true
+  },
+  "practice": {
+    "title": "Our Practice | Meet Dr. Patel & the Team | {name}",
+    "description": "Meet Dr. Patel and the team, take a look around our Holland, PA office, and find directions, parking and opening hours.",
+    "path": "/our-practice/",
+    "section": "practice"
+  },
+  "services": {
+    "title": "Dental Services in Holland, PA | {name}",
+    "description": "Family, cosmetic, implant, gum and orthodontic care in Holland, PA, plus same-day help for urgent tooth pain during office hours.",
+    "path": "/services/",
+    "section": "services"
+  },
+  "service": {
+    "section": "services"
+  },
+  "testimonials": {
+    "title": "Patient Reviews | {name}",
+    "description": "What patients say about their visits to our Holland, PA dental practice, from Invisalign and implants to family check-ups.",
+    "path": "/testimonials/",
+    "section": "testimonials"
+  },
+  "contact": {
+    "title": "Contact & Book an Appointment | {name}",
+    "description": "Book an appointment, call the practice or find directions to 1030 Holland Rd, Holland, PA. Free parking right outside.",
+    "path": "/contact/",
+    "section": "contact",
+    "hasForm": true
+  },
+  "privacy": {
+    "title": "Privacy Policy | {name}",
+    "description": "How we collect, use and protect your personal information.",
+    "path": "/privacy/",
+    "section": "legal"
+  },
+  "terms": {
+    "title": "Terms of Use | {name}",
+    "description": "Terms that apply to using this website.",
+    "path": "/terms/",
+    "section": "legal"
+  },
+  "notfound": {
+    "title": "Page not found | {name}",
+    "description": "This page doesn't exist. Head back home or book an appointment.",
+    "path": "/404.html",
+    "section": "none"
+  }
+}

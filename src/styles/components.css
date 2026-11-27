@@ -129,3 +129,26 @@
 /* ---------- Glass tile XL (treatment visuals) ---------- */
 .glass-tile--xl { --size: 104px; border-radius: 28px; }
 .glass-tile--xl svg { width: 60px; height: 60px; }
+
+/* ---------- Photo slot: branded stand-in for a stock/practice photo not yet supplied ----------
+   Rendered by @picture when the image isn't in the manifest (always data-dummy="true"). */
+.photo-slot {
+  position: relative;
+  width: 100%; height: 100%;
+  aspect-ratio: var(--slot-ratio, 4 / 3);
+  display: grid; place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(55% 65% at 25% 20%, rgb(42 175 204 / 0.26), transparent 70%),
+    radial-gradient(50% 60% at 85% 90%, rgb(117 200 222 / 0.22), transparent 70%),
+    var(--teal-25);
+}
+.photo-slot::before, .photo-slot::after {
+  content: ""; position: absolute; left: 50%; top: 50%; aspect-ratio: 1; border-radius: 50%;
+  translate: -50% -50%; border: 1px solid rgb(255 255 255 / 0.75);
+}
+.photo-slot::before { width: min(46%, 220px); box-shadow: inset 0 0 50px rgb(255 255 255 / 0.55); }
+.photo-slot::after { width: min(78%, 380px); border-color: rgb(255 255 255 / 0.45); }
+.photo-slot__tile { position: relative; z-index: 1; --size: 72px; border-radius: 20px; }
+.photo-slot__tile svg { width: 42px; height: 42px; }
+.review-mode .photo-slot::after { content: attr(aria-label); width: auto; aspect-ratio: auto; border: 0; top: auto; bottom: 12px; translate: -50% 0; font-size: 12px; color: #7A4D00; background: #FFF6E5; padding: 4px 10px; border-radius: 99px; white-space: nowrap; }

@@ -1,0 +1,35 @@
+<!-- ===================== SECTION: reviews (featured quote + 3 cards) =====================
+     WP: template-parts/home/reviews.php · Reviews CPT or a Google reviews plugin feed
+     Driven by src/data/reviews.json (ALL DUMMY sample reviews until real ones are supplied).
+     ======================================================================================= -->
+<section class="section reviews" id="reviews" aria-labelledby="reviews-title">
+  <div class="container">
+    <div class="reviews__head">
+      <p class="eyebrow" data-reveal>Patient reviews</p>
+      <h2 class="t-h2 reviews__title" id="reviews-title" data-reveal>What our patients say</h2>
+    </div>
+
+    {{#each reviews.items as r}}{{#if r.featured}}
+    <figure class="reviews__featured" data-reveal data-dummy="true" data-note="Sample review: replace with a real 5-star Google review (with permission)">
+      <svg class="reviews__mark" viewBox="0 0 48 36" aria-hidden="true"><path d="M0 36V22.4C0 9.6 6.8 2.1 18.8 0l2 4.6C13.7 6.7 10.4 10.7 10 17h9.4v19H0Zm28 0V22.4C28 9.6 34.8 2.1 46.8 0l2 4.6C41.7 6.7 38.4 10.7 38 17h9.4v19H28Z"/></svg>
+      <blockquote class="reviews__quote"><p>{{r.text}}</p></blockquote>
+      <figcaption class="reviews__cite">
+        <span class="reviews__stars" role="img" aria-label="Rated {{r.rating}} out of 5"><svg aria-hidden="true"><use href="#ui-star"/></svg><svg aria-hidden="true"><use href="#ui-star"/></svg><svg aria-hidden="true"><use href="#ui-star"/></svg><svg aria-hidden="true"><use href="#ui-star"/></svg><svg aria-hidden="true"><use href="#ui-star"/></svg></span>
+        <span class="reviews__name">{{r.name}}</span>
+        <span class="tag">{{r.category}}</span>
+      </figcaption>
+    </figure>
+    {{/if}}{{/each}}
+
+    <div class="reviews__grid">
+      {{#each reviews.items as r}}{{#if r.home}}
+      <div class="reviews__cell" data-reveal><!-- @include src/partials/review-card.html --></div>
+      {{/if}}{{/each}}
+    </div>
+
+    <div class="reviews__ctas" data-reveal>
+      <a class="btn btn--secondary" href="/testimonials/">Read all reviews <span class="btn__arrow" aria-hidden="true" style="background:var(--teal-50);color:var(--teal-700)"><svg><use href="#ui-arrow"/></svg></span></a>
+      <a class="link" href="{{site.reviewsLink.url}}" target="_blank" rel="noopener" data-dummy="true" data-note="Google Business Profile reviews URL">{{site.reviewsLink.label}}<span aria-hidden="true"> ↗</span><span class="visually-hidden"> (opens in a new tab)</span></a>
+    </div>
+  </div>
+</section>

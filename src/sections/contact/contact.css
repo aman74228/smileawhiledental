@@ -1,0 +1,56 @@
+/* ==========================================================================
+   Section: contact — details list + click-to-load map facade
+   ========================================================================== */
+.contact__grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-10); }
+.contact__title { margin-top: var(--space-5); }
+.contact__list { display: grid; margin-top: var(--space-8); border-top: 1px solid var(--color-border); }
+.contact__row { display: grid; grid-template-columns: 8.5rem minmax(0, 1fr); gap: var(--space-4); padding: var(--space-5) 0; border-bottom: 1px solid var(--color-border); }
+.contact__row > dt { display: flex; align-items: center; gap: var(--space-3); align-self: start; font-size: var(--fs-small); font-weight: var(--fw-medium); color: var(--color-text-muted); }
+.contact__row > dt svg { width: 16px; height: 16px; color: var(--teal-700); }
+.contact__row > dd { margin: 0; color: var(--color-text-secondary); line-height: 1.6; }
+.contact__big { font-size: var(--fs-h4); font-weight: var(--fw-medium); color: var(--color-text); text-decoration: none; letter-spacing: -0.01em; }
+.contact__big:hover { color: var(--teal-700); }
+.contact__small { font-size: var(--fs-small); }
+.contact__note { margin-top: var(--space-6); font-size: var(--fs-small); color: var(--color-text-muted); max-width: 46ch; }
+.contact .hours-list { max-width: 20rem; }
+
+.open-status { display: inline-flex; align-items: center; gap: 8px; margin-bottom: var(--space-3); font-size: var(--fs-small); font-weight: var(--fw-medium); color: var(--color-text); }
+.open-status__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--slate-400); }
+.open-status.is-open .open-status__dot { background: var(--color-success); box-shadow: 0 0 0 4px rgb(28 122 78 / 0.15); }
+
+/* Map facade */
+.map-facade { position: relative; height: 100%; min-height: 26rem; border-radius: var(--radius-2xl); overflow: hidden; background: #EAF0F2; border: 1px solid var(--color-border); }
+.map-facade__art { position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, rgb(255 255 255 / 0.7) 1px, transparent 1px) 0 0 / 48px 48px,
+    linear-gradient(rgb(255 255 255 / 0.7) 1px, transparent 1px) 0 0 / 48px 48px,
+    radial-gradient(40% 50% at 70% 30%, rgb(42 175 204 / 0.18), transparent 70%),
+    radial-gradient(35% 40% at 20% 80%, rgb(130 180 130 / 0.18), transparent 70%),
+    #E9EFF1; }
+.map-facade__road { position: absolute; background: #fff; box-shadow: 0 0 0 1px rgb(37 49 62 / 0.06); border-radius: 8px; }
+.map-facade__road--a { left: -10%; right: -10%; top: 46%; height: 14px; transform: rotate(-8deg); }
+.map-facade__road--b { top: -10%; bottom: -10%; left: 58%; width: 12px; transform: rotate(14deg); }
+.map-facade__road--c { left: 10%; right: 30%; top: 72%; height: 8px; transform: rotate(4deg); }
+.map-facade__pin { position: absolute; left: 58%; top: 43%; translate: -50% -100%; display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50% 50% 50% 0; rotate: -45deg; background: var(--teal-600); box-shadow: var(--shadow-cta); }
+.map-facade__pin svg { width: 22px; height: 22px; color: #fff; rotate: 45deg; }
+.map-facade__card { position: absolute; left: var(--space-4); right: var(--space-4); bottom: var(--space-4); display: grid; gap: 6px; padding: var(--space-5); border-radius: var(--radius-xl); background: rgb(255 255 255 / 0.9); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: var(--shadow-glass), 0 0 0 1px var(--glass-hairline); }
+.map-facade__label { font-weight: var(--fw-medium); }
+.map-facade__addr { font-size: var(--fs-small); color: var(--color-text-muted); }
+.map-facade__actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3) var(--space-5); margin-top: var(--space-3); }
+.map-facade__hint { font-size: 0.75rem; color: var(--color-text-muted); margin-top: var(--space-1); }
+.map-facade iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.map-facade.is-loaded .map-facade__art, .map-facade.is-loaded .map-facade__card { display: none; }
+
+@media (min-width: 64rem) {
+  .contact__grid { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--grid-gap); align-items: stretch; }
+  .contact__info { grid-column: 1 / span 5; }
+  .contact__map { grid-column: 7 / span 6; }
+  .map-facade { min-height: 34rem; }
+  .map-facade__card { left: auto; right: var(--space-6); bottom: var(--space-6); width: min(24rem, 80%); }
+}
+
+/* Small phones: label above value so hours never wrap mid-range */
+@media (max-width: 29.99rem) {
+  .contact__row { grid-template-columns: minmax(0, 1fr); gap: var(--space-2); }
+  .contact .hours-list { max-width: none; }
+}

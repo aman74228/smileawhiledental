@@ -57,8 +57,8 @@
 }
 .site-nav__link:hover { color: var(--color-text); }
 .site-nav__link:hover::after { transform: scaleX(1); }
-.site-nav__link[aria-current="page"] { color: var(--color-text); }
-.site-nav__link[aria-current="page"]::after {
+.site-nav__link[aria-current="page"], .site-nav__trigger.is-current { color: var(--color-text); }
+.site-nav__link[aria-current="page"]::after, .site-nav__trigger.is-current::after {
   left: 50%; right: auto; bottom: -2px; width: 4px; height: 4px; border-radius: 50%;
   background: var(--teal-500); transform: translateX(-50%);
 }

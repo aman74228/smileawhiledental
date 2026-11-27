@@ -1,0 +1,58 @@
+<!-- ===================== SECTION: footer (global) =====================
+     WP: footer.php · columns from theme options; social from ACF repeater
+     [data-hide-sticky]: the mobile Call/Book bar hides while the footer is on screen.
+     ==================================================================== -->
+<footer class="site-footer" data-hide-sticky>
+  <div class="container site-footer__inner">
+    <div class="site-footer__brand">
+      <a class="wordmark wordmark--inverse{{#if site.wordmark.spaced}} wordmark--spaced{{/if}}" href="/" aria-label="{{site.name}}, home" data-dummy="true" data-note="Temporary text wordmark: final logo file needed">
+        <span aria-hidden="true">{{site.wordmark.lead}}<span class="wordmark__sub">{{site.wordmark.tail}}</span></span>
+      </a>
+      <p class="site-footer__tagline">Personal, calm dental care for the whole family in Holland, PA.</p>
+      <div class="site-footer__ctas">
+        <a class="btn btn--inverse btn--sm" href="{{bookHref}}">
+          <span class="btn__label">{{site.booking.label}}</span>
+          <span class="btn__arrow" aria-hidden="true"><svg><use href="#ui-arrow"/></svg></span>
+        </a>
+        <a class="link link--inverse" href="/contact/">Contact us</a>
+      </div>
+    </div>
+
+    <div class="site-footer__col">
+      <h2 class="site-footer__heading">Visit</h2>
+      <address class="site-footer__address">
+        {{site.address.street}}<br>{{site.address.city}}, {{site.address.region}} {{site.address.postalCode}}
+      </address>
+      <a class="link link--inverse site-footer__small" href="{{site.map.directions}}" target="_blank" rel="noopener">Get directions<span class="visually-hidden"> (opens Google Maps in a new tab)</span></a>
+      <h2 class="site-footer__heading site-footer__heading--spaced">Contact</h2>
+      <a class="site-footer__contact t-num" href="tel:{{site.phone.tel}}">{{site.phone.display}}</a>
+      <a class="site-footer__contact" href="mailto:{{site.email.value}}" data-dummy="true" data-note="Practice email address">{{site.email.value}}</a>
+    </div>
+
+    <div class="site-footer__col">
+      <h2 class="site-footer__heading">Hours</h2>
+      <dl class="hours-list hours-list--inverse t-num" data-dummy="true" data-note="Dummy hours: replace with the real opening hours">
+        {{#each site.hours.days as d}}<div class="hours-list__row"><dt>{{d.label}}</dt><dd>{{d.display}}</dd></div>{{/each}}
+      </dl>
+      <p class="site-footer__small site-footer__note">We don't offer after-hours emergency care. For urgent tooth pain, call us during office hours.</p>
+    </div>
+
+    <nav class="site-footer__col" aria-label="Footer">
+      <h2 class="site-footer__heading">Explore</h2>
+      <ul class="site-footer__links" role="list">
+        {{#each site.nav as n}}<li><a class="link link--inverse" href="{{n.href}}">{{n.label}}</a></li>{{/each}}
+      </ul>
+    </nav>
+  </div>
+
+  <div class="container site-footer__bottom">
+    <p class="site-footer__copy">© {{year}} {{site.name}}. All rights reserved.</p>
+    <ul class="site-footer__legal" role="list">
+      <li><a class="link link--inverse" href="/privacy/">Privacy policy</a></li>
+      <li><a class="link link--inverse" href="/terms/">Terms of use</a></li>
+    </ul>
+    <ul class="site-footer__social" role="list" aria-label="Social media">
+      {{#each site.social as so}}<li><a class="site-footer__social-link" href="{{so.url}}" target="_blank" rel="noopener" data-dummy="true" data-note="Dummy social URL: real {{so.name}} profile needed"><span class="visually-hidden">{{site.name}} on {{so.name}} (opens in a new tab)</span><svg aria-hidden="true"><use href="#ui-{{so.icon}}"/></svg></a></li>{{/each}}
+    </ul>
+  </div>
+</footer>

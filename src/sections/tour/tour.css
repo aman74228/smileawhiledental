@@ -1,0 +1,44 @@
+/* ==========================================================================
+   Section: tour (signature 2) — numbered steps joined by a scrubbed line
+   Mobile: vertical timeline (line on the left). Desktop: 3 columns, line across.
+   ========================================================================== */
+.tour { background: var(--color-surface-sunken); }
+.tour__head { display: grid; gap: var(--space-6); margin-bottom: clamp(2.5rem, 2rem + 2vw, 4rem); }
+.tour__title { margin-top: var(--space-5); max-width: 16ch; }
+.tour__intro { max-width: 40ch; align-self: end; }
+
+.tour__steps { position: relative; display: grid; gap: var(--space-10); padding-left: 56px; }
+.tour__line { position: absolute; left: 19px; top: 20px; bottom: 20px; width: 2px; background: var(--slate-200); border-radius: 2px; overflow: hidden; }
+.tour__line-fill { position: absolute; inset: 0; background: var(--teal-500); transform-origin: top; transform: scaleY(0); }
+
+.tour-step { position: relative; display: grid; gap: var(--space-4); align-content: start; }
+.tour-step__n {
+  position: absolute; left: -56px; top: 0;
+  display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%;
+  background: var(--slate-0); color: var(--color-text-muted);
+  box-shadow: 0 0 0 1px var(--slate-200);
+  font-size: var(--fs-small); font-weight: var(--fw-medium);
+  transition: background-color var(--dur-base) var(--ease-out), color var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
+}
+.tour-step.is-lit .tour-step__n { background: var(--teal-600); color: #fff; box-shadow: 0 0 0 6px rgb(42 175 204 / 0.18); }
+.tour-step__frame { position: relative; aspect-ratio: 4 / 3; border-radius: var(--radius-xl); overflow: hidden; background: var(--slate-100); }
+.tour-step__frame picture, .tour-step__frame .photo-slot { position: absolute; inset: 0; }
+.tour-step__img { width: 100%; height: 100%; object-fit: cover; }
+.tour-step__title { font-size: var(--fs-h4); font-weight: var(--fw-medium); letter-spacing: -0.015em; margin-top: var(--space-2); }
+.tour-step__text { color: var(--color-text-secondary); max-width: 36ch; }
+.tour__cta { margin-top: var(--space-12); }
+
+/* Before JS (or reduced motion): show steps lit */
+html:not(.js) .tour-step .tour-step__n, .reduced-motion .tour-step .tour-step__n { background: var(--teal-600); color: #fff; }
+html:not(.js) .tour__line-fill, .reduced-motion .tour__line-fill { transform: none; }
+
+@media (min-width: 64rem) {
+  .tour__head { grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--grid-gap); }
+  .tour__head > :first-child { grid-column: 1 / span 6; }
+  .tour__intro { grid-column: 8 / span 5; }
+  .tour__steps { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--grid-gap); padding-left: 0; padding-top: 64px; }
+  .tour__line { left: 20px; right: calc(33.333% - 20px); top: 19px; bottom: auto; width: auto; height: 2px; }
+  .tour__line-fill { transform-origin: left; transform: scaleX(0); }
+  html:not(.js) .tour__line-fill, .reduced-motion .tour__line-fill { transform: none; }
+  .tour-step__n { left: 0; top: -64px; }
+}
