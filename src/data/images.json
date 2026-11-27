@@ -1103,5 +1103,263 @@
       "unsplashId": "uTUsnv_UCSQ",
       "url": "https://unsplash.com/photos/uTUsnv_UCSQ"
     }
+  },
+  "treat-preventive": {
+    "alt": "A friendly dentist talking with a relaxed, smiling patient in the chair",
+    "crops": {
+      "16x10": {
+        "width": 3648,
+        "height": 2280,
+        "files": [
+          {
+            "w": 480,
+            "h": 300,
+            "avif": "treat-preventive-16x10-480.avif",
+            "webp": "treat-preventive-16x10-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 500,
+            "avif": "treat-preventive-16x10-800.avif",
+            "webp": "treat-preventive-16x10-800.webp"
+          },
+          {
+            "w": 1200,
+            "h": 750,
+            "avif": "treat-preventive-16x10-1200.avif",
+            "webp": "treat-preventive-16x10-1200.webp"
+          },
+          {
+            "w": 1600,
+            "h": 1000,
+            "avif": "treat-preventive-16x10-1600.avif",
+            "webp": "treat-preventive-16x10-1600.webp"
+          }
+        ]
+      }
+    },
+    "dir": "/images/stock/",
+    "dummy": true,
+    "note": "Dummy stock photo (Unsplash · Harold Hisona): replace with practice photography",
+    "credit": {
+      "photographer": "Harold Hisona",
+      "unsplashId": "Bg81yWKZlMg",
+      "url": "https://unsplash.com/photos/Bg81yWKZlMg"
+    }
+  },
+  "treat-invisalign": {
+    "alt": "A smiling woman fitting a clear aligner",
+    "crops": {
+      "16x10": {
+        "width": 2880,
+        "height": 1800,
+        "files": [
+          {
+            "w": 480,
+            "h": 300,
+            "avif": "treat-invisalign-16x10-480.avif",
+            "webp": "treat-invisalign-16x10-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 500,
+            "avif": "treat-invisalign-16x10-800.avif",
+            "webp": "treat-invisalign-16x10-800.webp"
+          },
+          {
+            "w": 1200,
+            "h": 750,
+            "avif": "treat-invisalign-16x10-1200.avif",
+            "webp": "treat-invisalign-16x10-1200.webp"
+          },
+          {
+            "w": 1600,
+            "h": 1000,
+            "avif": "treat-invisalign-16x10-1600.avif",
+            "webp": "treat-invisalign-16x10-1600.webp"
+          }
+        ]
+      }
+    },
+    "dir": "/images/stock/",
+    "dummy": true,
+    "note": "Dummy stock photo (Unsplash · Harold Hisona): replace with practice photography",
+    "credit": {
+      "photographer": "Harold Hisona",
+      "unsplashId": "uTUsnv_UCSQ",
+      "url": "https://unsplash.com/photos/uTUsnv_UCSQ"
+    }
+  },
+  "treat-implants": {
+    "alt": "A dental implant model used to explain treatment",
+    "crops": {
+      "16x10": {
+        "width": 5472,
+        "height": 3420,
+        "files": [
+          {
+            "w": 480,
+            "h": 300,
+            "avif": "treat-implants-16x10-480.avif",
+            "webp": "treat-implants-16x10-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 500,
+            "avif": "treat-implants-16x10-800.avif",
+            "webp": "treat-implants-16x10-800.webp"
+          },
+          {
+            "w": 1200,
+            "h": 750,
+            "avif": "treat-implants-16x10-1200.avif",
+            "webp": "treat-implants-16x10-1200.webp"
+          },
+          {
+            "w": 1600,
+            "h": 1000,
+            "avif": "treat-implants-16x10-1600.avif",
+            "webp": "treat-implants-16x10-1600.webp"
+          }
+        ]
+      }
+    },
+    "dir": "/images/stock/",
+    "dummy": true,
+    "note": "Dummy stock photo (Unsplash · Jonathan Borba): replace with practice photography",
+    "credit": {
+      "photographer": "Jonathan Borba",
+      "unsplashId": "W9YEY6G8LVM",
+      "url": "https://unsplash.com/photos/W9YEY6G8LVM"
+    }
+  },
+  "treat-emergency": {
+    "alt": "A dentist calmly explaining X-rays to a seated patient",
+    "crops": {
+      "16x10": {
+        "width": 4455,
+        "height": 2784,
+        "files": [
+          {
+            "w": 480,
+            "h": 300,
+            "avif": "treat-emergency-16x10-480.avif",
+            "webp": "treat-emergency-16x10-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 500,
+            "avif": "treat-emergency-16x10-800.avif",
+            "webp": "treat-emergency-16x10-800.webp"
+          },
+          {
+            "w": 1200,
+            "h": 750,
+            "avif": "treat-emergency-16x10-1200.avif",
+            "webp": "treat-emergency-16x10-1200.webp"
+          },
+          {
+            "w": 1600,
+            "h": 1000,
+            "avif": "treat-emergency-16x10-1600.avif",
+            "webp": "treat-emergency-16x10-1600.webp"
+          }
+        ]
+      }
+    },
+    "dir": "/images/stock/",
+    "dummy": true,
+    "note": "Dummy stock photo (Unsplash · Caroline LM): replace with practice photography",
+    "credit": {
+      "photographer": "Caroline LM",
+      "unsplashId": "-m-4tYmtLlI",
+      "url": "https://unsplash.com/photos/-m-4tYmtLlI"
+    }
+  },
+  "tour-explain": {
+    "alt": "A teeth model used to explain options before any treatment",
+    "crops": {
+      "4x3": {
+        "width": 4864,
+        "height": 3648,
+        "files": [
+          {
+            "w": 480,
+            "h": 360,
+            "avif": "tour-explain-4x3-480.avif",
+            "webp": "tour-explain-4x3-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 600,
+            "avif": "tour-explain-4x3-800.avif",
+            "webp": "tour-explain-4x3-800.webp"
+          },
+          {
+            "w": 1200,
+            "h": 900,
+            "avif": "tour-explain-4x3-1200.avif",
+            "webp": "tour-explain-4x3-1200.webp"
+          },
+          {
+            "w": 1600,
+            "h": 1200,
+            "avif": "tour-explain-4x3-1600.avif",
+            "webp": "tour-explain-4x3-1600.webp"
+          }
+        ]
+      }
+    },
+    "dir": "/images/stock/",
+    "dummy": true,
+    "note": "Dummy stock photo (Unsplash · Enis Yavuz): replace with practice photography",
+    "credit": {
+      "photographer": "Enis Yavuz",
+      "unsplashId": "4u2fG9mqGvQ",
+      "url": "https://unsplash.com/photos/4u2fG9mqGvQ"
+    }
+  },
+  "tour-checkup": {
+    "alt": "A dental mirror and probe for a gentle check-up",
+    "crops": {
+      "4x3": {
+        "width": 3479,
+        "height": 2609,
+        "files": [
+          {
+            "w": 480,
+            "h": 360,
+            "avif": "tour-checkup-4x3-480.avif",
+            "webp": "tour-checkup-4x3-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 600,
+            "avif": "tour-checkup-4x3-800.avif",
+            "webp": "tour-checkup-4x3-800.webp"
+          },
+          {
+            "w": 1200,
+            "h": 900,
+            "avif": "tour-checkup-4x3-1200.avif",
+            "webp": "tour-checkup-4x3-1200.webp"
+          },
+          {
+            "w": 1600,
+            "h": 1200,
+            "avif": "tour-checkup-4x3-1600.avif",
+            "webp": "tour-checkup-4x3-1600.webp"
+          }
+        ]
+      }
+    },
+    "dir": "/images/stock/",
+    "dummy": true,
+    "note": "Dummy stock photo (Unsplash · Caroline LM): replace with practice photography",
+    "credit": {
+      "photographer": "Caroline LM",
+      "unsplashId": "ux18C551ghI",
+      "url": "https://unsplash.com/photos/ux18C551ghI"
+    }
   }
 }

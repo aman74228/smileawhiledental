@@ -1,8 +1,11 @@
 <!-- ===================== SECTION: featured treatments =====================
-     WP: template-parts/home/treatments.php · items = ACF repeater or 4 picked Service posts
-     Without JS: cards in a grid (desktop) / snap carousel (mobile); tab links jump to cards.
-     With JS ≥1024px: the tab list becomes an accessible ARIA tablist controlling one visible card.
-     Copy from the content source; emergency copy per client (office hours only).
+     WP: template-parts/home/treatments.php · items = ACF repeater (title, text, tags, image) or 4 picked Service posts
+     ≥1024px + motion: section is PINNED; scrolling steps through the 4 treatments (≈62vh each,
+       snapped). The left list is an ARIA tablist (click / Enter / arrows / Home / End scroll to
+       that step). Card change: image clip-wipe + scale, text and tags swap with a 12px rise.
+     <1024px: swipeable carousel with "01 / 04" counter; cards fade up as they enter.
+     Reduced motion (any width): no pin, no wipe; a simple stacked list with fade-in only.
+     Images: dummy stock (data-dummy via @picture), 16:10, first image eager, others pre-warmed.
      ======================================================================== -->
 <section class="section treatments" id="treatments" aria-labelledby="treatments-title" data-treatments>
   <div class="container treatments__grid">
@@ -13,6 +16,7 @@
       <div class="treatments__tabs" data-treatments-tabs data-reveal>
         {{#each site.featured as f}}
         <a class="treatments__tab" href="#treatment-{{f.slug}}" id="tab-{{f.slug}}" data-treatments-tab>
+          <span class="treatments__tab-line" aria-hidden="true"><span class="treatments__tab-fill" data-tab-fill></span></span>
           <span class="treatments__tab-n t-num">{{@n}}</span>
           <span class="treatments__tab-label">{{f.title}}</span>
         </a>
@@ -25,25 +29,27 @@
       </div>
     </div>
 
-    <div class="treatments__stage" data-reveal>
+    <div class="treatments__stage">
       <div class="treatments__list" role="list" data-treatments-list>
         {{#each site.featured as f}}
-        <div class="treatment-card" id="treatment-{{f.slug}}" role="listitem" data-treatment>
-          <div class="treatment-card__visual treatment-card__visual--{{f.tone}}">
-            <span class="treatment-card__icon-wrap" aria-hidden="true">
-              <span class="treatment-card__pulse"></span>
-              <span class="glass-tile glass-tile--xl treatment-card__icon"><svg><use href="#{{f.icon}}"/></svg></span>
-            </span>
-            <ul class="treatment-card__tags" role="list" aria-label="Includes">
+        <article class="treatment-card" id="treatment-{{f.slug}}" role="listitem" aria-labelledby="treatment-{{f.slug}}-title" data-treatment>
+          <div class="treatment-card__media" data-treatment-media>
+            <div class="treatment-card__img-wrap" data-treatment-img>
+              {{#if @first}}<!-- @picture {{f.image}} 16x10 eager noprio class="treatment-card__img" sizes="(min-width: 1440px) 776px, (min-width: 1024px) 55vw, 86vw" -->{{/if}}
+              {{#unless @first}}<!-- @picture {{f.image}} 16x10 class="treatment-card__img" sizes="(min-width: 1440px) 776px, (min-width: 1024px) 55vw, 86vw" -->{{/unless}}
+            </div>
+            <span class="treatment-card__dim" aria-hidden="true" data-treatment-dim></span>
+            <span class="treatment-card__scrim" aria-hidden="true"></span>
+            <ul class="treatment-card__tags" role="list" aria-label="Includes" data-treatment-tags>
               {{#each f.tags as tag}}<li>{{tag}}</li>{{/each}}
             </ul>
           </div>
-          <div class="treatment-card__body">
-            <h3 class="t-h3 treatment-card__title">{{f.title}}</h3>
+          <div class="treatment-card__body" data-treatment-body>
+            <h3 class="t-h3 treatment-card__title" id="treatment-{{f.slug}}-title">{{f.title}}</h3>
             <p class="t-body treatment-card__text">{{f.text}}</p>
             <a class="link treatment-card__link" href="/services/{{f.slug}}/">Explore treatment<span class="visually-hidden">: {{f.title}}</span></a>
           </div>
-        </div>
+        </article>
         {{/each}}
       </div>
     </div>

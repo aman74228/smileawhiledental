@@ -20,7 +20,7 @@ Supplied in `dental_images.zip` (Unsplash downloads; filenames keep photographer
 |---|---|---|---|
 | `interior-treatment` | https://unsplash.com/photos/e7MJLM5VGjY | Benyamin Bohlouli | Home office strip; Our Practice gallery |
 | `interior-technology` | https://unsplash.com/photos/-m-4tYmtLlI | Caroline LM | Home tour step 3; Our Practice gallery |
-| `interior-consult` | https://unsplash.com/photos/Bg81yWKZlMg | Harold Hisona | Home tour step 2; Our Practice gallery |
+| `interior-consult` | https://unsplash.com/photos/Bg81yWKZlMg | Harold Hisona | Our Practice gallery |
 | `interior-xray` | https://unsplash.com/photos/v_2FRXEba94 | Jonathan Borba | Home office strip; Our Practice gallery |
 | `service-emergency-dentistry` | https://unsplash.com/photos/v_2FRXEba94 | Jonathan Borba | Emergency Dentistry page |
 | `service-dental-implants` | https://unsplash.com/photos/W9YEY6G8LVM | Jonathan Borba | Dental Implants page |
@@ -28,6 +28,12 @@ Supplied in `dental_images.zip` (Unsplash downloads; filenames keep photographer
 | `service-general-dentistry` | https://unsplash.com/photos/ux18C551ghI | Caroline LM | General Dentistry page |
 | `service-cosmetic-dentistry` | https://unsplash.com/photos/RCQnbyQsnUg | Kamal Hoseinianzade | Cosmetic Dentistry page |
 | `service-orthodontics` | https://unsplash.com/photos/uTUsnv_UCSQ | Harold Hisona | Orthodontics page |
+| `treat-preventive` | https://unsplash.com/photos/Bg81yWKZlMg | Harold Hisona | Home featured treatments: Preventive Care (16:10) |
+| `treat-invisalign` | https://unsplash.com/photos/uTUsnv_UCSQ | Harold Hisona | Home featured treatments: Invisalign (16:10) |
+| `treat-implants` | https://unsplash.com/photos/W9YEY6G8LVM | Jonathan Borba | Home featured treatments: Dental Implants (16:10) |
+| `treat-emergency` | https://unsplash.com/photos/-m-4tYmtLlI | Caroline LM | Home featured treatments: Emergency Dentistry (16:10) |
+| `tour-explain` | https://unsplash.com/photos/4u2fG9mqGvQ | Enis Yavuz | Home tour step 2 |
+| `tour-checkup` | https://unsplash.com/photos/ux18C551ghI | Caroline LM | Home tour step 3 |
 
 **Supplied but not used:**
 - `candid-WFsNCIn8OF4`: the aligner case shows a third-party brand name ("Candid").

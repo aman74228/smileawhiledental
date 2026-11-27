@@ -19,7 +19,7 @@ import '../sections/footer/footer.css';
 import '../sections/sticky-cta/sticky-cta.css';
 import '../styles/pages.css';
 
-import { initSmoothScroll, reducedMotion } from './motion.js';
+import { initSmoothScroll, reducedMotion, ScrollTrigger } from './motion.js';
 import { initMagnetic } from './magnetic.js';
 import { initReviewMode } from './review-mode.js';
 import { initReveals } from './reveal.js';
@@ -52,3 +52,8 @@ initPageWidgets();
 initReveals();
 initStickyCta();
 initMagnetic();
+
+// Recalculate every pin/trigger once images and fonts have settled (pins stack: Featured
+// Treatments' pin spacer shifts Advanced Technology and everything after it).
+window.addEventListener('load', () => ScrollTrigger.refresh());
+document.fonts?.ready.then(() => ScrollTrigger.refresh());

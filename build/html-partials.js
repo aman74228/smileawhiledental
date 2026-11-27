@@ -7,7 +7,7 @@
 //   {{@json service.faqSchema}}                        → wp_json_encode() inside <script type="application/ld+json">
 //   {{#each site.services as svc}}…{{/each}}           → foreach in PHP   ({{@n}} = 01, 02…; {{@index}} = 0, 1…)
 //   {{#if x}}…{{/if}} / {{#unless x}}…{{/unless}}      → if / if ( ! … ) in PHP
-//   <!-- @picture name ratio sizes="…" [eager] [class="…"] [alt="…"] [art="ratio|media|sizes"]
+//   <!-- @picture name ratio sizes="…" [eager [noprio]] [class="…"] [alt="…"] [art="ratio|media|sizes"]
 //                 [slot="gi-icon|What photo is needed"] -->
 //                                                      → wp_get_attachment_image() with srcset
 //     If the image isn't in the manifest yet and `slot` is given, a branded "photo slot"
@@ -106,7 +106,7 @@ function picture(args, images) {
   return `<picture${dummy}>${artSources}
   <source type="image/avif" srcset="${set(crop, 'avif')}" sizes="${sizes}">
   <source type="image/webp" srcset="${set(crop, 'webp')}" sizes="${sizes}">
-  <img src="${base}${largest.webp}" width="${largest.w}" height="${largest.h}" alt="${esc(attr('alt') ?? img.alt)}"${attr('class') ? ` class="${attr('class')}"` : ''} ${eager ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"'} decoding="async">
+  <img src="${base}${largest.webp}" width="${largest.w}" height="${largest.h}" alt="${esc(attr('alt') ?? img.alt)}"${attr('class') ? ` class="${attr('class')}"` : ''} ${eager ? (/\bnoprio\b/.test(args) ? 'loading="eager"' : 'loading="eager" fetchpriority="high"') : 'loading="lazy"'} decoding="async">
 </picture>`;
 }
 

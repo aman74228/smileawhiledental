@@ -99,6 +99,20 @@ const PHOTOS = [
       crops: { '4x3': { focus: [0.62, 0.45] } }, alt: 'A natural, bright smile' },
     { name: 'service-orthodontics', file: 'harold-hisona-uTUsnv_UCSQ-unsplash.jpg', credit: 'Harold Hisona', id: 'uTUsnv_UCSQ',
       crops: { '4x3': { focus: [0.5, 0.5] } }, alt: 'A woman fitting a clear aligner' },
+    // Featured Treatments (homepage): one shared 16:10 crop + the house grade across all four.
+    { name: 'treat-preventive', file: 'harold-hisona-Bg81yWKZlMg-unsplash.jpg', credit: 'Harold Hisona', id: 'Bg81yWKZlMg',
+      crops: { '16x10': { focus: [0.47, 0.5] } }, alt: 'A friendly dentist talking with a relaxed, smiling patient in the chair' },
+    { name: 'treat-invisalign', file: 'harold-hisona-uTUsnv_UCSQ-unsplash.jpg', credit: 'Harold Hisona', id: 'uTUsnv_UCSQ',
+      crops: { '16x10': { focus: [0.5, 0.45] } }, alt: 'A smiling woman fitting a clear aligner' },
+    { name: 'treat-implants', file: 'jonathan-borba-W9YEY6G8LVM-unsplash.jpg', credit: 'Jonathan Borba', id: 'W9YEY6G8LVM',
+      crops: { '16x10': { focus: [0.42, 0.55] } }, alt: 'A dental implant model used to explain treatment' },
+    { name: 'treat-emergency', file: 'caroline-lm--m-4tYmtLlI-unsplash.jpg', credit: 'Caroline LM', id: '-m-4tYmtLlI',
+      crops: { '16x10': { focus: [0.56, 0.45] } }, alt: 'A dentist calmly explaining X-rays to a seated patient' },
+    // Tour steps 2–3 (homepage), so no photo repeats on the page.
+    { name: 'tour-explain', file: 'enis-yavuz-4u2fG9mqGvQ-unsplash.jpg', credit: 'Enis Yavuz', id: '4u2fG9mqGvQ',
+      crops: { '4x3': { focus: [0.4, 0.5] } }, alt: 'A teeth model used to explain options before any treatment' },
+    { name: 'tour-checkup', file: 'caroline-lm-ux18C551ghI-unsplash.jpg', credit: 'Caroline LM', id: 'ux18C551ghI',
+      crops: { '4x3': { focus: [0.5, 0.35] } }, alt: 'A dental mirror and probe for a gentle check-up' },
   ].map((p) => ({ ...p, stock: true, dummy: true, note: `Dummy stock photo (Unsplash · ${p.credit}): replace with practice photography` })),
 ];
 

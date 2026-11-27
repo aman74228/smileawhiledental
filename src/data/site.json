@@ -243,50 +243,46 @@
     {
       "slug": "general-dentistry",
       "title": "Preventive Care",
-      "icon": "gi-general",
-      "tone": "teal",
       "text": "Thorough check-ups, gentle cleans and early detection that keep small problems from becoming big ones.",
       "tags": [
         "Check-ups",
         "Cleanings",
         "Digital X-rays"
-      ]
+      ],
+      "image": "treat-preventive"
     },
     {
       "slug": "orthodontics",
       "title": "Invisalign Clear Aligners",
-      "icon": "gi-orthodontics",
-      "tone": "mist",
       "text": "Straighten your smile with nearly invisible, removable aligners planned around your lifestyle.",
       "tags": [
         "Clear aligners",
         "Removable",
         "Planned digitally"
-      ]
+      ],
+      "image": "treat-invisalign"
     },
     {
       "slug": "dental-implants",
       "title": "Dental Implants",
-      "icon": "gi-implants",
-      "tone": "teal-deep",
       "text": "Permanent replacements that look, feel and function like natural teeth.",
       "tags": [
         "Single tooth",
         "Full arch",
         "All-on-4"
-      ]
+      ],
+      "image": "treat-implants"
     },
     {
       "slug": "emergency-dentistry",
       "title": "Emergency Dentistry",
-      "icon": "gi-emergency",
-      "tone": "plum",
       "text": "Urgent tooth pain? Call us during office hours and we'll prioritize you.",
       "tags": [
         "Tooth pain",
         "Lost fillings",
         "Dental trauma"
-      ]
+      ],
+      "image": "treat-emergency"
     }
   ],
   "stickyBar": {
