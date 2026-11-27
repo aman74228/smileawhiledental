@@ -9,7 +9,9 @@
     "build:preview": "node scripts/gen-pages.mjs && vite build --mode preview",
     "preview": "vite preview",
     "images": "node scripts/process-images.mjs",
-    "standalone": "npm run build:preview && python3 scripts/build-standalone.py"
+    "standalone": "npm run build:preview && python3 scripts/build-standalone.py",
+    "content-report": "npm run build:preview && python3 scripts/content-report.py",
+    "artifact": "npm run build:preview && python3 scripts/build-artifact.py"
   },
   "dependencies": {
     "gsap": "^3.15.1",

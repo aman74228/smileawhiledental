@@ -1,102 +1,322 @@
-# Content gaps & open decisions
+# Content gaps: replacement checklist
 
-Status legend: **BLOCKER** = needed before the related phase · **NEEDED** = before that section ships · **CONFIRM** = we have a value, client must verify.
-Anything unconfirmed is marked `data-placeholder="note"`. Markers are hidden in the default client view; open the page with **`?review=1`** to see dashed amber flags (hover for the note) and review-only tiles.
+The site is complete with **realistic dummy content** so the client can judge the design. Everything dummy is tagged:
 
-## Resolved
-| # | Item | Decision |
-|---|------|----------|
-| 1 | Brand name | **PENDING:** "SmileaDental" (in use now) vs "Smileawhile Dental". Lives only in `src/data/site.json` (`name` + `wordmark`); header, `<title>`, meta, schema and the coming footer all read from it. |
-| 2 | Doctor name | **Dr. Patel** (use exactly this until full name/credentials arrive) |
-| 3 | Emergency / 24/7 | Practice does **not** take emergency calls. All "24/7", "Open 24/7", "day or night", "around-the-clock", "on-call" and "same evening" claims removed. Category renamed **Emergency Dentistry**: "Urgent tooth pain? Call us during office hours and we'll prioritise you." |
-| 4 | Hero copy | Eyebrow "Family & cosmetic dentistry · Holland, PA" · H1 "Calm, expert dental care in Holland, PA." · subline as supplied |
-| 5 | Photography | Client approved reuse of holland-smiles.com photos (see `docs/photo-inventory.md`) |
-| 6 | Plum | It IS in the original palette (logo gradient end, #592C7B). Minor accents only: tags, hover tints, one gradient stop. Never CTAs or large surfaces. |
-| 7 | Mobile sticky Call / Book bar | Approved and built (<1024px; hidden over hero, appointment form, footer and open menu). |
-| 8 | Trust logos | Keep text stand-ins in fixed 24px monochrome slots until official files arrive. |
+- HTML: `data-dummy="true"` (+ `data-note="what's needed"`). Open any page with **`?review=1`** to see every dummy item outlined in amber, with the note as a tooltip.
+- Data: `"dummy": true` on entries in `src/data/*.json`.
+- **A production build (`npm run build`) fails** while any dummy item, `[BRACKETED]` placeholder or review-only element remains, and lists them by page. Use `npm run build:preview` for review builds.
 
-## Dropped from the content source (do not reintroduce)
-- Featured testimonial "…fitted me in the same evening when I cracked a tooth." (implies emergency service)
-- Stats "Open 24/7" and "24/7 emergency care"
-- Location copy "Open 24/7, including emergencies" and the "Dental emergency? Call now, we are open 24/7" card
-- Footer "Open 24/7" and brand line "…day or night"
+## Confirmed facts (not dummy)
+- Doctor shown as **Dr. Patel** (full name not published). Lead to confirm: **Dr. Akshit Patel, D.M.D.** (from street sign, unconfirmed).
+- Address **1030 Holland Rd, Holland, PA 18966** · Phone **(215) 355-4242**.
+- **No emergency calls / no 24/7.** Emergency copy is "call during office hours and we'll prioritize you" everywhere.
+- Real client photos: exterior, Dr. Patel (hero + doctor portrait), two team members at reception.
 
-## Clinic facts
-- Phone: +1 (215) 355-4242 (CONFIRM; matches holland-smiles.com) → `src/data/site.json`
-- Address: 1030 Holland Rd, Holland, PA 18966 (CONFIRM) → `src/data/site.json`
-- **Hours: PLACEHOLDER** Mon–Thu 9:00 am – 5:00 pm · Fri 9:00 am – 2:00 pm · Sat–Sun Closed → `src/data/site.json` (`hours`). Not in schema (`openingHours` omitted) until confirmed. (The old site said Mon 11–8, Tue–Thu 9–5, Fri–Sun on-call; superseded.)
-- Email: **[EMAIL]** (NEEDED)
-- Social profile URLs: **[SOCIAL LINKS]** (NEEDED)
-- Site URL / domain: **[SITE URL]** (NEEDED for canonical, og:url, schema `url`, sitemap)
-- Google Business Profile URL / Place ID for map + reviews link (NEEDED)
-- Parking: "Free parking right outside the practice" (CONFIRM)
+## Decisions pending
+| Item | Current | Needed |
+|---|---|---|
+| Brand name | "SmileaDental" (site.json → `name`, `wordmark`) | Final: SmileaDental vs Smileawhile Dental |
+| Logo | Temporary text wordmark | Final logo (SVG) |
+| Trust logos (hero) | Text stand-ins in 24px slots | Official Invisalign, CEREC, ADA, CareCredit files from the provider portals + permission to display |
+| "Accepting new patients" | Not shown anywhere | Confirm before using |
+| "Serving Holland for 40 years" | Shown, dummy-flagged | Confirm it's the same practice |
+| Form endpoint | Empty = demo mode | Gravity Forms form ID / endpoint (site.json → `form.endpoint`) |
 
-## Doctor
-- UI uses **"Dr. Patel"** only. Do not publish the full name yet.
-- Lead to confirm: **Dr. Akshit Patel, D.M.D. (from street sign, unconfirmed)** (photo `practice-sign`, holland-smiles.com /about).
-- First name: **[FIRST NAME]** (CONFIRM)
-- Credentials: **[DDS/DMD]** (CONFIRM; the sign suggests D.M.D.)
-- Bio, education, years in practice, memberships (NEEDED for "Meet the doctor")
+## Photography
+All stock-photo spots are **photo slots** (branded stand-in, `data-dummy`). Stock images could not be sourced automatically (see `docs/image-credits.md`). Each slot fills automatically when an image with the same name is added to the pipeline. Slots needed:
 
-## Brand assets
-- **Logo:** the header uses a temporary Google Sans text wordmark ("Smileawhile Dental"). Final logo SVG needed.
-- **Trust logos** (hero): Invisalign, CEREC, ADA, CareCredit render as text stand-ins in fixed 24px slots. **Official files are needed from the client's provider portals** (Invisalign Doctor Site, Dentsply Sirona / CEREC, ADA member toolkit, CareCredit Provider Center), plus confirmation that the practice may display each mark. Drop-in: replace `.logo-slot__text` with `<img class="logo-slot__img" … height="24">` (see comment in `hero.html`).
+| Slot name | Used on | Subject | Ratio(s) |
+|---|---|---|---|
+| `interior-reception` | Home (office strip), Our Practice (gallery) | Reception desk | 3:2, 4:5 |
+| `interior-waiting` | Home (tour step 1), Our Practice | Calm waiting area | 4:3, 4:5 |
+| `interior-consult` | Home (tour step 2) | Dentist talking with a relaxed patient | 4:3 |
+| `interior-treatment` | Home (office strip, tour step 3), Our Practice | Modern treatment room | 3:2, 4:3, 4:5 |
+| `interior-technology` | Our Practice (gallery) | 3D imaging / intraoral scanner | 3:2 |
+| `team-maria`, `team-karen` | Our Practice (team) | Friendly team portraits in scrubs | 4:5 |
+| `service-<slug>` × 6 | Each service page hero | One image per category (no graphic clinical close-ups) | 4:3 |
 
-## Team
-- **About section photo:** the woman at reception is unidentified. Caption shows **"[NAME], [ROLE]"** so visitors don't read her as the dentist. Need her name and role (and permission to feature her).
-- Second team member photo (`team-member-reception-b`) and the group photo: names/roles needed for Meet the Team.
+Client-uploaded clinical photos (`assets/images/*.jpg|png|webp`) are **not used**: several appear to come from other clinics or stock libraries (e.g. `all-on-4-dental-implants-houston.jpg`, `teeth-whitening-2-licence-confirmed.webp`, a branded infographic). Confirm rights before any use.
 
-## Featured review (homepage)
-- **NEEDED:** one real 5-star Google review (2–3 sentences), patient first name + last initial, and written permission. The section shows a bracketed placeholder until then.
-- The content-source testimonials can't be used: one implies out-of-hours care ("same evening"); the other credits "Dr. Reyes", who doesn't exist. Patient quotes are never edited.
-- **NEEDED:** Google Business Profile reviews URL ("Read our Google reviews").
+## Copy notes
+- US spelling throughout ("prioritize", "anesthesia", "judgment").
+- Implants copy avoids absolute claims ("like natural teeth", not "exactly like").
+- Patient reviews are sample text. Replace with real Google reviews used with permission; never edit a patient's words.
 
-## Meet the doctor (homepage)
-- **NEEDED:** bio (2–3 sentences), dental school + year, years in practice, memberships, certifications. All show as bracketed placeholders.
+## Replacement checklist (generated)
 
-## Kept off the site until confirmed
-- **"Accepting new patients"**: claimed by the content source; not shown anywhere. CONFIRM before using.
-- Google rating / review count
-- "Free parking right outside" is shown in the Office section but flagged (`data-placeholder`)
-- **"Serving Holland for 40 years"** (About) is shown but flagged: **confirm this is the same practice** as the 40-year claim on holland-smiles.com.
+_Generated by `python3 scripts/content-report.py` from the built pages. Do not edit below this line by hand; edit the source and regenerate._
 
-## Claims & numbers (not displayed until confirmed)
-- Google rating and review count (content source said 4.9 / 250+). Hero shows **no** rating per Phase 2 brief.
-- "40 years of dedicated service" (from holland-smiles.com)
-- Doctor credentials: years of experience, ADA member, Invisalign & CEREC certified
-- All 8 technologies are actually in the practice (3D CBCT, digital radiography, intraoral scanner, intraoral camera, CEREC, soft-tissue laser, digital smile design, computer-guided anaesthesia)
+### Global (header, footer, mobile menu, sticky bar: every page)
 
-## Copy (NEEDED)
-- Testimonials: only one usable source testimonial remains (Invisalign). Need **Emergency** and **Family** testimonials, plus patient names and permission. The emergency one must not imply out-of-hours care.
-- Meet the Team: names, roles (two team members photographed at reception, one group photo)
-- Driving directions text
-- Service category + sub-service page copy (36 sub-services)
-- Privacy policy, Terms of service
+| Section | Dummy value | Client must provide |
+|---|---|---|
+| site-header | Smilea Dental | Temporary text wordmark: final logo file needed |
+| site-header | Mon–Thu 9:00 am – 5:00 pm Fri 9:00 am – 2:00 pm Sat–Sun Closed | Dummy hours: replace with the real opening hours |
+| mobile-menu | Smilea Dental | Temporary text wordmark: final logo file needed |
+| mobile-menu | Mon–Thu 9:00 am – 5:00 pm Fri 9:00 am – 2:00 pm Sat–Sun Closed | Dummy hours: replace with the real opening hours |
+| site-footer | Smilea Dental | Temporary text wordmark: final logo file needed |
+| site-footer | hello@smileadental.com | Practice email address |
+| site-footer | Mon–Thu 9:00 am – 5:00 pm Fri 9:00 am – 2:00 pm Sat–Sun Closed | Dummy hours: replace with the real opening hours |
+| site-footer | SmileaDental on Facebook (opens in a new tab) | Dummy social URL: real Facebook profile needed |
+| site-footer | SmileaDental on Instagram (opens in a new tab) | Dummy social URL: real Instagram profile needed |
+| site-footer | SmileaDental on Google (opens in a new tab) | Dummy social URL: real Google profile needed |
 
-## Image rights (client uploads) — CONFIRM before any publication
-These look sourced from other clinics or stock libraries, not this practice:
-- `all-on-4-dental-implants-houston.jpg` (filename names a Houston clinic)
-- `dental-all-on-4-implants-cost.webp`, `img-all-on-4-dental-implants-1.webp`
-- `teeth-whitening-2-licence-confirmed.webp` (suggests a licensed stock image: whose licence?)
-- `options-for-replacing-a-missing-tooth.jpg` (branded infographic)
-- `overdenture.png` (3D illustration set)
-Homepage Featured Treatments therefore uses brand visuals (glass icon + tags), not these photos. Clinical photos will be used on service pages only once rights are confirmed.
+### Home
 
-## Copy edits made (FYI)
-- "Computer-guided anaesthesia" → US spelling "anesthesia".
-- "calm, home-based" now appears only in the About statement (Office heading is "Easy to find, easy to park").
-- US spelling applied: "prioritize" (client-supplied emergency line said "prioritise").
-- Implants copy softened from "look, feel and function **exactly** like natural teeth" to "…like natural teeth" (avoids an absolute clinical claim).
+| Section | Dummy value | Client must provide |
+|---|---|---|
+| hero | Invisalign | Text stand-in: official Invisalign logo file + permission to display |
+| hero | CEREC | Text stand-in: official CEREC logo file + permission to display |
+| hero | ADA | Text stand-in: official ADA logo file + permission to display |
+| hero | CareCredit | Text stand-in: official CareCredit logo file + permission to display |
+| about | Linda, Office Manager | Dummy name/role: confirm the team member in this photo |
+| about | Serving Holland for 40 years | Pending client confirmation that this is the same practice (claim from holland-smiles.com) |
+| office | Free parking right outside | Confirm free parking at the door |
+| office | [image] The bright, calm reception and waiting area | Stock photo slot: Interior: reception / waiting area |
+| office | [image] A modern treatment room with a chairside screen | Stock photo slot: Interior: modern treatment room |
+| reviews | I'd put off straightening my teeth for years because I assumed it would take over my life. Dr. Patel showed me… | Sample review: replace with a real 5-star Google review (with permission) |
+| reviews | Implants Replacing a back tooth felt like a big decision, but nothing was rushed. Every step was explained wit… | Sample review: replace with a real Google review (with permission) |
+| reviews | Family Both of my kids used to dread the dentist. The team here is so patient with them that they now ask when… | Sample review: replace with a real Google review (with permission) |
+| reviews | Cosmetic I wanted my smile to look brighter but still natural. We talked through options and costs first, with… | Sample review: replace with a real Google review (with permission) |
+| reviews | Read our Google reviews ↗ (opens in a new tab) | Google Business Profile reviews URL |
+| technology | 01 3D CBCT scanning Detailed 3D images of teeth, bone and nerves for safer implant planning and precise diagno… | Confirm each technology is in the practice |
+| doctor | DMD · Family & cosmetic dentist | Confirm credential (DMD vs DDS) |
+| doctor | Dr. Patel believes a good dental visit starts with listening. He takes the time to understand what matters to … | Dummy bio: replace with Dr. Patel's own |
+| doctor | Doctor of Dental Medicine (DMD) Member, American Dental Association Invisalign certified provider Ongoing trai… | Dummy credentials: confirm each |
+| tour | [image] A bright, quiet waiting area | Stock photo slot: Interior: calm waiting area |
+| tour | [image] A relaxed conversation before any treatment | Stock photo slot: Dentist talking with a relaxed patient |
+| tour | [image] A modern treatment room with digital X-ray screen | Stock photo slot: Interior: modern treatment room |
+| contact | hello@smileadental.com | Practice email address |
+| contact | Mon–Thu 9:00 am – 5:00 pm Fri 9:00 am – 2:00 pm Sat–Sun Closed | Dummy hours: replace with the real opening hours |
 
-## Photography (see `docs/photo-inventory.md`)
-- The operatory photo is held back from the homepage (yellow cast). Dr. Patel's reception photo had a headlamp reflection (now toned down). Both strengthen the case for a short professional shoot.
-- **Interior photos needed** (reception, waiting room, treatment rooms). Our Office shows the exterior only; a "coming soon" tile appears in review mode.
-- **Exterior resolution:** the only exterior source is 1080 px wide; at full container width on large screens it is visibly soft. A higher-res original or reshoot is needed.
-- Recommended: a short professional shoot (soft-light portrait of Dr. Patel without the headlamp, team, waiting room, technology)
-- Higher-res originals of the exterior photos and the team group photo (640×480 today)
-- Preventive / general care image for the featured treatments card
-- `crowns-collage.png` (client upload) contains Instagram UI fragments; needs a crop or the originals
+### Our Practice
 
-## Technical (NEEDED)
-- Form submit endpoint (WordPress form plugin of choice: CF7 / Gravity Forms / WPForms)
-- Google Maps embed key or share URL
+| Section | Dummy value | Client must provide |
+|---|---|---|
+| doctor | DMD · Family & cosmetic dentist | Confirm credential (DMD vs DDS) |
+| doctor | Dr. Patel believes a good dental visit starts with listening. He takes the time to understand what matters to … | Dummy bio: replace with Dr. Patel's own |
+| doctor | Doctor of Dental Medicine (DMD) Member, American Dental Association Invisalign certified provider Ongoing trai… | Dummy credentials: confirm each |
+| team |  (×4) | Dummy name/role for this team member |
+| team | Linda | Dummy name |
+| team | Linda keeps the practice running smoothly and is usually the first friendly face you'll see at reception. | Dummy bio |
+| team | [image] Maria, Dental Hygienist | Stock photo slot: Team portrait: Dental Hygienist in scrubs |
+| team | Maria | Dummy name |
+| team | Maria's gentle cleanings and practical tips help patients of every age keep their teeth and gums healthy. | Dummy bio |
+| team | Jessica | Dummy name |
+| team | Jessica works chairside with Dr. Patel and makes sure you're comfortable at every step of your treatment. | Dummy bio |
+| team | [image] Karen, Patient Coordinator | Stock photo slot: Team portrait: Patient Coordinator in scrubs |
+| team | Karen | Dummy name |
+| team | Karen helps you schedule visits, understand your treatment plan and make the most of your insurance. | Dummy bio |
+| office-tour | [image] The reception desk | Stock photo slot: Interior: reception desk |
+| office-tour | [image] The waiting area | Stock photo slot: Interior: waiting area |
+| office-tour | [image] A treatment room | Stock photo slot: Interior: treatment room |
+| office-tour | [image] Digital imaging equipment | Stock photo slot: Equipment: 3D imaging / scanner |
+| directions | By GPS Search for "1030 Holland Rd, Holland, PA 18966". The practice is a brick-and-siding family home with ou… | Dummy directions: replace with the practice's own |
+| hours | Mon–Thu 9:00 am – 5:00 pm Fri 9:00 am – 2:00 pm Sat–Sun Closed | Dummy hours: replace with the real opening hours |
+
+### Testimonials
+
+| Section | Dummy value | Client must provide |
+|---|---|---|
+| section | Invisalign I'd put off straightening my teeth for years because I assumed it would take over my life. Dr. Pate… | Sample review: replace with a real Google review (with permission) |
+| section | Implants Replacing a back tooth felt like a big decision, but nothing was rushed. Every step was explained wit… | Sample review: replace with a real Google review (with permission) |
+| section | Family Both of my kids used to dread the dentist. The team here is so patient with them that they now ask when… | Sample review: replace with a real Google review (with permission) |
+| section | Cosmetic I wanted my smile to look brighter but still natural. We talked through options and costs first, with… | Sample review: replace with a real Google review (with permission) |
+| section | General Friendly from the moment you walk in. My cleaning was gentle and thorough, and I left with a clear pla… | Sample review: replace with a real Google review (with permission) |
+| section | Family We've brought the whole family here for check-ups. Appointments run on time, the office is calm and spo… | Sample review: replace with a real Google review (with permission) |
+| section | Read our Google reviews ↗ (opens in a new tab) | Google Business Profile reviews URL |
+
+### Contact
+
+| Section | Dummy value | Client must provide |
+|---|---|---|
+| contact | hello@smileadental.com | Practice email address |
+| contact | Mon–Thu 9:00 am – 5:00 pm Fri 9:00 am – 2:00 pm Sat–Sun Closed | Dummy hours: replace with the real opening hours |
+| directions | By GPS Search for "1030 Holland Rd, Holland, PA 18966". The practice is a brick-and-siding family home with ou… | Dummy directions: replace with the practice's own |
+
+### Privacy policy
+
+| Section | Dummy value | Client must provide |
+|---|---|---|
+| section | Sample text. This page shows placeholder wording for design review only. It isn't legal advice and must be rep… | Sample legal text: replace with a reviewed policy |
+| section | Last updated: November 2026 Who we are This website is operated by SmileaDental, 1030 Holland Rd, Holland, PA … | Sample privacy policy |
+
+### Terms of use
+
+| Section | Dummy value | Client must provide |
+|---|---|---|
+| section | Sample text. This page shows placeholder wording for design review only. It isn't legal advice and must be rep… | Sample legal text: replace with reviewed terms |
+| section | Last updated: November 2026 Using this website By using this website you agree to these terms. If you don't ag… | Sample terms of use |
+
+### Service: Cosmetic Dentistry
+
+| Section | Dummy value | Client must provide |
+|---|---|---|
+| page-hero | Small changes can make a big difference to how you feel about your smile. We aim for natural-looking results, … | Dummy intro copy |
+| page-hero | [image] Cosmetic Dentistry at SmileaDental | Stock photo slot: Service photo: Cosmetic Dentistry |
+| porcelain-veneers | Thin porcelain shells bonded to the front of your teeth can improve their color, shape and alignment for a nat… | Dummy description |
+| minimal-prep-veneers | Minimal-prep veneers need little or no reshaping of your natural teeth, making them a conservative way to refr… | Dummy description |
+| single-tooth-veneer | A single veneer can disguise one chipped, discolored or uneven tooth, carefully color-matched to its neighbors… | Dummy description |
+| tooth-reshaping | Gentle reshaping smooths small chips and uneven edges in a single visit, with no anesthetic usually needed. | Dummy description |
+| tooth-whitening | Professional whitening brightens your smile safely, using custom trays or in-office treatment tailored to you. | Dummy description |
+| total-smile-restoration | For bigger changes, we combine treatments such as veneers, crowns and whitening into one coordinated plan, pre… | Dummy description |
+| what-to-expect | Show us what you'd like to change and we'll discuss what's possible. | Dummy step copy |
+| what-to-expect | Digital smile design lets you see the result and refine it before treatment begins. | Dummy step copy |
+| what-to-expect | Your treatment is carried out carefully, with time to review and fine-tune the final look. | Dummy step copy |
+| faq | Will veneers look natural? Yes. Each veneer is shaped and color-matched to suit your face and the rest of your… | Dummy FAQs (also in FAQPage schema) |
+
+### Service: Dental Implants
+
+| Section | Dummy value | Client must provide |
+|---|---|---|
+| page-hero | Dental implants replace missing teeth with a secure, natural-looking result that's built to last. We plan ever… | Dummy intro copy |
+| page-hero | [image] Dental Implants at SmileaDental | Stock photo slot: Service photo: Dental Implants |
+| single-tooth-implant | A single implant replaces one missing tooth without involving the teeth on either side. Once healed, it's topp… | Dummy description |
+| multiple-tooth-implants | Where several teeth are missing, a small number of implants can support a bridge, restoring your bite without … | Dummy description |
+| full-arch-implants | A complete set of fixed teeth can be supported on a few carefully placed implants, giving you a stable, confid… | Dummy description |
+| all-on-4-systems | All-on-4 uses four implants to support a full arch of fixed teeth. In many cases it reduces the need for bone … | Dummy description |
+| implant-dentures | Clip-in or fixed dentures anchored to implants stay firmly in place, so you can eat and talk without worrying … | Dummy description |
+| ceramic-implants | For patients who prefer a metal-free option, ceramic implants offer a tooth-colored alternative. We'll talk th… | Dummy description |
+| what-to-expect | We look at your teeth, gums and bone in 3D and talk through what you'd like to achieve. | Dummy step copy |
+| what-to-expect | You'll get a written plan with timings and costs, so you can decide with confidence. | Dummy step copy |
+| what-to-expect | After a comfortable placement and healing period, your custom crown, bridge or denture is fitted. | Dummy step copy |
+| faq | Am I a candidate for dental implants? Most adults with good general health can have implants. We'll check your… | Dummy FAQs (also in FAQPage schema) |
+
+### Service: Emergency Dentistry
+
+| Section | Dummy value | Client must provide |
+|---|---|---|
+| page-hero | Dental problems rarely wait for a convenient moment. If you're in pain or something has broken, call us during… | Dummy intro copy |
+| page-hero | [image] Emergency Dentistry at SmileaDental | Stock photo slot: Service photo: Emergency Dentistry |
+| tooth-pain | Toothache can have many causes, from a cracked filling to an infection. We'll find the source quickly with a g… | Dummy description |
+| tooth-extraction-and-oral-surgery | When a tooth can't be saved, we remove it as gently as possible and make sure you're comfortable throughout. W… | Dummy description |
+| emergency-root-canal-treatment | If a tooth's nerve is inflamed or infected, root canal treatment can relieve the pain and save the tooth. We s… | Dummy description |
+| lost-fillings | A lost filling can leave a tooth sensitive and vulnerable. We'll clean the area and place a new tooth-colored … | Dummy description |
+| dental-abscess-and-infection | Swelling, throbbing pain or a bad taste can be signs of infection. We'll assess it promptly, start treatment t… | Dummy description |
+| dental-trauma | Chipped, cracked or knocked teeth after a fall or sports injury should be seen quickly. Keep any broken pieces… | Dummy description |
+| what-to-expect | Tell us what's happening. We'll prioritize urgent pain and find you the earliest possible appointment. | Dummy step copy |
+| what-to-expect | A focused exam and digital X-rays help us find the cause and ease your discomfort straight away. | Dummy step copy |
+| what-to-expect | We explain the options and costs for a lasting fix, so there are no surprises. | Dummy step copy |
+| faq | Can I get emergency care after hours? No. We don't have an after-hours line. Call during office hours and we'l… | Dummy FAQs (also in FAQPage schema) |
+
+### Service: General Dentistry
+
+| Section | Dummy value | Client must provide |
+|---|---|---|
+| page-hero | Everyday dental care for every age, from a child's first visit to keeping grandparents' smiles comfortable. We… | Dummy intro copy |
+| page-hero | [image] General Dentistry at SmileaDental | Stock photo slot: Service photo: General Dentistry |
+| dental-crowns-and-bridges | Crowns protect and strengthen damaged teeth, while bridges fill gaps left by missing teeth. Both are custom-ma… | Dummy description |
+| root-canals-and-endodontic-re-treatment | Root canal treatment saves an infected tooth by cleaning and sealing it inside. If an older root canal has fai… | Dummy description |
+| cavities-and-fillings | We repair cavities with tooth-colored fillings that blend in naturally, using careful numbing so you stay comf… | Dummy description |
+| bite-correction | An uneven bite can cause wear, sensitivity or jaw discomfort. We'll find the cause and suggest simple adjustme… | Dummy description |
+| grinding-and-clenching-solutions | Grinding can wear teeth down and cause headaches. A custom night guard protects your teeth while you sleep. | Dummy description |
+| routine-care | Regular check-ups and cleanings catch small problems early, keep your gums healthy and leave your teeth feelin… | Dummy description |
+| tmj | Jaw pain, clicking or headaches can be linked to the jaw joint. We'll assess your bite and jaw and talk throug… | Dummy description |
+| dentures | Full and partial dentures are made to fit comfortably and look natural. We'll help you adjust and keep them fi… | Dummy description |
+| what-to-expect | Tell us about any concerns before we start. We listen before we look. | Dummy step copy |
+| what-to-expect | A gentle exam, cleaning and digital X-rays where needed. | Dummy step copy |
+| what-to-expect | You'll leave knowing what's healthy, what needs attention and what it costs. | Dummy step copy |
+| faq | How often should I have a check-up? Most people benefit from a check-up and cleaning every six months. We'll r… | Dummy FAQs (also in FAQPage schema) |
+
+### Service: Orthodontics
+
+| Section | Dummy value | Client must provide |
+|---|---|---|
+| page-hero | Clear aligners straighten teeth with a series of nearly invisible, removable trays. We plan your treatment dig… | Dummy intro copy |
+| page-hero | [image] Orthodontics at SmileaDental | Stock photo slot: Service photo: Orthodontics |
+| clear-aligners | Custom aligners gradually move your teeth into place. You can take them out to eat, brush and floss, and most … | Dummy description |
+| what-to-expect | A quick, comfortable 3D scan replaces messy impressions. | Dummy step copy |
+| what-to-expect | We show you a preview of how your teeth will move, step by step. | Dummy step copy |
+| what-to-expect | Wear your aligners as directed, with short check-ins to track progress. | Dummy step copy |
+| faq | How long does clear aligner treatment take? It varies with how much your teeth need to move. Many adult cases … | Dummy FAQs (also in FAQPage schema) |
+
+### Service: Periodontal Treatment
+
+| Section | Dummy value | Client must provide |
+|---|---|---|
+| page-hero | Healthy gums are the foundation of a healthy smile. We treat gum disease gently, help you keep it under contro… | Dummy intro copy |
+| page-hero | [image] Periodontal Treatment at SmileaDental | Stock photo slot: Service photo: Periodontal Treatment |
+| sinus-lift | A sinus lift adds bone to the upper jaw so there's enough support for implants. It's a routine procedure, care… | Dummy description |
+| crown-lengthening | Crown lengthening reshapes gum and bone to expose more of a tooth, either to support a new crown or to balance… | Dummy description |
+| scaling-and-root-planing-gum-disease-treatment | This deep clean removes build-up from below the gumline and smooths root surfaces so gums can heal and reattac… | Dummy description |
+| laser-gum-shaping | A soft-tissue laser can gently reshape uneven gums with less bleeding and quicker healing, for a more balanced… | Dummy description |
+| what-to-expect | We measure your gums, review X-rays and show you what we find on screen. | Dummy step copy |
+| what-to-expect | Treatment is carried out comfortably, often over one or two visits, with numbing as needed. | Dummy step copy |
+| what-to-expect | Regular maintenance visits and simple home-care tips help keep gum disease under control. | Dummy step copy |
+| faq | What are the signs of gum disease? Bleeding when brushing, red or swollen gums, bad breath and gums that look … | Dummy FAQs (also in FAQPage schema) |
+
+### Data files (`"dummy": true`)
+
+| File | Entry | Dummy value | Client must provide |
+|---|---|---|---|
+| reviews.json | Rachel M. | I'd put off straightening my teeth for years because I assumed it would take over my life.… | Real copy |
+| reviews.json | Tom K. | Replacing a back tooth felt like a big decision, but nothing was rushed. Every step was ex… | Real copy |
+| reviews.json | Priya S. | Both of my kids used to dread the dentist. The team here is so patient with them that they… | Real copy |
+| reviews.json | Daniel R. | I wanted my smile to look brighter but still natural. We talked through options and costs … | Real copy |
+| reviews.json | Linda W. | Friendly from the moment you walk in. My cleaning was gentle and thorough, and I left with… | Real copy |
+| reviews.json | Marcus J. | We've brought the whole family here for check-ups. Appointments run on time, the office is… | Real copy |
+| services.json | Emergency Dentistry | Urgent tooth pain? Call us during office hours and we'll prioritize you. | Real copy |
+| services.json | Tooth pain | Toothache can have many causes, from a cracked filling to an infection. We'll find the sou… | Real copy |
+| services.json | Tooth extraction & oral surgery | When a tooth can't be saved, we remove it as gently as possible and make sure you're comfo… | Real copy |
+| services.json | Emergency root canal treatment | If a tooth's nerve is inflamed or infected, root canal treatment can relieve the pain and … | Real copy |
+| services.json | Lost fillings | A lost filling can leave a tooth sensitive and vulnerable. We'll clean the area and place … | Real copy |
+| services.json | Dental abscess & infection | Swelling, throbbing pain or a bad taste can be signs of infection. We'll assess it promptl… | Real copy |
+| services.json | Dental trauma | Chipped, cracked or knocked teeth after a fall or sports injury should be seen quickly. Ke… | Real copy |
+| services.json | Dental Implants | Single teeth, full arches and All-on-4, planned around you. | Real copy |
+| services.json | Single tooth implant | A single implant replaces one missing tooth without involving the teeth on either side. On… | Real copy |
+| services.json | Multiple tooth implants | Where several teeth are missing, a small number of implants can support a bridge, restorin… | Real copy |
+| services.json | Full arch implants | A complete set of fixed teeth can be supported on a few carefully placed implants, giving … | Real copy |
+| services.json | All-on-4 systems | All-on-4 uses four implants to support a full arch of fixed teeth. In many cases it reduce… | Real copy |
+| services.json | Implant dentures | Clip-in or fixed dentures anchored to implants stay firmly in place, so you can eat and ta… | Real copy |
+| services.json | Ceramic implants | For patients who prefer a metal-free option, ceramic implants offer a tooth-colored altern… | Real copy |
+| services.json | Periodontal Treatment | Gum disease treatment, sinus lifts and laser gum shaping. | Real copy |
+| services.json | Sinus lift | A sinus lift adds bone to the upper jaw so there's enough support for implants. It's a rou… | Real copy |
+| services.json | Crown lengthening | Crown lengthening reshapes gum and bone to expose more of a tooth, either to support a new… | Real copy |
+| services.json | Scaling & root planing (gum disease treatment) | This deep clean removes build-up from below the gumline and smooths root surfaces so gums … | Real copy |
+| services.json | Laser gum shaping | A soft-tissue laser can gently reshape uneven gums with less bleeding and quicker healing,… | Real copy |
+| services.json | General Dentistry | Check-ups, fillings, crowns, root canals and dentures. | Real copy |
+| services.json | Dental crowns & bridges | Crowns protect and strengthen damaged teeth, while bridges fill gaps left by missing teeth… | Real copy |
+| services.json | Root canals & endodontic re-treatment | Root canal treatment saves an infected tooth by cleaning and sealing it inside. If an olde… | Real copy |
+| services.json | Cavities & fillings | We repair cavities with tooth-colored fillings that blend in naturally, using careful numb… | Real copy |
+| services.json | Bite correction | An uneven bite can cause wear, sensitivity or jaw discomfort. We'll find the cause and sug… | Real copy |
+| services.json | Grinding & clenching solutions | Grinding can wear teeth down and cause headaches. A custom night guard protects your teeth… | Real copy |
+| services.json | Routine care | Regular check-ups and cleanings catch small problems early, keep your gums healthy and lea… | Real copy |
+| services.json | TMJ | Jaw pain, clicking or headaches can be linked to the jaw joint. We'll assess your bite and… | Real copy |
+| services.json | Dentures | Full and partial dentures are made to fit comfortably and look natural. We'll help you adj… | Real copy |
+| services.json | Cosmetic Dentistry | Veneers, whitening, reshaping and total smile restoration. | Real copy |
+| services.json | Porcelain veneers | Thin porcelain shells bonded to the front of your teeth can improve their color, shape and… | Real copy |
+| services.json | Minimal-prep veneers | Minimal-prep veneers need little or no reshaping of your natural teeth, making them a cons… | Real copy |
+| services.json | Single tooth veneer | A single veneer can disguise one chipped, discolored or uneven tooth, carefully color-matc… | Real copy |
+| services.json | Tooth reshaping | Gentle reshaping smooths small chips and uneven edges in a single visit, with no anestheti… | Real copy |
+| services.json | Tooth whitening | Professional whitening brightens your smile safely, using custom trays or in-office treatm… | Real copy |
+| services.json | Total smile restoration | For bigger changes, we combine treatments such as veneers, crowns and whitening into one c… | Real copy |
+| services.json | Orthodontics | Clear aligners to straighten your smile, discreetly. | Real copy |
+| services.json | Clear aligners | Custom aligners gradually move your teeth into place. You can take them out to eat, brush … | Real copy |
+| site.json | site.url | https://www.smileadental.com | Final domain |
+| site.json | site.email | hello@smileadental.com | Practice email address |
+| site.json | site.hours | Mon–Thu 9:00 am – 5:00 pm · Fri 9:00 am – 2:00 pm · Sat–Sun Closed | Confirm / replace |
+| site.json | Invisalign |  | Text stand-in: official Invisalign logo file + permission needed |
+| site.json | CEREC |  | Text stand-in: official CEREC logo file + permission needed |
+| site.json | ADA |  | Text stand-in: official ADA logo file + permission needed |
+| site.json | CareCredit |  | Text stand-in: official CareCredit logo file + permission needed |
+| site.json | site.doctor |  | Credential (DMD) and full name to confirm; street sign suggests "Dr. Akshit Patel, D.M.D." |
+| site.json | Facebook | https://www.facebook.com/ | Confirm / replace |
+| site.json | Instagram | https://www.instagram.com/ | Confirm / replace |
+| site.json | Google | https://www.google.com/maps/search/?api=1&query=1030+Holland+Rd+Holland+PA+18966 | Confirm / replace |
+| site.json | 3D CBCT scanning | Detailed 3D images of teeth, bone and nerves for safer implant planning and precise diagno… | Real copy |
+| site.json | Digital radiography | Instant, high-resolution X-rays with much lower radiation than traditional film. | Real copy |
+| site.json | 3D intraoral scanner | Fast, comfortable digital impressions, with no messy trays or gagging. | Real copy |
+| site.json | Intraoral camera | See exactly what we see, on screen, so every treatment decision is clear. | Real copy |
+| site.json | CEREC same-day crowns | Crowns designed, milled and fitted in a single visit, with no temporaries. | Real copy |
+| site.json | Soft-tissue dental laser | Gentler gum treatments with less bleeding, fewer stitches and faster healing. | Real copy |
+| site.json | Digital smile design | Preview your new smile before treatment begins, and shape it together with us. | Real copy |
+| site.json | Computer-guided anesthesia | Precise, steady numbing for a far more comfortable injection. | Real copy |
+| site.json | Read our Google reviews | https://www.google.com/maps/search/?api=1&query=1030+Holland+Rd+Holland+PA+18966 | Google Business Profile reviews URL |
+| team.json | Dr. Patel |  | Confirm / replace |
+| team.json | Linda |  | Confirm / replace |
+| team.json | Maria |  | Confirm / replace |
+| team.json | Jessica |  | Confirm / replace |
+| team.json | Karen |  | Confirm / replace |
+
+_Total distinct on-page dummy items: 134._
+

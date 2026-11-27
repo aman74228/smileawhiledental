@@ -5,7 +5,7 @@
 
 <header class="site-header" data-header>
   <div class="site-header__bar container">
-    <a class="wordmark{{#if site.wordmark.spaced}} wordmark--spaced{{/if}} site-header__logo" href="/" aria-label="{{site.name}}, home" data-dummy="true" data-note="Temporary wordmark (final logo pending)">
+    <a class="wordmark{{#if site.wordmark.spaced}} wordmark--spaced{{/if}} site-header__logo" href="/" aria-label="{{site.name}}, home" data-dummy="true" data-note="Temporary text wordmark: final logo file needed">
       <span aria-hidden="true">{{site.wordmark.lead}}<span class="wordmark__sub">{{site.wordmark.tail}}</span></span>
     </a>
 
@@ -37,7 +37,7 @@
               <aside class="mega__aside" data-mega-item aria-label="Visit and contact">
                 <p class="eyebrow">Office hours</p>
                 <!-- PLACEHOLDER HOURS – confirm with client (values come from src/data/site.json) -->
-                <dl class="hours-list t-num" data-dummy="true" data-note="Placeholder hours (confirm with client)">
+                <dl class="hours-list t-num" data-dummy="true" data-note="Dummy hours: replace with the real opening hours">
                   {{#each site.hours.days as d}}<div class="hours-list__row"><dt>{{d.label}}</dt><dd>{{d.display}}</dd></div>{{/each}}
                 </dl>
                 <a class="mega__phone t-num" href="tel:{{site.phone.tel}}">
@@ -77,7 +77,7 @@
 <!-- Mobile / tablet menu (full screen) -->
 <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Site menu" data-menu hidden>
   <div class="mobile-menu__top container">
-    <a class="wordmark{{#if site.wordmark.spaced}} wordmark--spaced{{/if}}" href="/" aria-label="{{site.name}}, home" data-dummy="true">
+    <a class="wordmark{{#if site.wordmark.spaced}} wordmark--spaced{{/if}}" href="/" aria-label="{{site.name}}, home" data-dummy="true" data-note="Temporary text wordmark: final logo file needed">
       <span aria-hidden="true">{{site.wordmark.lead}}<span class="wordmark__sub">{{site.wordmark.tail}}</span></span>
     </a>
     <button class="icon-btn" type="button" data-menu-close>
@@ -117,7 +117,7 @@
   <div class="mobile-menu__foot" data-menu-item>
     <div class="container">
       <!-- PLACEHOLDER HOURS – confirm with client (values come from src/data/site.json) -->
-      <dl class="hours-list hours-list--inline mobile-menu__hours t-num" data-dummy="true" data-note="Placeholder hours (confirm with client)">
+      <dl class="hours-list hours-list--inline mobile-menu__hours t-num" data-dummy="true" data-note="Dummy hours: replace with the real opening hours">
         {{#each site.hours.days as d}}<div class="hours-list__row"><dt>{{d.label}}</dt><dd>{{d.display}}</dd></div>{{/each}}
       </dl>
       <div class="mobile-menu__ctas">

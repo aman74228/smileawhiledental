@@ -1,0 +1,19 @@
+<!-- Text-only driving directions (Contact page; the map sits in the contact section). -->
+<section class="section section--band directions directions--text" id="directions" aria-labelledby="directions-title">
+  <div class="container directions__grid">
+    <div class="directions__text">
+      <p class="eyebrow" data-reveal>Driving directions</p>
+      <h2 class="t-h2" id="directions-title" data-reveal>Getting here</h2>
+      <p class="t-body-lg directions__addr" data-reveal>{{site.address.singleLine}}</p>
+      <a class="btn btn--secondary directions__cta" href="{{site.map.directions}}" target="_blank" rel="noopener" data-reveal>
+        <svg class="btn__icon" aria-hidden="true"><use href="#ui-arrow-up-right"/></svg>
+        Open directions in Google Maps<span class="visually-hidden"> (opens in a new tab)</span>
+      </a>
+    </div>
+    <ol class="directions__steps directions__steps--card" role="list" data-reveal data-dummy="true" data-note="Dummy directions: replace with the practice's own">
+      <li><strong>By GPS</strong><span>Search for "{{site.address.singleLine}}". The practice is a brick-and-siding family home with our sign at the end of the driveway.</span></li>
+      <li><strong>Parking</strong><span>Free parking in the driveway right outside the front door, with extra space alongside the building.</span></li>
+      <li><strong>Accessibility</strong><span>Let us know when you book if you'd like help getting in. We'll make sure the space nearest the door is free for you.</span></li>
+    </ol>
+  </div>
+</section>

@@ -111,6 +111,10 @@
     "title": "Page not found | {name}",
     "description": "This page doesn't exist. Head back home or book an appointment.",
     "path": "/404.html",
-    "section": "none"
+    "section": "none",
+    "eyebrow": "Error 404",
+    "h1": "We can't find that page",
+    "lede": "",
+    "crumb": "Not found"
   }
 }
