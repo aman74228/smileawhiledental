@@ -35,6 +35,16 @@ for f in site.rglob('*.css'):
     s = re.sub(r'url\((["\']?)(/[^)"\']+)\1\)', lambda m: f'url("{rel_url(m.group(2), depth)}")', s)
     f.write_text(s)
 
+# Drop images no page references (keeps the package small and within host file limits).
+refs = set()
+for f in list(site.rglob('*.html')) + list(site.rglob('*.css')):
+    refs.update(re.findall(r'images/[\w/.-]+\.(?:webp|avif|png|jpg|svg)', f.read_text()))
+pruned = 0
+for img in list((site / 'images').rglob('*')):
+    if img.is_file() and str(img.relative_to(site)) not in refs:
+        img.unlink(); pruned += 1
+print(f'pruned {pruned} unreferenced image files')
+
 left = [str(f.relative_to(site)) for f in site.rglob('*.html') if re.search(r'\b(href|src)="/(?!/)', f.read_text())]
 print(f'packaged {sum(1 for _ in site.rglob("*") if _.is_file())} files into {site}')
 print('root-relative URLs left:', left or 'none')

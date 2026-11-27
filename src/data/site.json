@@ -1,15 +1,15 @@
 {
   "_readme": "Single source of truth for clinic facts. Templates read this at build time ({{site.*}}). Anything with \"dummy\": true is sample content the client must replace (see docs/content-gaps.md); a production build fails while any remain.",
-  "_brand_comment": "PENDING FINAL CONFIRMATION: \"SmileaDental\" vs \"Smileawhile Dental\". Change name + wordmark here only; header, footer, <title>, meta and schema all read from these fields.",
-  "name": "SmileaDental",
+  "_brand_comment": "Brand: \"Smileawhile Dental\" (confirmed). Name + logo live here only; header, footer, <title>, meta and schema read from these fields.",
+  "name": "Smileawhile Dental",
   "wordmark": {
-    "lead": "Smilea",
+    "lead": "Smileawhile",
     "tail": "Dental",
-    "spaced": false
+    "spaced": true
   },
   "tagline": "Family & cosmetic dentistry · Holland, PA",
   "url": {
-    "value": "https://www.smileadental.com",
+    "value": "https://www.smileawhiledental.com",
     "dummy": true,
     "note": "Final domain"
   },
@@ -19,7 +19,7 @@
     "tel": "+12153554242"
   },
   "email": {
-    "value": "hello@smileadental.com",
+    "value": "hello@smileawhiledental.com",
     "dummy": true,
     "note": "Practice email address"
   },
@@ -375,5 +375,11 @@
       "Orthodontics",
       "Other"
     ]
+  },
+  "logo": {
+    "src": "/images/brand/smileawhile-logo.png",
+    "width": 321,
+    "height": 110,
+    "note": "Raster logo (321×110). An SVG would be sharper on high-density screens."
   }
 }

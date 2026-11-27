@@ -12,25 +12,31 @@
 
 All real photos go through `scripts/process-images.mjs` (one crop per ratio + the house grade). Full inventory: `docs/photo-inventory.md`.
 
-## Stock photos (Unsplash / Pexels): NOT YET SOURCED
+## Stock photos (Unsplash): supplied by the client, all DUMMY
 
-**Status: blocked during the build, so every stock spot is a branded photo slot (`data-dummy="true"`).**
+Supplied in `dental_images.zip` (Unsplash downloads; filenames keep photographer + photo ID). Graded with the house grade, focus-cropped by `scripts/process-images.mjs`, and tagged `data-dummy="true"` on every page until replaced by practice photography. Licence: Unsplash License (free commercial use; attribution appreciated, not required). **Confirm none is an Unsplash+ image** (Unsplash+ photos aren't covered by the free licence).
 
-What was tried:
-1. Unsplash's internal search endpoint was refused by this environment's safety check (it's not a sanctioned API).
-2. Unsplash's public pages serve an automated-browser challenge (Anubis). Getting past it would mean defeating the site's bot protection, so it wasn't attempted.
-3. The official Unsplash and Pexels APIs need an access key, and none was available.
+| Slot | Photo | Photographer | Where used |
+|---|---|---|---|
+| `interior-treatment` | https://unsplash.com/photos/e7MJLM5VGjY | Benyamin Bohlouli | Home office strip; Our Practice gallery |
+| `interior-technology` | https://unsplash.com/photos/-m-4tYmtLlI | Caroline LM | Home tour step 3; Our Practice gallery |
+| `interior-consult` | https://unsplash.com/photos/Bg81yWKZlMg | Harold Hisona | Home tour step 2; Our Practice gallery |
+| `interior-xray` | https://unsplash.com/photos/v_2FRXEba94 | Jonathan Borba | Home office strip; Our Practice gallery |
+| `service-emergency-dentistry` | https://unsplash.com/photos/v_2FRXEba94 | Jonathan Borba | Emergency Dentistry page |
+| `service-dental-implants` | https://unsplash.com/photos/W9YEY6G8LVM | Jonathan Borba | Dental Implants page |
+| `service-periodontal-treatment` | https://unsplash.com/photos/4u2fG9mqGvQ | Enis Yavuz | Periodontal Treatment page |
+| `service-general-dentistry` | https://unsplash.com/photos/ux18C551ghI | Caroline LM | General Dentistry page |
+| `service-cosmetic-dentistry` | https://unsplash.com/photos/RCQnbyQsnUg | Kamal Hoseinianzade | Cosmetic Dentistry page |
+| `service-orthodontics` | https://unsplash.com/photos/uTUsnv_UCSQ | Harold Hisona | Orthodontics page |
 
-### How to fill the slots (any one of these)
-- **Fastest:** pick the photos on unsplash.com or pexels.com in a browser, download them, and drop them in `assets/images/stock/` named after the slot (e.g. `interior-reception.jpg`). Add each to the `PHOTOS` list in `scripts/process-images.mjs` with `dir: '/images/stock/'`, `dummy: true` and a crop per ratio. Run `npm run images` and the slots fill automatically.
-- **Automated:** provide an Unsplash access key (free developer account) and I'll search, filter out Unsplash+ (paid) images, download, grade and log them here.
+**Supplied but not used:**
+- `candid-WFsNCIn8OF4`: the aligner case shows a third-party brand name ("Candid").
+- `caroline-lm-JiBssiZVPZA` (open-mouth exam with instruments) and `kamal-hoseinianzade-s5TU52ZjaFA` (cheek retractor): too clinical for the site.
+- `tony-litvyak-glPVwPr1FKo`: no matching slot (vertical smile close-up). Available for later.
 
-### Rules for any stock image
-- Licence: Unsplash License or Pexels License only (free commercial use). **Exclude Unsplash+ / premium.**
-- No visible third-party clinic logos, signage or branding. No graphic clinical close-ups (blood, surgery, extracted teeth).
-- Mark as dummy (`dummy: true` in the pipeline → `data-dummy="true"` on the page) until replaced by practice photography.
-- Log each here: slot · photo URL · photographer · licence · where used.
+**Still needed:** team portraits for Maria and Karen (photo slots on Our Practice).
 
-| Slot | Photo URL | Photographer | Licence | Where used |
-|---|---|---|---|---|
-| _none yet_ | | | | |
+## Rules for any future stock image
+- Unsplash / Pexels free licences only; exclude Unsplash+ / premium.
+- No visible third-party logos or branding; no graphic clinical close-ups.
+- Add to `scripts/process-images.mjs` (stock section) with `credit` + `id`, run `npm run images`, log it above.

@@ -5,9 +5,7 @@
 
 <header class="site-header" data-header>
   <div class="site-header__bar container">
-    <a class="wordmark{{#if site.wordmark.spaced}} wordmark--spaced{{/if}} site-header__logo" href="/" aria-label="{{site.name}}, home" data-dummy="true" data-note="Temporary text wordmark: final logo file needed">
-      <span aria-hidden="true">{{site.wordmark.lead}}<span class="wordmark__sub">{{site.wordmark.tail}}</span></span>
-    </a>
+    <a class="logo site-header__logo" href="/" aria-label="{{site.name}}, home"><img class="logo__img" src="{{site.logo.src}}" width="{{site.logo.width}}" height="{{site.logo.height}}" alt=""></a>
 
     <nav class="site-nav" aria-label="Primary">
       <ul class="site-nav__list" role="list">
@@ -77,9 +75,7 @@
 <!-- Mobile / tablet menu (full screen) -->
 <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Site menu" data-menu hidden>
   <div class="mobile-menu__top container">
-    <a class="wordmark{{#if site.wordmark.spaced}} wordmark--spaced{{/if}}" href="/" aria-label="{{site.name}}, home" data-dummy="true" data-note="Temporary text wordmark: final logo file needed">
-      <span aria-hidden="true">{{site.wordmark.lead}}<span class="wordmark__sub">{{site.wordmark.tail}}</span></span>
-    </a>
+    <a class="logo" href="/" aria-label="{{site.name}}, home"><img class="logo__img" src="{{site.logo.src}}" width="{{site.logo.width}}" height="{{site.logo.height}}" alt=""></a>
     <button class="icon-btn" type="button" data-menu-close>
       <span class="visually-hidden">Close menu</span>
       <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg>

@@ -189,7 +189,7 @@
     }
   },
   "team-member-reception-b": {
-    "alt": "[TEAM MEMBER NAME] at the reception desk",
+    "alt": "Checking in at the reception desk",
     "crops": {
       "4x5": {
         "width": 1229,
@@ -218,6 +218,36 @@
             "h": 1536,
             "avif": "team-member-reception-b-4x5-1229.avif",
             "webp": "team-member-reception-b-4x5-1229.webp"
+          }
+        ]
+      },
+      "4x3": {
+        "width": 2048,
+        "height": 1536,
+        "files": [
+          {
+            "w": 480,
+            "h": 360,
+            "avif": "team-member-reception-b-4x3-480.avif",
+            "webp": "team-member-reception-b-4x3-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 600,
+            "avif": "team-member-reception-b-4x3-800.avif",
+            "webp": "team-member-reception-b-4x3-800.webp"
+          },
+          {
+            "w": 1200,
+            "h": 900,
+            "avif": "team-member-reception-b-4x3-1200.avif",
+            "webp": "team-member-reception-b-4x3-1200.webp"
+          },
+          {
+            "w": 1600,
+            "h": 1200,
+            "avif": "team-member-reception-b-4x3-1600.avif",
+            "webp": "team-member-reception-b-4x3-1600.webp"
           }
         ]
       }
@@ -402,6 +432,676 @@
           }
         ]
       }
+    }
+  },
+  "interior-treatment": {
+    "alt": "A bright, modern treatment room",
+    "crops": {
+      "3x2": {
+        "width": 5472,
+        "height": 3648,
+        "files": [
+          {
+            "w": 480,
+            "h": 320,
+            "avif": "interior-treatment-3x2-480.avif",
+            "webp": "interior-treatment-3x2-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 533,
+            "avif": "interior-treatment-3x2-800.avif",
+            "webp": "interior-treatment-3x2-800.webp"
+          },
+          {
+            "w": 1200,
+            "h": 800,
+            "avif": "interior-treatment-3x2-1200.avif",
+            "webp": "interior-treatment-3x2-1200.webp"
+          },
+          {
+            "w": 1600,
+            "h": 1067,
+            "avif": "interior-treatment-3x2-1600.avif",
+            "webp": "interior-treatment-3x2-1600.webp"
+          }
+        ]
+      },
+      "4x3": {
+        "width": 4877,
+        "height": 3658,
+        "files": [
+          {
+            "w": 480,
+            "h": 360,
+            "avif": "interior-treatment-4x3-480.avif",
+            "webp": "interior-treatment-4x3-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 600,
+            "avif": "interior-treatment-4x3-800.avif",
+            "webp": "interior-treatment-4x3-800.webp"
+          },
+          {
+            "w": 1200,
+            "h": 900,
+            "avif": "interior-treatment-4x3-1200.avif",
+            "webp": "interior-treatment-4x3-1200.webp"
+          },
+          {
+            "w": 1600,
+            "h": 1200,
+            "avif": "interior-treatment-4x3-1600.avif",
+            "webp": "interior-treatment-4x3-1600.webp"
+          }
+        ]
+      },
+      "4x5": {
+        "width": 2926,
+        "height": 3658,
+        "files": [
+          {
+            "w": 480,
+            "h": 600,
+            "avif": "interior-treatment-4x5-480.avif",
+            "webp": "interior-treatment-4x5-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 1000,
+            "avif": "interior-treatment-4x5-800.avif",
+            "webp": "interior-treatment-4x5-800.webp"
+          },
+          {
+            "w": 1200,
+            "h": 1500,
+            "avif": "interior-treatment-4x5-1200.avif",
+            "webp": "interior-treatment-4x5-1200.webp"
+          },
+          {
+            "w": 1600,
+            "h": 2000,
+            "avif": "interior-treatment-4x5-1600.avif",
+            "webp": "interior-treatment-4x5-1600.webp"
+          }
+        ]
+      }
+    },
+    "dir": "/images/stock/",
+    "dummy": true,
+    "note": "Dummy stock photo (Unsplash · Benyamin Bohlouli): replace with practice photography",
+    "credit": {
+      "photographer": "Benyamin Bohlouli",
+      "unsplashId": "e7MJLM5VGjY",
+      "url": "https://unsplash.com/photos/e7MJLM5VGjY"
+    }
+  },
+  "interior-technology": {
+    "alt": "A dentist explaining X-ray images on a chairside screen",
+    "crops": {
+      "3x2": {
+        "width": 4455,
+        "height": 2970,
+        "files": [
+          {
+            "w": 480,
+            "h": 320,
+            "avif": "interior-technology-3x2-480.avif",
+            "webp": "interior-technology-3x2-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 533,
+            "avif": "interior-technology-3x2-800.avif",
+            "webp": "interior-technology-3x2-800.webp"
+          },
+          {
+            "w": 1200,
+            "h": 800,
+            "avif": "interior-technology-3x2-1200.avif",
+            "webp": "interior-technology-3x2-1200.webp"
+          },
+          {
+            "w": 1600,
+            "h": 1067,
+            "avif": "interior-technology-3x2-1600.avif",
+            "webp": "interior-technology-3x2-1600.webp"
+          }
+        ]
+      },
+      "4x3": {
+        "width": 4455,
+        "height": 3341,
+        "files": [
+          {
+            "w": 480,
+            "h": 360,
+            "avif": "interior-technology-4x3-480.avif",
+            "webp": "interior-technology-4x3-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 600,
+            "avif": "interior-technology-4x3-800.avif",
+            "webp": "interior-technology-4x3-800.webp"
+          },
+          {
+            "w": 1200,
+            "h": 900,
+            "avif": "interior-technology-4x3-1200.avif",
+            "webp": "interior-technology-4x3-1200.webp"
+          },
+          {
+            "w": 1600,
+            "h": 1200,
+            "avif": "interior-technology-4x3-1600.avif",
+            "webp": "interior-technology-4x3-1600.webp"
+          }
+        ]
+      },
+      "4x5": {
+        "width": 2673,
+        "height": 3341,
+        "files": [
+          {
+            "w": 480,
+            "h": 600,
+            "avif": "interior-technology-4x5-480.avif",
+            "webp": "interior-technology-4x5-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 1000,
+            "avif": "interior-technology-4x5-800.avif",
+            "webp": "interior-technology-4x5-800.webp"
+          },
+          {
+            "w": 1200,
+            "h": 1500,
+            "avif": "interior-technology-4x5-1200.avif",
+            "webp": "interior-technology-4x5-1200.webp"
+          },
+          {
+            "w": 1600,
+            "h": 2000,
+            "avif": "interior-technology-4x5-1600.avif",
+            "webp": "interior-technology-4x5-1600.webp"
+          }
+        ]
+      }
+    },
+    "dir": "/images/stock/",
+    "dummy": true,
+    "note": "Dummy stock photo (Unsplash · Caroline LM): replace with practice photography",
+    "credit": {
+      "photographer": "Caroline LM",
+      "unsplashId": "-m-4tYmtLlI",
+      "url": "https://unsplash.com/photos/-m-4tYmtLlI"
+    }
+  },
+  "interior-consult": {
+    "alt": "A dentist chatting with a smiling, relaxed patient",
+    "crops": {
+      "4x3": {
+        "width": 3648,
+        "height": 2736,
+        "files": [
+          {
+            "w": 480,
+            "h": 360,
+            "avif": "interior-consult-4x3-480.avif",
+            "webp": "interior-consult-4x3-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 600,
+            "avif": "interior-consult-4x3-800.avif",
+            "webp": "interior-consult-4x3-800.webp"
+          },
+          {
+            "w": 1200,
+            "h": 900,
+            "avif": "interior-consult-4x3-1200.avif",
+            "webp": "interior-consult-4x3-1200.webp"
+          },
+          {
+            "w": 1600,
+            "h": 1200,
+            "avif": "interior-consult-4x3-1600.avif",
+            "webp": "interior-consult-4x3-1600.webp"
+          }
+        ]
+      },
+      "4x5": {
+        "width": 2189,
+        "height": 2736,
+        "files": [
+          {
+            "w": 480,
+            "h": 600,
+            "avif": "interior-consult-4x5-480.avif",
+            "webp": "interior-consult-4x5-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 1000,
+            "avif": "interior-consult-4x5-800.avif",
+            "webp": "interior-consult-4x5-800.webp"
+          },
+          {
+            "w": 1200,
+            "h": 1500,
+            "avif": "interior-consult-4x5-1200.avif",
+            "webp": "interior-consult-4x5-1200.webp"
+          },
+          {
+            "w": 1600,
+            "h": 2000,
+            "avif": "interior-consult-4x5-1600.avif",
+            "webp": "interior-consult-4x5-1600.webp"
+          }
+        ]
+      },
+      "3x2": {
+        "width": 3648,
+        "height": 2432,
+        "files": [
+          {
+            "w": 480,
+            "h": 320,
+            "avif": "interior-consult-3x2-480.avif",
+            "webp": "interior-consult-3x2-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 533,
+            "avif": "interior-consult-3x2-800.avif",
+            "webp": "interior-consult-3x2-800.webp"
+          },
+          {
+            "w": 1200,
+            "h": 800,
+            "avif": "interior-consult-3x2-1200.avif",
+            "webp": "interior-consult-3x2-1200.webp"
+          },
+          {
+            "w": 1600,
+            "h": 1067,
+            "avif": "interior-consult-3x2-1600.avif",
+            "webp": "interior-consult-3x2-1600.webp"
+          }
+        ]
+      }
+    },
+    "dir": "/images/stock/",
+    "dummy": true,
+    "note": "Dummy stock photo (Unsplash · Harold Hisona): replace with practice photography",
+    "credit": {
+      "photographer": "Harold Hisona",
+      "unsplashId": "Bg81yWKZlMg",
+      "url": "https://unsplash.com/photos/Bg81yWKZlMg"
+    }
+  },
+  "interior-xray": {
+    "alt": "A dentist reviewing X-ray images on a lightbox",
+    "crops": {
+      "3x2": {
+        "width": 4624,
+        "height": 3083,
+        "files": [
+          {
+            "w": 480,
+            "h": 320,
+            "avif": "interior-xray-3x2-480.avif",
+            "webp": "interior-xray-3x2-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 533,
+            "avif": "interior-xray-3x2-800.avif",
+            "webp": "interior-xray-3x2-800.webp"
+          },
+          {
+            "w": 1200,
+            "h": 800,
+            "avif": "interior-xray-3x2-1200.avif",
+            "webp": "interior-xray-3x2-1200.webp"
+          },
+          {
+            "w": 1600,
+            "h": 1067,
+            "avif": "interior-xray-3x2-1600.avif",
+            "webp": "interior-xray-3x2-1600.webp"
+          }
+        ]
+      },
+      "4x3": {
+        "width": 4111,
+        "height": 3083,
+        "files": [
+          {
+            "w": 480,
+            "h": 360,
+            "avif": "interior-xray-4x3-480.avif",
+            "webp": "interior-xray-4x3-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 600,
+            "avif": "interior-xray-4x3-800.avif",
+            "webp": "interior-xray-4x3-800.webp"
+          },
+          {
+            "w": 1200,
+            "h": 900,
+            "avif": "interior-xray-4x3-1200.avif",
+            "webp": "interior-xray-4x3-1200.webp"
+          },
+          {
+            "w": 1600,
+            "h": 1200,
+            "avif": "interior-xray-4x3-1600.avif",
+            "webp": "interior-xray-4x3-1600.webp"
+          }
+        ]
+      },
+      "4x5": {
+        "width": 2466,
+        "height": 3083,
+        "files": [
+          {
+            "w": 480,
+            "h": 600,
+            "avif": "interior-xray-4x5-480.avif",
+            "webp": "interior-xray-4x5-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 1000,
+            "avif": "interior-xray-4x5-800.avif",
+            "webp": "interior-xray-4x5-800.webp"
+          },
+          {
+            "w": 1200,
+            "h": 1500,
+            "avif": "interior-xray-4x5-1200.avif",
+            "webp": "interior-xray-4x5-1200.webp"
+          },
+          {
+            "w": 1600,
+            "h": 2000,
+            "avif": "interior-xray-4x5-1600.avif",
+            "webp": "interior-xray-4x5-1600.webp"
+          }
+        ]
+      }
+    },
+    "dir": "/images/stock/",
+    "dummy": true,
+    "note": "Dummy stock photo (Unsplash · Jonathan Borba): replace with practice photography",
+    "credit": {
+      "photographer": "Jonathan Borba",
+      "unsplashId": "v_2FRXEba94",
+      "url": "https://unsplash.com/photos/v_2FRXEba94"
+    }
+  },
+  "service-emergency-dentistry": {
+    "alt": "A dentist reviewing X-rays to find the cause of tooth pain",
+    "crops": {
+      "4x3": {
+        "width": 4111,
+        "height": 3083,
+        "files": [
+          {
+            "w": 480,
+            "h": 360,
+            "avif": "service-emergency-dentistry-4x3-480.avif",
+            "webp": "service-emergency-dentistry-4x3-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 600,
+            "avif": "service-emergency-dentistry-4x3-800.avif",
+            "webp": "service-emergency-dentistry-4x3-800.webp"
+          },
+          {
+            "w": 1200,
+            "h": 900,
+            "avif": "service-emergency-dentistry-4x3-1200.avif",
+            "webp": "service-emergency-dentistry-4x3-1200.webp"
+          },
+          {
+            "w": 1600,
+            "h": 1200,
+            "avif": "service-emergency-dentistry-4x3-1600.avif",
+            "webp": "service-emergency-dentistry-4x3-1600.webp"
+          }
+        ]
+      }
+    },
+    "dir": "/images/stock/",
+    "dummy": true,
+    "note": "Dummy stock photo (Unsplash · Jonathan Borba): replace with practice photography",
+    "credit": {
+      "photographer": "Jonathan Borba",
+      "unsplashId": "v_2FRXEba94",
+      "url": "https://unsplash.com/photos/v_2FRXEba94"
+    }
+  },
+  "service-dental-implants": {
+    "alt": "A dental implant model beside natural teeth",
+    "crops": {
+      "4x3": {
+        "width": 4864,
+        "height": 3648,
+        "files": [
+          {
+            "w": 480,
+            "h": 360,
+            "avif": "service-dental-implants-4x3-480.avif",
+            "webp": "service-dental-implants-4x3-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 600,
+            "avif": "service-dental-implants-4x3-800.avif",
+            "webp": "service-dental-implants-4x3-800.webp"
+          },
+          {
+            "w": 1200,
+            "h": 900,
+            "avif": "service-dental-implants-4x3-1200.avif",
+            "webp": "service-dental-implants-4x3-1200.webp"
+          },
+          {
+            "w": 1600,
+            "h": 1200,
+            "avif": "service-dental-implants-4x3-1600.avif",
+            "webp": "service-dental-implants-4x3-1600.webp"
+          }
+        ]
+      }
+    },
+    "dir": "/images/stock/",
+    "dummy": true,
+    "note": "Dummy stock photo (Unsplash · Jonathan Borba): replace with practice photography",
+    "credit": {
+      "photographer": "Jonathan Borba",
+      "unsplashId": "W9YEY6G8LVM",
+      "url": "https://unsplash.com/photos/W9YEY6G8LVM"
+    }
+  },
+  "service-periodontal-treatment": {
+    "alt": "A model of healthy teeth and gums",
+    "crops": {
+      "4x3": {
+        "width": 4864,
+        "height": 3648,
+        "files": [
+          {
+            "w": 480,
+            "h": 360,
+            "avif": "service-periodontal-treatment-4x3-480.avif",
+            "webp": "service-periodontal-treatment-4x3-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 600,
+            "avif": "service-periodontal-treatment-4x3-800.avif",
+            "webp": "service-periodontal-treatment-4x3-800.webp"
+          },
+          {
+            "w": 1200,
+            "h": 900,
+            "avif": "service-periodontal-treatment-4x3-1200.avif",
+            "webp": "service-periodontal-treatment-4x3-1200.webp"
+          },
+          {
+            "w": 1600,
+            "h": 1200,
+            "avif": "service-periodontal-treatment-4x3-1600.avif",
+            "webp": "service-periodontal-treatment-4x3-1600.webp"
+          }
+        ]
+      }
+    },
+    "dir": "/images/stock/",
+    "dummy": true,
+    "note": "Dummy stock photo (Unsplash · Enis Yavuz): replace with practice photography",
+    "credit": {
+      "photographer": "Enis Yavuz",
+      "unsplashId": "4u2fG9mqGvQ",
+      "url": "https://unsplash.com/photos/4u2fG9mqGvQ"
+    }
+  },
+  "service-general-dentistry": {
+    "alt": "A dental mirror and probe used for check-ups",
+    "crops": {
+      "4x3": {
+        "width": 3479,
+        "height": 2609,
+        "files": [
+          {
+            "w": 480,
+            "h": 360,
+            "avif": "service-general-dentistry-4x3-480.avif",
+            "webp": "service-general-dentistry-4x3-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 600,
+            "avif": "service-general-dentistry-4x3-800.avif",
+            "webp": "service-general-dentistry-4x3-800.webp"
+          },
+          {
+            "w": 1200,
+            "h": 900,
+            "avif": "service-general-dentistry-4x3-1200.avif",
+            "webp": "service-general-dentistry-4x3-1200.webp"
+          },
+          {
+            "w": 1600,
+            "h": 1200,
+            "avif": "service-general-dentistry-4x3-1600.avif",
+            "webp": "service-general-dentistry-4x3-1600.webp"
+          }
+        ]
+      }
+    },
+    "dir": "/images/stock/",
+    "dummy": true,
+    "note": "Dummy stock photo (Unsplash · Caroline LM): replace with practice photography",
+    "credit": {
+      "photographer": "Caroline LM",
+      "unsplashId": "ux18C551ghI",
+      "url": "https://unsplash.com/photos/ux18C551ghI"
+    }
+  },
+  "service-cosmetic-dentistry": {
+    "alt": "A natural, bright smile",
+    "crops": {
+      "4x3": {
+        "width": 5333,
+        "height": 4000,
+        "files": [
+          {
+            "w": 480,
+            "h": 360,
+            "avif": "service-cosmetic-dentistry-4x3-480.avif",
+            "webp": "service-cosmetic-dentistry-4x3-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 600,
+            "avif": "service-cosmetic-dentistry-4x3-800.avif",
+            "webp": "service-cosmetic-dentistry-4x3-800.webp"
+          },
+          {
+            "w": 1200,
+            "h": 900,
+            "avif": "service-cosmetic-dentistry-4x3-1200.avif",
+            "webp": "service-cosmetic-dentistry-4x3-1200.webp"
+          },
+          {
+            "w": 1600,
+            "h": 1200,
+            "avif": "service-cosmetic-dentistry-4x3-1600.avif",
+            "webp": "service-cosmetic-dentistry-4x3-1600.webp"
+          }
+        ]
+      }
+    },
+    "dir": "/images/stock/",
+    "dummy": true,
+    "note": "Dummy stock photo (Unsplash · Kamal Hoseinianzade): replace with practice photography",
+    "credit": {
+      "photographer": "Kamal Hoseinianzade",
+      "unsplashId": "RCQnbyQsnUg",
+      "url": "https://unsplash.com/photos/RCQnbyQsnUg"
+    }
+  },
+  "service-orthodontics": {
+    "alt": "A woman fitting a clear aligner",
+    "crops": {
+      "4x3": {
+        "width": 2880,
+        "height": 2160,
+        "files": [
+          {
+            "w": 480,
+            "h": 360,
+            "avif": "service-orthodontics-4x3-480.avif",
+            "webp": "service-orthodontics-4x3-480.webp"
+          },
+          {
+            "w": 800,
+            "h": 600,
+            "avif": "service-orthodontics-4x3-800.avif",
+            "webp": "service-orthodontics-4x3-800.webp"
+          },
+          {
+            "w": 1200,
+            "h": 900,
+            "avif": "service-orthodontics-4x3-1200.avif",
+            "webp": "service-orthodontics-4x3-1200.webp"
+          },
+          {
+            "w": 1600,
+            "h": 1200,
+            "avif": "service-orthodontics-4x3-1600.avif",
+            "webp": "service-orthodontics-4x3-1600.webp"
+          }
+        ]
+      }
+    },
+    "dir": "/images/stock/",
+    "dummy": true,
+    "note": "Dummy stock photo (Unsplash · Harold Hisona): replace with practice photography",
+    "credit": {
+      "photographer": "Harold Hisona",
+      "unsplashId": "uTUsnv_UCSQ",
+      "url": "https://unsplash.com/photos/uTUsnv_UCSQ"
     }
   }
 }

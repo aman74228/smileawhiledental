@@ -1,4 +1,4 @@
-# SmileaDental: website
+# Smileawhile Dental: website
 
 Static, WordPress-portable multi-page site: Vite + HTML partials + modern CSS (custom properties, no framework) + vanilla ES modules, with GSAP (ScrollTrigger, SplitText) and Lenis.
 
